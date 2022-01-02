@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(192, 192, 192);
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-evenly;
+}
