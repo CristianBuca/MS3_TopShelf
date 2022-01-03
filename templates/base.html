@@ -26,21 +26,21 @@
         <!-- Extended navbar -->
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
+                <a href="{{ url_for('get_items') }}" class="brand-logo">Logo</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">All Shelves</a></li>
+                    <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
                     <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </div>
             </nav>
 
         <!-- Mobile navbar -->
             <ul class="sidenav" id="mobile-demo">
-                <li><a href="#">All Shelves</a></li>
+                <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
                 <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
             </ul>
         <!-- NavBar End -->
     </header>
@@ -59,10 +59,14 @@
 
     <!-- Footer Start -->
     <footer>
-        <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square"></i></a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
+            aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
+            aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" 
+            aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener" 
+            aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square"></i></a>
     </footer>
     <!-- Footer End -->
 
