@@ -2,12 +2,15 @@
 {% block content %}
 
     {% for item in items %}
-        {{ item.item_name }}<br>
-        {{ item.region_name }}<br>
-        {{ item.age }}<br>
-        {{ item.distillery }}<br>
-        {{ item.notes }}<br>
-        {{ item.image }}<br>
+        {% if item.share %}
+            {{ item.item_name }}<br>
+            {{ item.region_name }}<br>
+            {{ item.age }}<br>
+            {{ item.distillery }}<br>
+            {{ item.notes }}<br>
+            {{ item.image }}<br>
+            {{ item.owned_by }}
+        {% endif %}
     {% endfor %}
 
 {% endblock %}
