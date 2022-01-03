@@ -1,15 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Registration form card Start -->
 <div class="row">
-    <form class="col s12 m6">
-        <div class="card-panel teal">
-            <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively. I am similar to what is called a
-                panel in other frameworks.
-            </span>
+    <form class="col s12 m6" method="POST" action="{{ url_for('register') }}">
+        <div class="card-panel">
+            <!-- Username input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" id="username" name="username" class="validate" required>
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            
+            <!-- Password input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+
+            <!-- Registration button -->
+            <div class="row">
+                <button type="submit" class="col s123 btn-large">Register</button>
+            </div>
         </div>
     </form>
 </div>
+<!-- Registration form End -->
 
 {% endblock %}
