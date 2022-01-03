@@ -19,10 +19,14 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_items")
-def get_item():
+def get_items():
     items = mongo.db.items.find()
     return render_template("items.html", items=items)
 
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
