@@ -24,15 +24,45 @@
                 </div>
                 <div>
                     {{ form.email.label }}
-                    {{ form.email }}
+
+                    {% if form.email.errors %}
+                        {{ form.email(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="valid")}}
+                    {% endif %}
                 </div>
                 <div>
                     {{ form.password.label }}
-                    {{ form.password }}
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="valid")}}
+                    {% endif %}
                 </div>
                 <div>
                     {{ form.password_check.label }}
-                    {{ form.password_check }}
+
+                    {% if form.password_check.errors %}
+                        {{ form.password_check(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.password_check.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password_check(class="valid")}}
+                    {% endif %}
                 </div>
             </fieldset>
             <div>
