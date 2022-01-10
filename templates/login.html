@@ -5,7 +5,44 @@
 <div class="row">
     <form class="col s12 m6" method="POST" action="">
         <div class="card-panel">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Login Us!</legend>
+                <div>
+                    {{ form.username.label }}
+                    
+                    {% if form.username.errors %}
+                        {{ form.username(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="valid")}}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.password.label }}
 
+                    {% if form.password.errors %}
+                        {{ form.password(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="valid")}}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div>
+                {{ form.submit }}
+            </div>
+            <div>
+                Not Registered Yet? <a href="{{ url_for('register')}}">Register</a>
+            </div>
         </div>
     </form>
 </div>
