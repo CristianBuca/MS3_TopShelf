@@ -59,6 +59,17 @@
 
     <!-- Footer Start -->
     <footer>
+        <div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
             aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square"></i></a>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
