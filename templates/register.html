@@ -12,9 +12,25 @@
                     {{ form.username.label }}
                     {{ form.username }}
                 </div>
+                <div>
+                    {{ form.email.label }}
+                    {{ form.email }}
+                </div>
+                <div>
+                    {{ form.password.label }}
+                    {{ form.password }}
+                </div>
+                <div>
+                    {{ form.password_check.label }}
+                    {{ form.password_check }}
+                </div>
             </fieldset>
-           
-           
+            <div>
+                {{ form.submit }}
+            </div>
+            <div>
+                Already have an account? <a href="{{ url_for('login')}}">Log In</a>
+            </div>
         </div>
     </form>
 </div>
