@@ -5,7 +5,14 @@
 <div class="row">
     <form class="col s12 m6" method="POST" action="">
         <div class="card-panel">
-            
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Join Us!</legend>
+                <div>
+                    {{ form.username.label }}
+                    {{ form.username }}
+                </div>
+            </fieldset>
            
            
         </div>
