@@ -10,7 +10,17 @@
                 <legend>Join Us!</legend>
                 <div>
                     {{ form.username.label }}
-                    {{ form.username }}
+                    
+                    {% if form.username.errors %}
+                        {{ form.username(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="valid")}}
+                    {% endif %}
                 </div>
                 <div>
                     {{ form.email.label }}
