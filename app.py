@@ -44,6 +44,7 @@ def register():
                 "email": form.email.data,
             }
             mongo.db.users.insert_one(register)
+            session["user"] = form.username.data.lower()
             flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green accent-4')
             return redirect(url_for('login'))
     return render_template("register.html", title='Register', form=form)
@@ -55,8 +56,9 @@ def login():
     if request.method == "POST":
         user_exists = mongo.db.users.find_one({"username": form.username.data.lower()})
         if user_exists and check_password_hash(user_exists["password"], form.password.data):
-                flash(f'Welcome {form.username.data}. This is your Top Shelf',  'light-green accent-4')
-                return redirect(url_for('get_items'))
+            session["user"] = form.username.data.lower()
+            flash(f'Welcome {form.username.data}. This is your Top Shelf',  'light-green accent-4')
+            return redirect(url_for('get_items'))
         else:
             flash(f'Login Unsuccessful', 'red accent-4')
             return redirect(url_for("login"))
