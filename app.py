@@ -30,7 +30,7 @@ def get_items():
 def register():
     form = RegistrationForm()
     if request.method == "POST":
-        user_exists = mongo.db.users.find_one({'username': form.username.data})
+        user_exists = mongo.db.users.find_one({'username': form.username.data.lower()})
         email_exists = mongo.db.users.find_one({'email': form.email.data})
         if user_exists:
             flash('Username already taken', 'light-green accent-4')
@@ -52,25 +52,14 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
-        if form.username.data == 'admin' and form.password.data == 'password':       
-            flash(f'Welcome {form.username.data}. This is your Top Shelf',  'light-green accent-4')
-            return redirect(url_for('get_items'))
+    if request.method == "POST":
+        user_exists = mongo.db.users.find_one({"username": form.username.data.lower()})
+        if user_exists and check_password_hash(user_exists["password"], form.password.data):
+                flash(f'Welcome {form.username.data}. This is your Top Shelf',  'light-green accent-4')
+                return redirect(url_for('get_items'))
         else:
             flash(f'Login Unsuccessful', 'red accent-4')
-    # if request.method == "POST":
-    #     user_exists = mongo.db.users.find_one(
-    #         {"username": request.form.get("username").lower()})
-
-    #     if user_exists:
-    #         if check_password_hash(
-    #             user_exists["password"], request.form.get("password")):
-    #             session["user"] = request.form.get("username").lower()
-    #         else:
-    #             return redirect(url_for("login"))
-
-    #     else:
-    #         return redirect(url_for("get_items"))
+            return redirect(url_for("login"))
     return render_template("login.html", title='Login', form=form)
 
 
