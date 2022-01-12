@@ -30,9 +30,12 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </div>
             </nav>
@@ -40,9 +43,12 @@
         <!-- Mobile navbar -->
             <ul class="sidenav" id="mobile-demo">
                 <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
+                {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                {% else %}
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
             </ul>
         <!-- NavBar End -->
     </header>
@@ -51,7 +57,6 @@
     <section class="messages">
 
     </section>
-
     <!-- Section for main content -->
     <section class="main-content">
         {% block content %}
@@ -80,7 +85,9 @@
             aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square"></i></a>
         <a href="https://www.twitter.com" target="_blank" rel="noopener" 
             aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square"></i></a>
-        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a>
+        {% if session.user %}
+            <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a>
+        {% endif %}
     </footer>
     <!-- Footer End -->
 
