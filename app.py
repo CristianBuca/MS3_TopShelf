@@ -19,14 +19,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/get_items")
+@app.route('/')
+@app.route('/get_items')
 def get_items():
     items = mongo.db.items.find()
     return render_template("items.html", items=items)
 
 
-@app.route("/register", methods=["GET", "POST"])
+@app.route('/register', methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
     if request.method == "POST":
@@ -39,33 +39,39 @@ def register():
             flash('Email already in use!', 'light-green accent-4')
         elif form.validate_on_submit():
             register = {
-                "username": form.username.data,
-                "password": generate_password_hash(form.password.data),
-                "email": form.email.data,
+                'username': form.username.data,
+                'password': generate_password_hash(form.password.data),
+                'email': form.email.data,
             }
             mongo.db.users.insert_one(register)
-            session["user"] = form.username.data.lower()
+            session['user'] = form.username.data.lower()
             flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green accent-4')
             return redirect(url_for('login'))
-    return render_template("register.html", title='Register', form=form)
+    return render_template('register.html', title='Register', form=form)
 
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route('/login', methods=["GET", "POST"])
 def login():
     form = LoginForm()
     if request.method == "POST":
         user_exists = mongo.db.users.find_one({"username": form.username.data.lower()})
-        if user_exists and check_password_hash(user_exists["password"], form.password.data):
-            session["user"] = form.username.data.lower()
-            flash(f'Welcome {form.username.data}. This is your Top Shelf',  'light-green accent-4')
-            return redirect(url_for('get_items'))
+        if user_exists and check_password_hash(user_exists['password'], form.password.data):
+            session['user'] = form.username.data.lower()
+            flash(f'Welcome {form.username.data}. This is your Profile Page',  'light-green accent-4')
+            return redirect(url_for('profile', username=session['user']))
         else:
             flash(f'Login Unsuccessful', 'red accent-4')
             return redirect(url_for("login"))
-    return render_template("login.html", title='Login', form=form)
+    return render_template('login.html', title='Login', form=form)
 
 
-if __name__ == "__main__":
+@app.route('/profile/<username>', methods=['GET', 'POST'])
+def profile(username):
+    username = mongo.db.users.find_one({'username': session['user']})['username']
+    return render_template('profile.html', username=username)
+
+
+if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
