@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template, 
-    redirect, session, url_for)
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -29,18 +29,23 @@ def get_items():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green accent-4')
-        return redirect(url_for('get_items'))
-
-
-    # if request.method == "POST":
-
-    #     register = {
-    #         "username": request.form.get("username").lower(),
-    #         "password": generate_password_hash(request.form.get("password"))
-    #     }
-    #     mongo.db.users.insert_one(register)
+    if request.method == "POST":
+        user_exists = mongo.db.users.find_one({'username': form.username.data})
+        email_exists = mongo.db.users.find_one({'email': form.email.data})
+        if user_exists:
+            flash('Username already taken', 'light-green accent-4')
+            return redirect(url_for('register'))
+        elif email_exists:
+            flash('Email already in use!', 'light-green accent-4')
+        elif form.validate_on_submit():
+            register = {
+                "username": form.username.data,
+                "password": generate_password_hash(form.password.data),
+                "email": form.email.data,
+            }
+            mongo.db.users.insert_one(register)
+            flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green accent-4')
+            return redirect(url_for('login'))
     return render_template("register.html", title='Register', form=form)
 
 
@@ -48,7 +53,7 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.username.data == 'admin@topshelf.com' and form.password.data == 'password':       
+        if form.username.data == 'admin' and form.password.data == 'password':       
             flash(f'Welcome {form.username.data}. This is your Top Shelf',  'light-green accent-4')
             return redirect(url_for('get_items'))
         else:
