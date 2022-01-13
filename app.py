@@ -70,7 +70,7 @@ def login():
 def add_stock():
     form = AddStock()
     if request.method == "POST":
-        share = "True" if request.form.get("share") else "False"
+        share = True if request.form.get("share") else False
     if form.validate_on_submit():
         stock = {
             'item_name' : form.name.data,
