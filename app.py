@@ -83,7 +83,7 @@ def add_stock():
         mongo.db.items.insert_one(stock)
         flash(f'New item was added to your shelf', 'light-green accent-4')
         return redirect(url_for('get_items'))
-    return render_template('items.html', title='Add Stock', form=form)
+    return render_template('add_stock.html', title='Add Stock', form=form)
 
 
 @app.route('/profile/<username>', methods=['GET', 'POST'])
