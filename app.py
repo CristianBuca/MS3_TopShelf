@@ -69,6 +69,8 @@ def login():
 @app.route('/add_stock', methods=['GET', 'POST'])
 def add_stock():
     form = AddStock()
+    if request.method == "POST":
+        share = "True" if request.form.get("share") else "False"
     if form.validate_on_submit():
         stock = {
             'item_name' : form.name.data,
@@ -77,7 +79,7 @@ def add_stock():
             'distillery' : form.distillery.data,
             'notes' : form.notes.data,
             'image' : form.image.data,
-            'share' : form.share.data,
+            'share' : share,
             'owned_by': session['user'].lower()
         }
         mongo.db.items.insert_one(stock)
