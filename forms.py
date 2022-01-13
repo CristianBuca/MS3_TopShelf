@@ -54,3 +54,4 @@ class AddStock(FlaskForm):
     notes = StringField('Additional Notes')
     image = StringField('Image Link')
     share = BooleanField()
+    submit = SubmitField('Add to shelf')
