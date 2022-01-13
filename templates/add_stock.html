@@ -50,6 +50,59 @@
                         {{ form.age(class="valid")}}
                     {% endif %}
                 </div>
+                <div>
+                    {{ form.distillery.label }}
+                    
+                    {% if form.distillery.errors %}
+                        {{ form.distillery(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.distillery.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.distillery(class="valid")}}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.notes.label }}
+                    
+                    {% if form.notes.errors %}
+                        {{ form.notes(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.notes.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.notes(class="valid")}}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.image.label }}
+                    
+                    {% if form.image.errors %}
+                        {{ form.image(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.image.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.image(class="valid")}}
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="switch">
+                            <label for="share">
+                                <input type="checkbox" id="share" name="share">
+                                <span class="lever"></span>
+                                Share with others
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
             <div>
                 {{ form.submit }}
