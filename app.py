@@ -92,14 +92,14 @@ def add_stock():
 def my_shelf():
     user = session['user']
     my_shelf = list(mongo.db.items.find({'owned_by': user}))
-    return render_template('/my_shelf.html', my_shelf=my_shelf)
+    return render_template('/my_shelf.html', title='My Shelf', my_shelf=my_shelf)
 
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
     if session.get('user') is not None:
         username = mongo.db.users.find_one(
             {'username': session['user']})['username']
-        return render_template('profile.html', username=username)
+        return render_template('profile.html', title='Profile', username=username)
     return redirect(url_for('login'))
 
 
