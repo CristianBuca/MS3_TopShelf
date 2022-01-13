@@ -7,8 +7,49 @@
         <div class="card-panel">
             {{ form.hidden_tag() }}
             <fieldset>
-                <legend>Login Us!</legend>
+                <legend>Add to your shelf</legend>
+                <div>
+                    {{ form.region.label }}
 
+                    {% if form.region.errors %}
+                        {{ form.region(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.region.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.region(class="browser-default")}}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.name.label }}
+                    
+                    {% if form.name.errors %}
+                        {{ form.name(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="valid")}}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.age.label }}
+                    
+                    {% if form.age.errors %}
+                        {{ form.age(class="invalid") }}
+                        <div class="invalid">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="valid")}}
+                    {% endif %}
+                </div>
             </fieldset>
             <div>
                 {{ form.submit }}
