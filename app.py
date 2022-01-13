@@ -71,7 +71,19 @@ def add_stock():
     form = AddStock()
     if form.validate_on_submit():
         stock = {
-
+            'item_name' : form.name.data,
+            'region_name' : form.region.data,
+            'age' : form.age.data,
+            'distillery' : form.distillery.data,
+            'notes' : form.notes.data,
+            'image' : form.image.data,
+            'share' : form.share.data,
+            'owned_by': session['user'].lower()
+        }
+        mongo.db.items.insert_one(stock)
+        flash(f'New item was added to your shelf', 'light-green accent-4')
+        return redirect(url_for('get_items'))
+    return render_template('items.html', title='Add Stock', form=form)
 
 
 @app.route('/profile/<username>', methods=['GET', 'POST'])
