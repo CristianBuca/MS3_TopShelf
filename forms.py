@@ -4,7 +4,7 @@ from wtforms import (
     IntegerField
 )
 from wtforms.fields.choices import SelectField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo, Regexp
 
 
 class RegistrationForm(FlaskForm):
@@ -15,8 +15,10 @@ class RegistrationForm(FlaskForm):
         'Email', validators=[DataRequired(), Email()]
     )
     password = PasswordField(
-        'Password', validators=[DataRequired(), Length(min=5, max=20)]
-    )
+        'Password', validators=[DataRequired(), Length(min=5, max=20),
+            Regexp('^(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,}).{5,}$',
+            message='Please include one at least one uppercase letter and one number'),
+    ])
     password_check = PasswordField(
         'Confirm Password', validators=[DataRequired(), EqualTo('password')]
     )
@@ -39,7 +41,7 @@ class AddStock(FlaskForm):
         'Name', validators=[DataRequired(), Length(min=5, max=30)]
     )
     age = IntegerField(
-        'Age', validators=[DataRequired]
+        'Age', validators=[DataRequired()]
     )
     distillery = StringField('Distillery', validators=[DataRequired()])
     region = SelectField('Region', choices=(
