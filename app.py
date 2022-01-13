@@ -88,6 +88,12 @@ def add_stock():
     return render_template('add_stock.html', title='Add Stock', form=form)
 
 
+@app.route('/my_shelf', methods=['GET', 'POST'])
+def my_shelf():
+    user = session['user']
+    my_shelf = list(mongo.db.items.find({'owned_by': user}))
+    return render_template('/my_shelf.html', my_shelf=my_shelf)
+
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
     if session.get('user') is not None:
@@ -102,6 +108,7 @@ def logout():
     flash('You have been logged out')
     session.pop('user')
     return redirect(url_for('login'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
