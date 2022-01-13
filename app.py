@@ -1,11 +1,12 @@
 import os
 from flask import (
     Flask, flash, render_template, 
-    redirect, request, session, url_for)
+    redirect, request, session, url_for
+)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm, AddStock
 if os.path.exists("env.py"):
     import env
 
@@ -65,6 +66,14 @@ def login():
     return render_template('login.html', title='Login', form=form)
 
 
+@app.route('/add_stock', methods=['GET', 'POST'])
+def add_stock():
+    form = AddStock()
+    if form.validate_on_submit():
+        stock = {
+
+
+
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
     if session.get('user') is not None:
@@ -72,6 +81,7 @@ def profile(username):
             {'username': session['user']})['username']
         return render_template('profile.html', username=username)
     return redirect(url_for('login'))
+
 
 @app.route('/logout')
 def logout():
