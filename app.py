@@ -129,6 +129,9 @@ def remove_stock(item_id):
 
 @app.route('/remove_user/<user_id>')
 def remove_user(user_id):
+    mongo.db.users.delete_one({'id': ObjectId(user_id)})
+    flash('User removed from database')
+    return render_template
     
 
 
