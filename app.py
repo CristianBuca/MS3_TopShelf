@@ -117,8 +117,12 @@ def change_stock(item_id):
         form.region.data = item['region_name']
         form.notes.data = item['notes']
         form.image.data = item['image']
-        form.share = True
     return render_template('change_stock.html', title='Change Stock', item=item, form=form)
+
+
+@app.route('/remove_stock/<item_id>')
+def remove_stock(item_id):
+    
 
 
 @app.route('/my_shelf', methods=['GET', 'POST'])
