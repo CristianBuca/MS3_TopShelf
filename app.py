@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template, abort,
     redirect, request, session, url_for
 )
 from flask_pymongo import PyMongo
@@ -71,33 +71,40 @@ def add_stock():
     form = AddStock()
     if request.method == "POST":
         share = True if request.form.get("share") else False
-    if form.validate_on_submit():
-        stock = {
-            'item_name' : form.name.data,
-            'region_name' : form.region.data,
-            'age' : form.age.data,
-            'distillery' : form.distillery.data,
-            'notes' : form.notes.data,
-            'image' : form.image.data,
-            'share' : share,
-            'owned_by': session['user'].lower()
-        }
-        mongo.db.items.insert_one(stock)
-        flash(f'New item was added to your shelf', 'light-green accent-4')
-        return redirect(url_for('get_items'))
+        if form.validate_on_submit():
+            stock = {
+                'item_name' : form.name.data,
+                'region_name' : form.region.data,
+                'age' : form.age.data,
+                'distillery' : form.distillery.data,
+                'notes' : form.notes.data,
+                'image' : form.image.data,
+                'share' : share,
+                'owned_by': session['user'].lower()
+            }
+            mongo.db.items.insert_one(stock)
+            flash(f'New item was added to your shelf', 'light-green accent-4')
+            return redirect(url_for('get_items'))
     return render_template('add_stock.html', title='Add Stock', form=form)
 
 
-@app.route('/change_stock/<item_id>')
+@app.route('/change_stock/<item_id>', methods=['GET', 'POST'])
 def change_stock(item_id):
+    item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
+    if item['owned_by'] != session['user']:
+        abort(403)
+    form = AddStock()
+
     
+    return render_template('change_stock.html', title='Change Stock', item=item, form=form)
 
 
 @app.route('/my_shelf', methods=['GET', 'POST'])
 def my_shelf():
     user = session['user']
     my_shelf = list(mongo.db.items.find({'owned_by': user}))
-    return render_template('/my_shelf.html', title='My Shelf', my_shelf=my_shelf)
+    return render_template('my_shelf.html', title='My Shelf', my_shelf=my_shelf)
+
 
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
