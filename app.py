@@ -27,10 +27,10 @@ def get_items():
     return render_template("items.html", items=items)
 
 
-@app.route('/register', methods=["GET", "POST"])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if request.method == "POST":
+    if request.method == 'POST':
         user_exists = mongo.db.users.find_one({'username': form.username.data.lower()})
         email_exists = mongo.db.users.find_one({'email': form.email.data})
         if user_exists:
@@ -51,10 +51,10 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route('/login', methods=["GET", "POST"])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if request.method == "POST":
+    if request.method == 'POST':
         user_exists = mongo.db.users.find_one({"username": form.username.data.lower()})
         if user_exists and check_password_hash(user_exists['password'], form.password.data):
             session['user'] = form.username.data.lower()
@@ -69,7 +69,7 @@ def login():
 @app.route('/add_stock', methods=['GET', 'POST'])
 def add_stock():
     form = AddStock()
-    if request.method == "POST":
+    if request.method == 'POST':
         share = True if request.form.get("share") else False
         if form.validate_on_submit():
             stock = {
@@ -94,7 +94,7 @@ def change_stock(item_id):
     if item['owned_by'] != session['user']:
         abort(403)
     form = AddStock()
-    if request.method == "POST":
+    if request.method == 'POST':
         share = True if request.form.get("share") else False
         if form.validate_on_submit():
             stock = {
@@ -107,9 +107,17 @@ def change_stock(item_id):
                 'share' : share,
                 'owned_by': session['user'].lower()
             }
-            mongo.db.items.insert_one(stock)
+            mongo.db.items.replace_one({'_id': ObjectId(item_id)}, stock)
             flash(f'Your Shelf has been updated', 'light-green accent-4')
             return redirect(url_for('my_shelf'))
+    elif request.method == 'GET':
+        form.name.data = item['item_name']
+        form.age.data = item['age']
+        form.distillery.data = item['distillery']
+        form.region.data = item['region_name']
+        form.notes.data = item['notes']
+        form.image.data = item['image']
+        form.share = True
     return render_template('change_stock.html', title='Change Stock', item=item, form=form)
 
 
