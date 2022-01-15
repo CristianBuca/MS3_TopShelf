@@ -15,7 +15,7 @@
 
                             <!-- Username input field-->
                             <div>
-                                {{ form.username.label }}
+                                <label for="username">Username - Can't be changed</label>
                                 
                                 {% if form.username.errors %}
                                     {{ form.username(class="invalid") }}
@@ -28,10 +28,10 @@
                                     {{ form.username(class="valid", readonly=true)}}
                                 {% endif %}
                             </div>
-                            
+
                             <!-- Email input field -->
                             <div>
-                                {{ form.email.label }}
+                                <label for="email">Email - Can't be changed</label>
 
                                 {% if form.email.errors %}
                                     {{ form.email(class="invalid") }}
