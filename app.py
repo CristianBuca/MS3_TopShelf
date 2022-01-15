@@ -43,6 +43,8 @@ def register():
                 'username': form.username.data,
                 'password': generate_password_hash(form.password.data),
                 'email': form.email.data,
+                'avatar': 'default.png',
+                'superuser': False
             }
             mongo.db.users.insert_one(register)
             session['user'] = form.username.data.lower()
@@ -134,7 +136,6 @@ def remove_user(user_id):
     return render_template
     
 
-
 @app.route('/my_shelf', methods=['GET', 'POST'])
 def my_shelf():
     user = session['user']
@@ -163,6 +164,13 @@ def profile(username):
                 flash(f'Profile successfully updated')
                 return render_template('profile.html', title='Profile', user=user, form=form)
         return render_template('profile.html', title='Profile', user=user, form=form)
+
+
+@app.route('/superuser', methods=['GET', 'POST'])
+def superuser():
+    if session.get('user') is not None:
+        user = mongo.db.users.find_one({'username': session['user']})
+
 
 
 @app.route('/logout')
