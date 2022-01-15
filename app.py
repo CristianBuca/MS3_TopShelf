@@ -120,7 +120,7 @@ def change_stock(item_id):
     return render_template('change_stock.html', title='Change Stock', item=item, form=form)
 
 
-@app.route('/remove_stock/<item_id>', methods=['POST'])
+@app.route('/remove_stock/<item_id>')
 def remove_stock(item_id):
     mongo.db.items.delete_one({'_id': ObjectId(item_id)})
     flash('Item Removed from Shelf')
@@ -139,7 +139,6 @@ def my_shelf():
 def profile(username):
     if session.get('user') is not None:
         user = mongo.db.users.find_one({'username': session['user']})
-        username = user['username']
         user_id = user['_id']
         form = RegistrationForm()
         if request.method == 'GET':
