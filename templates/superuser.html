@@ -8,8 +8,20 @@
                     <img src="{{ user.avatar }}" alt="" class="circle">
                     <span class="title">{{ user.username }}</span>
                     <p>{{ user.email }}</p>
-                    <a href="{{ url_for('') }}" class="btn"><i class="fas fa-user-slash"></i></a>
+                    <div class="right">
+                        <button data-target="remove-{{ user._id }}" class="btn modal-trigger">Remove User from Database</button>
+                    </div>
                 </li>
+                <div id="remove-{{ user._id }}" class="modal">
+                    <div class="modal-content">
+                        <h4>{{ item.item_name }}</h4>
+                        <p>Are you sure you want to remove user from database</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn">Keep it</a>
+                        <a class="waves-effect waves-light btn" href="{{ url_for('remove_user', user_id=user._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove</a>
+                    </div>
+                </div>
             {% endif %}
         {% endfor %}
     </ul>
