@@ -170,7 +170,12 @@ def profile(username):
 def superuser():
     if session.get('user') is not None:
         user = mongo.db.users.find_one({'username': session['user']})
-
+        if user['superuser']:
+            users = list(mongo.db.users.find())
+            return render_template('superuser.html', title='Admin', users=users)
+        else:
+            flash(f'You do not have the required permission to access this feature')
+            return redirect(url_for('my_shelf'))
 
 
 @app.route('/logout')
