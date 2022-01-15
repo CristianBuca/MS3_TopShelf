@@ -140,6 +140,9 @@ def profile(username):
     if session.get('user') is not None:
         username = mongo.db.users.find_one(
             {'username': session['user']})['username']
+        form = RegistrationForm
+        if request.method == 'POST':
+            
         return render_template('profile.html', title='Profile', username=username)
     return redirect(url_for('login'))
 
