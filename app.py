@@ -122,7 +122,10 @@ def change_stock(item_id):
 
 @app.route('/remove_stock/<item_id>')
 def remove_stock(item_id):
-    
+    mongo.db.items.delete_one({'_id': ObjectId(item_id)})
+    flash('Item Removed from Shelf')
+    return  redirect(url_for('my_shelf'))
+
 
 
 @app.route('/my_shelf', methods=['GET', 'POST'])
