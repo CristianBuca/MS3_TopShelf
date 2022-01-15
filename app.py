@@ -40,7 +40,7 @@ def register():
             flash('Email already in use!', 'light-green accent-4')
         elif form.validate_on_submit():
             register = {
-                'username': form.username.data,
+                'username': form.username.data.lower(),
                 'password': generate_password_hash(form.password.data),
                 'email': form.email.data,
                 'avatar': 'default.png',
@@ -131,9 +131,9 @@ def remove_stock(item_id):
 
 @app.route('/remove_user/<user_id>')
 def remove_user(user_id):
-    mongo.db.users.delete_one({'id': ObjectId(user_id)})
+    mongo.db.users.delete_one({'_id': ObjectId(user_id)})
     flash('User removed from database')
-    return render_template
+    return redirect(url_for('superuser'))
     
 
 @app.route('/my_shelf', methods=['GET', 'POST'])
@@ -171,8 +171,9 @@ def superuser():
     if session.get('user') is not None:
         user = mongo.db.users.find_one({'username': session['user']})
         if user['superuser']:
+            items = list(mongo.db.items.find())
             users = list(mongo.db.users.find())
-            return render_template('superuser.html', title='Admin', users=users)
+            return render_template('superuser.html', title='Admin', users=users, items=items)
         else:
             flash(f'You do not have the required permission to access this feature')
             return redirect(url_for('my_shelf'))
