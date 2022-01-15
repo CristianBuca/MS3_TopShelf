@@ -10,34 +10,33 @@
                     <div class="collapsible-body">
                         <div class="row">
                             <div class="col">
-                            <div class="card">
-                                <div class="card-image">
-                                <img src="{{ item.image }}">
+                                <div class="card">
+                                    <div class="card-image">
+                                    <img src="{{ item.image }}">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ item.region_name }}</p>
+                                        <p>{{ item.age }}</p>
+                                        <p>{{ item.distillery }}</p>
+                                        <p>{{ item.notes }}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-light btn" href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
+                                        <button data-target="remove-{{ item._id }}" class="btn modal-trigger">Remove from Shelf</button>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <p>{{ item.region_name }}</p>
-                                    <p>{{ item.age }}</p>
-                                    <p>{{ item.distillery }}</p>
-                                    <p>{{ item.notes }}</p>
-                                </div>
-                                <div class="card-action">
-                                <a href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
-                                <a href="#confirm-modal">Take off Shelf</a>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </div>
                 </li>
-                <!-- Modal Structure -->
-                <div id="confirm-modal" class="modal">
+                <div id="remove-{{ item._id }}" class="modal">
                     <div class="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>A bunch of text</p>
+                        <h4>{{ item.item_name }}</h4>
+                        <p>Are you sure you want to remove it from your shelf?</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ url_for('remove_stock', item_id=item._id) }}"
-                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        <a href="#!" class="modal-close waves-effect waves-green btn">Keep it</a>
+                        <a class="waves-effect waves-light btn" href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove from Shelf</a>
                     </div>
                 </div>
             {% endfor %}
