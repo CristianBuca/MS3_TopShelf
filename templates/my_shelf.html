@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="row">
     <div class="col s12">
         <ul class="collapsible popout">
@@ -21,17 +22,27 @@
                                 </div>
                                 <div class="card-action">
                                 <a href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
-                                <a href="{{ url_for('remove_stock', item_id=item._id) }}">Take off Shelf</a>
+                                <a href="#confirm-modal">Take off Shelf</a>
                                 </div>
                             </div>
                             </div>
                         </div>
                     </div>
                 </li>
+                <!-- Modal Structure -->
+                <div id="confirm-modal" class="modal">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('remove_stock', item_id=item._id) }}"
+                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
             {% endfor %}
         </ul>
     </div>
 </div>
-  
 
 {% endblock %}
