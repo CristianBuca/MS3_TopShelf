@@ -47,7 +47,7 @@ def register():
             mongo.db.users.insert_one(register)
             session['user'] = form.username.data.lower()
             flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green accent-4')
-            return redirect(url_for('login'))
+            return redirect(url_for('get_items'))
     return render_template('register.html', title='Register', form=form)
 
 
@@ -142,26 +142,21 @@ def profile(username):
         username = user['username']
         user_id = user['_id']
         form = RegistrationForm()
-        if request.method == 'POST':
-            user_exists = mongo.db.users.find_one({'username': form.username.data.lower()})
-            email_exists = mongo.db.users.find_one({'email': form.email.data})
-            if user_exists and not username:
-                flash('Username already taken', 'light-green accent-4')
-            elif email_exists and not user['email']:
-                flash('Email already in use!', 'light-green accent-4')
-            elif form.validate_on_submit():
-                update = {
-                    'username': form.username.data,
-                    'password': generate_password_hash(form.password.data),
-                    'email': form.email.data
-                }
-                mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
-                flash(f'Profile successfully updated')
-                return render_template('profile.html', title='Profile', username=username, form=form)
         if request.method == 'GET':
             form.username.data = user['username']
             form.email.data = user['email']
-        return render_template('profile.html', title='Profile', username=username, form=form)
+        if request.method == 'POST':
+            if form.validate_on_submit():
+                update = {
+                    'username': request.form.get('username'),
+                    'email': request.form.get('email'),
+                    'password': generate_password_hash(form.password.data),
+                    'avatar': request.form.get('avatar')
+                }
+                mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
+                flash(f'Profile successfully updated')
+                return render_template('profile.html', title='Profile', user=user, form=form)
+        return render_template('profile.html', title='Profile', user=user, form=form)
 
 
 @app.route('/logout')
