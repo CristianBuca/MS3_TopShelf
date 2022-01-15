@@ -36,8 +36,9 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="{{ url_for('my_shelf') }}">My Shelf</a></li>
                         <li><a href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -50,11 +51,12 @@
             <ul class="sidenav" id="mobile-demo">
                 <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
                 {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
+                    <li><a href="{{ url_for('my_shelf') }}">My Shelf</a></li>
+                    <li><a href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
             </ul>
         <!-- NavBar End -->
