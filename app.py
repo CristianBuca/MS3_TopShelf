@@ -88,6 +88,11 @@ def add_stock():
     return render_template('add_stock.html', title='Add Stock', form=form)
 
 
+@app.route('/change_stock/<item_id>')
+def change_stock(item_id):
+    
+
+
 @app.route('/my_shelf', methods=['GET', 'POST'])
 def my_shelf():
     user = session['user']
