@@ -5,6 +5,82 @@
     <div class="col s12 m6">
         <div class="card-panel">
             <h1>{{ username }}' Profile</h1>
+            <!-- Registration form card Start -->
+            <div class="row">
+                <form class="col s12 m6" method="POST" action="">
+                    <div class="card-panel">
+                        {{ form.hidden_tag() }}
+                        <fieldset>
+                            <legend>Join Us!</legend>
+                            <!-- Username input field-->
+                            <div>
+                                {{ form.username.label }}
+            
+                                {% if form.username.errors %}
+                                {{ form.username(class="invalid") }}
+                                <div class="invalid">
+                                    {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.username(class="valid")}}
+                                {% endif %}
+                            </div>
+                            <!-- Email input field -->
+                            <div>
+                                {{ form.email.label }}
+            
+                                {% if form.email.errors %}
+                                {{ form.email(class="invalid") }}
+                                <div class="invalid">
+                                    {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.email(class="valid")}}
+                                {% endif %}
+                            </div>
+                            <!-- Password input field -->
+                            <div>
+                                {{ form.password.label }}
+            
+                                {% if form.password.errors %}
+                                {{ form.password(class="invalid") }}
+                                <div class="invalid">
+                                    {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.password(class="valid")}}
+                                {% endif %}
+                            </div>
+                            <!-- Password confirmation input field -->
+                            <div>
+                                {{ form.password_check.label }}
+            
+                                {% if form.password_check.errors %}
+                                {{ form.password_check(class="invalid") }}
+                                <div class="invalid">
+                                    {% for error in form.password_check.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.password_check(class="valid")}}
+                                {% endif %}
+                            </div>
+                        </fieldset>
+                        <!-- Form submit button -->
+                        <div>
+                            {{ form.submit }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Registration form End -->
         </div>
     </div>
 </div>
