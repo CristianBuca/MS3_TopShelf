@@ -120,7 +120,7 @@ def change_stock(item_id):
     return render_template('change_stock.html', title='Change Stock', item=item, form=form)
 
 
-@app.route('/remove_stock/<item_id>')
+@app.route('/remove_stock/<item_id>', methods=['POST'])
 def remove_stock(item_id):
     mongo.db.items.delete_one({'_id': ObjectId(item_id)})
     flash('Item Removed from Shelf')
@@ -138,13 +138,30 @@ def my_shelf():
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
     if session.get('user') is not None:
-        username = mongo.db.users.find_one(
-            {'username': session['user']})['username']
-        form = RegistrationForm
+        user = mongo.db.users.find_one({'username': session['user']})
+        username = user['username']
+        user_id = user['_id']
+        form = RegistrationForm()
         if request.method == 'POST':
-            
-        return render_template('profile.html', title='Profile', username=username)
-    return redirect(url_for('login'))
+            user_exists = mongo.db.users.find_one({'username': form.username.data.lower()})
+            email_exists = mongo.db.users.find_one({'email': form.email.data})
+            if user_exists and not username:
+                flash('Username already taken', 'light-green accent-4')
+            elif email_exists and not user['email']:
+                flash('Email already in use!', 'light-green accent-4')
+            elif form.validate_on_submit():
+                update = {
+                    'username': form.username.data,
+                    'password': generate_password_hash(form.password.data),
+                    'email': form.email.data
+                }
+                mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
+                flash(f'Profile successfully updated')
+                return render_template('profile.html', title='Profile', username=username, form=form)
+        if request.method == 'GET':
+            form.username.data = user['username']
+            form.email.data = user['email']
+        return render_template('profile.html', title='Profile', username=username, form=form)
 
 
 @app.route('/logout')
