@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="card-action">
                                 <a href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
-                                <a href="#">Take off Shelf</a>
+                                <a href="{{ url_for('remove_stock', item_id=item._id) }}">Take off Shelf</a>
                                 </div>
                             </div>
                             </div>
