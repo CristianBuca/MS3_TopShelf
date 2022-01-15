@@ -94,8 +94,22 @@ def change_stock(item_id):
     if item['owned_by'] != session['user']:
         abort(403)
     form = AddStock()
-
-    
+    if request.method == "POST":
+        share = True if request.form.get("share") else False
+        if form.validate_on_submit():
+            stock = {
+                'item_name' : form.name.data,
+                'region_name' : form.region.data,
+                'age' : form.age.data,
+                'distillery' : form.distillery.data,
+                'notes' : form.notes.data,
+                'image' : form.image.data,
+                'share' : share,
+                'owned_by': session['user'].lower()
+            }
+            mongo.db.items.insert_one(stock)
+            flash(f'Your Shelf has been updated', 'light-green accent-4')
+            return redirect(url_for('my_shelf'))
     return render_template('change_stock.html', title='Change Stock', item=item, form=form)
 
 
