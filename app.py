@@ -127,6 +127,10 @@ def remove_stock(item_id):
     return  redirect(url_for('my_shelf'))
 
 
+@app.route('/remove_user/<user_id>')
+def remove_user(user_id):
+    
+
 
 @app.route('/my_shelf', methods=['GET', 'POST'])
 def my_shelf():
