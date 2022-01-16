@@ -30,7 +30,14 @@ def get_items():
 @app.route('/search_items', methods=['GET', 'POST'])
 def search_items():
     search_items = request.form.get('search_items')
-    items = mongo.db.items.find(({'$text': {'search': search_items}}))
+    items = mongo.db.items.find(({'$text': {'$search': search_items}}))
+    return render_template("items.html", items=items)
+
+
+@app.route('/super_search_item', methods=['GET', 'POST'])
+def super_search_items():
+    search_items = request.form.get('search_items')
+    items = mongo.db.items.find(({'$text': {'$search': search_items}}))
     return render_template("items.html", items=items)
 
 
