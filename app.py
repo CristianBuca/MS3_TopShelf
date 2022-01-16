@@ -27,9 +27,11 @@ def get_items():
     return render_template("items.html", items=items)
 
 
-@app.route('/search', methods=['GET', 'POST'])
-def search():
-    
+@app.route('/search_items', methods=['GET', 'POST'])
+def search_items():
+    search_items = request.form.get('search_items')
+    items = mongo.db.items.find(({'$text': {'search': search_items}}))
+    return render_template("items.html", items=items)
 
 
 @app.route('/register', methods=['GET', 'POST'])
