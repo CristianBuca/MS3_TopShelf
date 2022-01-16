@@ -24,21 +24,22 @@ mongo = PyMongo(app)
 @app.route('/get_items')
 def get_items():
     items = mongo.db.items.find()
-    return render_template("items.html", items=items)
+    return render_template('items.html', items=items)
 
 
 @app.route('/search_items', methods=['GET', 'POST'])
 def search_items():
     search_items = request.form.get('search_items')
-    items = mongo.db.items.find(({'$text': {'$search': search_items}}))
-    return render_template("items.html", items=items)
+    items = mongo.db.items.find({'$text': {'$search': search_items}})
+    return render_template('items.html', Title='Search Results', items=items)
 
 
-@app.route('/super_search_item', methods=['GET', 'POST'])
-def super_search_items():
-    search_items = request.form.get('search_items')
-    items = mongo.db.items.find(({'$text': {'$search': search_items}}))
-    return render_template("items.html", items=items)
+@app.route('/super_search', methods=['GET', 'POST'])
+def super_search():
+    super_search = request.form.get('super_search')
+    users = mongo.db.users.find({'$text': {'$search': super_search}})
+    items = mongo.db.items.find({'$text': {'$search': super_search}})
+    return render_template('superuser.html', Title='Search Results', users=users, items=items)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -153,7 +154,7 @@ def remove_user(user_id):
 @app.route('/my_shelf', methods=['GET', 'POST'])
 def my_shelf():
     user = session['user']
-    my_shelf = list(mongo.db.items.find({'owned_by': user}))
+    my_shelf = mongo.db.items.find({'owned_by': user})
     return render_template('my_shelf.html', title='My Shelf', my_shelf=my_shelf)
 
 
@@ -185,8 +186,8 @@ def superuser():
     if session.get('user') is not None:
         user = mongo.db.users.find_one({'username': session['user']})
         if user['superuser']:
-            items = list(mongo.db.items.find())
-            users = list(mongo.db.users.find())
+            items = mongo.db.items.find()
+            users = mongo.db.users.find()
             return render_template('superuser.html', title='Admin', users=users, items=items)
         else:
             flash(f'You do not have the required permission to access this feature')
