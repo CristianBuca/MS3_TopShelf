@@ -27,6 +27,11 @@ def get_items():
     return render_template("items.html", items=items)
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
