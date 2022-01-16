@@ -58,7 +58,7 @@ def register():
                 'username': form.username.data.lower(),
                 'password': generate_password_hash(form.password.data),
                 'email': form.email.data,
-                'avatar': 'default.png',
+                'avatar': '/static/images/avatar_default.jpg',
                 'superuser': False
             }
             mongo.db.users.insert_one(register)
@@ -173,7 +173,8 @@ def profile(username):
                     'username': request.form.get('username'),
                     'email': request.form.get('email'),
                     'password': generate_password_hash(form.password.data),
-                    'avatar': request.form.get('avatar')
+                    'avatar': request.form.get('avatar'),
+                    'superuser': user['superuser']
                 }
                 mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
                 flash(f'Profile successfully updated')

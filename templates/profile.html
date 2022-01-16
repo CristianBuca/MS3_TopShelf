@@ -2,11 +2,14 @@
 {% block content %}
 
     <div class="row">
-        <div class="col s12 m6">
+        <div class="col s10 offset-s1">
             <div class="card-panel">
                 <h1>{{ user.username }}' Profile</h1>
                 <!-- Registration form card Start -->
                 <div class="row">
+                    <div class="col s12 m6">
+                        <img src="{{ user.avatar }}" alt="" class="circle responsive-img">
+                    </div>
                     <form class="col s12 m6" method="POST" action="">
                         <div class="card-panel">
                             {{ form.hidden_tag() }}
