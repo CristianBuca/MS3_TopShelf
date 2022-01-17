@@ -7,3 +7,7 @@ $(document).ready(function(){
     $('.fixed-action-btn').floatingActionButton();
     $('.modal').modal();
 });
+
+$('img').on('error', () => {
+    $(this).attr('src', '/static/images/avatar_default.jpg');
+})
