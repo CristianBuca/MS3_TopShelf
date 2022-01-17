@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row card-panel">
-        <form action="{{ url_for('search_items') }}" method="POST">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field">
+    <div class="row">
+        <form class="col s10 offset-s1 center-align" action="{{ url_for('search_items') }}" method="POST">
+            <div class="row card-panel">
+                <div class="input-field col s12">
                     <input type="text" name="search_items" id="search_items" minlength="3" class="validate" required>
                     <label for="search_items">Search by Name, Region or Distillery</label>
                 </div>
-                <div>
+                <div class="col s12">
                     <a href="{{ url_for('get_items') }}" class="btn">Reset</a>
                     <button type="submit" class="btn">Search</button>
                 </div>
@@ -19,22 +19,31 @@
     <div class="row">
         {% for item in items %}
             {% if item.share %}
-                <div class="card large hoverable col s10 m4 xl2 offset-s1 offset-m1">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="{{ item.image }}">
+                <div class="col s12 m6 xl4">
+                    <div class="card large col-content">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img data-target="image-{{ item._id }}" class="modal-trigger" src="{{ item.image }}">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 center-align">{{ item.item_name }}</span>
+                            <a class="btn-floating pulse activator right"><i class="fas fa-plus-square right small"></i></a>
+                            <span class="center-align col s12">Expand for details</span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4 center-align">{{ item.item_name }}<i class="fas fa-window-close right"></i></span>
+                            <span>Aged: {{ item.age }} years</span><br>
+                            <span>Region: {{ item.region_name }}</span><br>
+                            <span>Distillery: {{ item.distillery }}</span><br>
+                            <span>Notes: {{ item.notes }}</span><br>
+                            <span class="right">Owner: {{ item.owned_by }}</span>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4 center-align">{{ item.item_name }}</span>
-                        <a class="btn-floating pulse activator right"><i class="fas fa-plus-square right small"></i></a>
-                        <span class="center-align col s12">Expand for details</span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4 center-align">{{ item.item_name }}<i class="fas fa-window-close right"></i></span>
-                        <span>Aged: {{ item.age }} years</span><br>
-                        <span>Region: {{ item.region_name }}</span><br>
-                        <span>Distillery: {{ item.distillery }}</span><br>
-                        <span>Notes: {{ item.notes }}</span><br>
-                        <span class="right">Owner: {{ item.owned_by }}</span>
+                </div>
+
+                <div id="image-{{ item._id }}" class="modal">
+                    <div class="modal-content row">
+                        <h4>{{ item.item_name }}</h4>
+                        <img class="modal-image col s12" src="{{ item.image }}">
                     </div>
                 </div>
             {% endif %}
