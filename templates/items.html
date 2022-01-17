@@ -19,10 +19,14 @@
     <div class="row">
         {% for item in items %}
             {% if item.share %}
-                <div class="col s12 m6 xl4">
-                    <div class="card large col-content">
+                <div class="col s12 m6 l4 xl3">
+                    <div class="card large col-content hoverable">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <img data-target="image-{{ item._id }}" class="modal-trigger" src="{{ item.image }}">
+                            {% if item.image %}
+                                <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}">
+                            {% else %}
+                                <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/avatar_default.jpg">
+                            {% endif %}
                         </div>
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4 center-align">{{ item.item_name }}</span>
@@ -41,13 +45,15 @@
                 </div>
 
                 <div id="image-{{ item._id }}" class="modal">
-                    <div class="modal-content row">
-                        <h4>{{ item.item_name }}</h4>
-                        <img class="modal-image col s12" src="{{ item.image }}">
+                    <div class="modal-content">
+                        <h4 class="center-align">{{ item.item_name }}</h4>
+                        {% if item.image %}
+                            <img data-target="image-{{ item._id }}" src="{{ item.image }}">
+                        {% else %}
+                            <img data-target="image-{{ item._id }}" src="/static/images/avatar_default.jpg">
+                        {% endif %}
                     </div>
                 </div>
             {% endif %}
         {% endfor %}
-    </div>
-
 {% endblock %}
