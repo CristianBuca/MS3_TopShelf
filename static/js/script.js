@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $('.sidenav').sidenav({
 		edge: "right",
@@ -8,6 +9,6 @@ $(document).ready(function(){
     $('.modal').modal();
 });
 
-$('img').on('error', () => {
+$('img').on('error', function() {
     $(this).attr('src', '/static/images/avatar_default.jpg');
 })
