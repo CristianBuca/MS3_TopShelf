@@ -32,3 +32,18 @@ img {
     height: 4rem;
     font-size: 0;
 }
+
+.card-content {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    position: relative;
+    bottom: 40%;
+    z-index: 1;
+    height: 40% !important;
+    font-weight: bold !important;
+}
+
+.card-image {
+    height: 500px !important;
+    max-height: 100% !important;
+}
+
