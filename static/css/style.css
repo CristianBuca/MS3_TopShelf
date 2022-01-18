@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;400;600;700&display=swap');
+
 body {
     background-color: rgb(192, 192, 192);
+    font-family: 'Barlow+Condensed';
+}
+
+.image-wrapper {
+    background-image: url("/static/images/landing-image.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 30vh;
+}
+
+.form-wrapper {
+    height: 30vh;
+    background-color: #0b0b0b !important;
 }
 
 footer {
@@ -45,5 +60,10 @@ img {
 .card-image {
     height: 500px !important;
     max-height: 100% !important;
+    overflow-y: clip;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
