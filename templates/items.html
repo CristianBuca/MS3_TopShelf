@@ -1,40 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <form class="col s10 offset-s1 center-align" action="{{ url_for('search_items') }}" method="POST">
-            <div class="row card-panel">
-                <div class="input-field col s12">
-                    <input type="text" name="search_items" id="search_items" minlength="3" class="validate" required>
-                    <label for="search_items">Search by Name, Region or Distillery</label>
+    <div class="row search-section black">
+        <div class="col s12 m6 image-wrapper"></div>
+        <div class="col s12 m6 form-wrapper valign-wrapper">
+            <form class="center-align" action="{{ url_for('search_items') }}" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="search_items" id="search_items" minlength="3" class="validate orange-text text-lighten-3" required>
+                        <label for="search_items" class="orange-text text-lighten-3">Search by Name, Region or Distillery</label>
+                    </div>
+                    <div class="col s12">
+                        <a href="{{ url_for('get_items') }}" class="btn light-green darken-3 waves-effect waves-light">Reset</a>
+                        <button type="submit" class="btn light-green darken-3 waves-effect waves-light">Search</button>
+                    </div>
                 </div>
-                <div class="col s12">
-                    <a href="{{ url_for('get_items') }}" class="btn">Reset</a>
-                    <button type="submit" class="btn">Search</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
-    <div class="row">
+    <div class="row container">
         {% for item in items %}
             {% if item.share %}
                 <div class="col s12 m6 l4 xl3">
-                    <div class="card large col-content hoverable">
+                    <div class="card medium col-content hoverable">
                         <div class="card-image waves-effect waves-block waves-light">
                             {% if item.image %}
                                 <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}">
+                                <p>{{ error }}</p>
                             {% else %}
                                 <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/avatar_default.jpg">
                             {% endif %}
                         </div>
                         <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4 center-align">{{ item.item_name }}</span>
-                            <a class="btn-floating pulse activator right"><i class="fas fa-plus-square right small"></i></a>
-                            <span class="center-align col s12">Expand for details</span>
+                            <span class="card-title activator center-align text-shadow">{{ item.item_name }}</span>
+                            <a class="activator right light-green-text text-darken-3"><i class="fas fa-plus-square right small hoverable"></i></a>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4 center-align">{{ item.item_name }}<i class="fas fa-window-close right"></i></span>
+                            <span class="card-title center-align">{{ item.item_name }}<i class="fas fa-window-close right"></i></span>
                             <span>Aged: {{ item.age }} years</span><br>
                             <span>Region: {{ item.region_name }}</span><br>
                             <span>Distillery: {{ item.distillery }}</span><br>
