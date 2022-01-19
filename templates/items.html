@@ -11,15 +11,15 @@
                         <label for="search_items" class="orange-text text-lighten-3">Search by Name, Region or Distillery</label>
                     </div>
                     <div class="col s12">
-                        <a href="{{ url_for('get_items') }}" class="btn light-green darken-3 waves-effect waves-light">Reset</a>
-                        <button type="submit" class="btn light-green darken-3 waves-effect waves-light">Search</button>
+                        <a href="{{ url_for('get_items') }}" class="btn light-green darken-3 waves-effect waves-light hoverable">Reset</a>
+                        <button type="submit" class="btn light-green darken-3 waves-effect waves-light hoverable">Search</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="row container">
+    <div class="row item-container">
         {% for item in items %}
             {% if item.share %}
                 <div class="col s12 m6 l4 xl3">
@@ -27,7 +27,6 @@
                         <div class="card-image waves-effect waves-block waves-light">
                             {% if item.image %}
                                 <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}">
-                                <p>{{ error }}</p>
                             {% else %}
                                 <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/avatar_default.jpg">
                             {% endif %}
@@ -37,12 +36,18 @@
                             <a class="activator right light-green-text text-darken-3"><i class="fas fa-plus-square right small hoverable"></i></a>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title center-align">{{ item.item_name }}<i class="fas fa-window-close right"></i></span>
-                            <span>Aged: {{ item.age }} years</span><br>
-                            <span>Region: {{ item.region_name }}</span><br>
-                            <span>Distillery: {{ item.distillery }}</span><br>
-                            <span>Notes: {{ item.notes }}</span><br>
-                            <span class="right">Owner: {{ item.owned_by }}</span>
+                            <span class="card-title center-align text-shadow">{{ item.item_name }}
+                                <a class="deep-orange-text text-darken-4 activator"><i class="fas fa-times right small hoverable"></i></a>
+                            </span>
+                            <p class="card-text"><strong>AGED:</strong> {{ item.age }} years</p>
+                            <div class="divider"></div>
+                            <p class="card-text">REGION: {{ item.region_name }}</p>
+                            <div class="divider"></div>
+                            <p class="card-text">DISTILLERY: {{ item.distillery }}</p>
+                            <div class="divider"></div>
+                            <p class="card-text">NOTES: {{ item.notes }}</p>
+                            <div class="divider"></div>
+                            <p class="right card-text">OWNER: {{ item.owned_by }}</p>
                         </div>
                     </div>
                 </div>
