@@ -49,10 +49,10 @@ def register():
         user_exists = mongo.db.users.find_one({'username': form.username.data.lower()})
         email_exists = mongo.db.users.find_one({'email': form.email.data})
         if user_exists:
-            flash('Username already taken', 'light-green accent-4')
+            flash('Username already taken', 'deep-orange darken-4 yellow-text text-lighten-5')
             return redirect(url_for('register'))
         elif email_exists:
-            flash('Email already in use!', 'light-green accent-4')
+            flash('Email already in use!', 'deep-orange darken-4 yellow-text text-lighten-5')
         elif form.validate_on_submit():
             register = {
                 'username': form.username.data.lower(),
@@ -63,7 +63,7 @@ def register():
             }
             mongo.db.users.insert_one(register)
             session['user'] = form.username.data.lower()
-            flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green accent-4')
+            flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('get_items'))
     return render_template('register.html', title='Register', form=form)
 
@@ -75,10 +75,10 @@ def login():
         user_exists = mongo.db.users.find_one({"username": form.username.data.lower()})
         if user_exists and check_password_hash(user_exists['password'], form.password.data):
             session['user'] = form.username.data.lower()
-            flash(f'Welcome {form.username.data}. This is your Profile Page',  'light-green accent-4')
-            return redirect(url_for('profile', username=session['user']))
+            flash(f'Welcome {form.username.data}. This is what your shelf looks like',  'light-green darken-3 yellow-text text-lighten-5')
+            return redirect(url_for('my_shelf', username=session['user']))
         else:
-            flash(f'Login Unsuccessful', 'red accent-4')
+            flash(f'Login Unsuccessful. Double check your username and password!', 'deep-orange darken-4 yellow-text text-lighten-5')
             return redirect(url_for('login'))
     return render_template('login.html', title='Login', form=form)
 
@@ -100,7 +100,7 @@ def add_stock():
                 'owned_by': session['user'].lower()
             }
             mongo.db.items.insert_one(stock)
-            flash(f'New item was added to your shelf', 'light-green accent-4')
+            flash(f'New item was added to your shelf', 'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('get_items'))
     return render_template('add_stock.html', title='Add Stock', form=form)
 
@@ -125,7 +125,7 @@ def change_stock(item_id):
                 'owned_by': session['user'].lower()
             }
             mongo.db.items.replace_one({'_id': ObjectId(item_id)}, stock)
-            flash(f'Your Shelf has been updated', 'light-green accent-4')
+            flash(f'Your Shelf has been updated', 'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('my_shelf'))
     elif request.method == 'GET':
         form.name.data = item['item_name']
@@ -140,14 +140,14 @@ def change_stock(item_id):
 @app.route('/remove_stock/<item_id>')
 def remove_stock(item_id):
     mongo.db.items.delete_one({'_id': ObjectId(item_id)})
-    flash('Item Removed from Shelf')
+    flash(f'Item Removed from Shelf', 'light-green darken-3 yellow-text text-lighten-5')
     return  redirect(url_for('my_shelf'))
 
 
 @app.route('/remove_user/<user_id>')
 def remove_user(user_id):
     mongo.db.users.delete_one({'_id': ObjectId(user_id)})
-    flash('User removed from database')
+    flash(f'User removed from database', 'light-green darken-3 yellow-text text-lighten-5')
     return redirect(url_for('superuser'))
     
 
@@ -177,7 +177,7 @@ def profile(username):
                     'superuser': user['superuser']
                 }
                 mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
-                flash(f'Profile successfully updated')
+                flash(f'Profile successfully updated', 'light-green darken-3 yellow-text text-lighten-5')
                 return render_template('profile.html', title='Profile', user=user, form=form)
         return render_template('profile.html', title='Profile', user=user, form=form)
 
@@ -191,13 +191,13 @@ def superuser():
             users = mongo.db.users.find()
             return render_template('superuser.html', title='Admin', users=users, items=items)
         else:
-            flash(f'You do not have the required permission to access this feature')
+            flash(f'You do not have the required permission to access this feature', 'deep-orange darken-4 yellow-text text-lighten-5')
             return redirect(url_for('my_shelf'))
 
 
 @app.route('/logout')
 def logout():
-    flash('You have been logged out')
+    flash(f'You have been logged out', 'light-green darken-3 yellow-text text-lighten-5')
     session.pop('user')
     return redirect(url_for('login'))
 
