@@ -21,7 +21,15 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    justify-content: space-evenly;
+    z-index: 10;
+    height: 15vh;
+}
+
+.media-links {
+    height: 5vh;
+    width: 100%;
+    margin: 20px;
+
 }
 
 .valid {
@@ -62,15 +70,26 @@ img {
     overflow-y: clip;
 }
 
+.item-container {
+    margin-bottom: 15vh;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Media Queries */
-/* Overwrite Materialize container width */
+/* Overwrite Materialize container width on screens larger than 993px */
 
 @media only screen and (min-width: 993px) {
-    .container {
+    .item-container {
         width: 80% !important;
+    }
+}
+
+/* On screens smaller than 993 overwrite Materialize "medium" class */
+@media only screen and (max-width: 993px) {
+    i.medium {
+        font-size: 2rem !important;
     }
 }
