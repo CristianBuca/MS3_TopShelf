@@ -5,7 +5,7 @@ body {
 }
 
 .image-wrapper {
-    background-image: url("/static/images/landing-image.jpg");
+    background-image: url("/static/images/landing_image.jpg");
     background-position: center center;
     background-size: cover;
     height: 30vh;
@@ -29,15 +29,6 @@ footer {
     height: 5vh;
     width: 100%;
     margin: 20px;
-
-}
-
-.valid {
-    background-color: green
-}
-
-.invalid {
-    background-color: red;
 }
 
 img {
@@ -49,10 +40,17 @@ img {
 
 .brand-logo {
     top: 35%;
-    left: 10%;
+    left: 5%;
     width: 8rem;
     height: 4rem;
     font-size: 0;
+}
+
+.sidenav {
+    background-image: url("/static/images/side-nav.jpg");
+    background-position: center center;
+    background-size: cover;
+    padding-top: 10vh;
 }
 
 .card-content {
@@ -91,5 +89,11 @@ img {
 @media only screen and (max-width: 993px) {
     i.medium {
         font-size: 2rem !important;
+    }
+}
+
+@media only screen and (min-width : 1600px)  {
+    .image-wrapper {
+        background-image: url("/static/images/landing_image_large.jpg");
     }
 }
