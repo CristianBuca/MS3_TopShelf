@@ -7,7 +7,7 @@
     <div class="hide-on-small-only col m6 top-wrapper center-align">
         <h3 class="orange-text text-lighten-3">You are updating {{ form.name.data }}</h3>
     </div>
-    <form class="col s12 m6" method="POST" action="">
+    <form class="col s12 m6 offset-m3" method="POST" action="">
         <div class="card-panel">
             {{ form.hidden_tag() }}
             <fieldset>
@@ -108,10 +108,10 @@
                     </div>
                 </div>
                 <div class="right">
-                    {{ form.submit (class="btn")}}
+                    {{ form.submit (class="btn light-green darken-3 hoverable")}}
                 </div>
                 <div class="left">
-                    <a href="{{ url_for('my_shelf') }}" class="btn">Cancel</a>
+                    <a href="{{ url_for('my_shelf') }}" class="btn deep-orange darken-4 hoverable">Cancel</a>
                 </div>
             </fieldset>
         </div>
