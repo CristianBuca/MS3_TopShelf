@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;400;600;700&display=swap');
 
-body {
-    font-family: 'Barlow+Condensed';
+body, button, .btn, .card, .card-title {
+    font-family: 'Barlow Condensed';
+    font-weight: 400 !important;
 }
 
 .image-wrapper {
@@ -17,12 +18,8 @@ body {
 }
 
 footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    z-index: 10;
-    height: 15vh;
+    height: 30vh;
 }
 
 .media-links {
@@ -53,13 +50,16 @@ img {
     padding-top: 10vh;
 }
 
+.messages {
+    font-size: 2rem;
+}
+
 .card-content {
     background-color: rgba(255, 255, 255, 0.7) !important;
     position: relative;
     bottom: 40%;
     z-index: 1;
     height: 40% !important;
-    font-weight: bold !important;
 }
 
 .card-image {
@@ -90,6 +90,15 @@ img {
     i.medium {
         font-size: 2rem !important;
     }
+
+    .brand-logo {
+        top: 5%;
+        left: 5%;
+        width: 6rem;
+        height: 4rem;
+        font-size: 0;
+    }
+
 }
 
 @media only screen and (min-width : 1600px)  {
