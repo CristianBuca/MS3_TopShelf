@@ -35,8 +35,8 @@
                                 </div>
                             </div>
                             <div class="col s12 center-align">
-                                <a class="waves-effect waves-light btn light-green darken-3" href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
-                                <button data-target="remove-{{ item._id }}" class="btn modal-trigger deep-orange darken-4">Remove from Shelf</button>
+                                <a class="waves-effect waves-light btn light-green darken-3 hoverable" href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
+                                <button data-target="remove-{{ item._id }}" class="btn modal-trigger deep-orange darken-4 hoverable">Remove from Shelf</button>
                             </div>
                         </div>
                     </div>
@@ -44,11 +44,11 @@
                 <div id="remove-{{ item._id }}" class="modal">
                     <div class="modal-content">
                         <h4>{{ item.item_name }}</h4>
-                        <p>Are you sure you want to remove it from your shelf?</p>
+                        <p>Are you sure you want to remove {{ item.item_name }} from your shelf?</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="#!" class="modal-close btn light-green darken-3">Keep it</a>
-                        <a class="btn deep-orange darken-4" href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove from Shelf</a>
+                        <a href="#!" class="modal-close btn light-green darken-3 hoverable">Keep it</a>
+                        <a class="btn deep-orange darken-4 hoverable" href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove from Shelf</a>
                     </div>
                 </div>
             {% endfor %}
