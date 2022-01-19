@@ -6,9 +6,10 @@
         <div class="col s12 m6 form-wrapper valign-wrapper">
             <form class="center-align" action="{{ url_for('search_items') }}" method="POST">
                 <div class="row">
+                    <h4 class="orange-text text-lighten-3">Feel free to browse through items shared by our members</h4>
                     <div class="input-field col s12">
                         <input type="text" name="search_items" id="search_items" minlength="3" class="validate orange-text text-lighten-3" required>
-                        <label for="search_items" class="orange-text text-lighten-3">Search by Name, Region or Distillery</label>
+                        <label for="search_items" class="orange-text text-lighten-3">You can search by Name, Region or Distillery</label>
                     </div>
                     <div class="col s12">
                         <a href="{{ url_for('get_items') }}" class="btn light-green darken-3 waves-effect waves-light hoverable">Reset</a>
