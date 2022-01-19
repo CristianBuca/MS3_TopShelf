@@ -3,6 +3,10 @@
 
 <!-- Add item to DB form card Start -->
 <div class="row">
+    <div class="col s12 m6 image-wrapper"></div>
+    <div class="hide-on-small-only col m6 top-wrapper center-align">
+        <h3 class="orange-text text-lighten-3">You are updating {{ form.name.data }}</h3>
+    </div>
     <form class="col s12 m6" method="POST" action="">
         <div class="card-panel">
             {{ form.hidden_tag() }}
