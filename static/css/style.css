@@ -12,7 +12,7 @@ body, button, .btn, .card, .card-title {
     height: 30vh;
 }
 
-.form-wrapper {
+.top-wrapper {
     height: 30vh;
     background-color: #0b0b0b !important;
 }
@@ -81,8 +81,23 @@ img {
     max-width: 70% !important;
 }
 
+.title {
+    font-size: 2rem;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.switch label .lever:after {
+    background-color: #bf360c; 
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #558b2f;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #bababa;
 }
 
 /* Media Queries */
