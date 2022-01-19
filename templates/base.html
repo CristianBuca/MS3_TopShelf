@@ -29,37 +29,49 @@
     <header>
         <!-- Navbar Start. Was built with Materialize Mobile Component Navbar, styled and modified to suit this site's purpose  -->
         <!-- Extended navbar -->
-        <nav class="blue-grey darken-4">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('get_items') }}" class="brand-logo" aria-label="Site Logo">
-                    <img src="/static/images/icons/logo.png" alt="Logo">
-                </a>
-                <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"
-                    aria-label="Site Logo"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('my_shelf') }}">My Shelf</a></li>
-                        <li><a href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav class="blue-grey darken-4">
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('get_items') }}" class="brand-logo" aria-label="Site Logo">
+                        <img src="/static/images/icons/logo.png" alt="Logo">
+                    </a>
+                    <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                    <ul class="hide-on-med-and-down right ">
+                        <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('get_items') }}">All Shelves</a></li>
+                        {% if session.user %}
+                            <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('my_shelf') }}">My Shelf</a></li>
+                            <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
+                            <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        {% else %}
+                            <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('login') }}">Login</a></li>
+                            <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('register') }}">Register</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="messages center-align">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
 
         <!-- Mobile navbar -->
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('get_items') }}">All Shelves</a></li>
+        <ul class="sidenav center-align" id="mobile-demo">
+            <li><a class="light-green darken-3 hoverable" href="{{ url_for('get_items') }}">All Shelves</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('my_shelf') }}">My Shelf</a></li>
-                <li><a href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a class="light-green darken-3 hoverable" href="{{ url_for('my_shelf') }}">My Shelf</a></li>
+                <li><a class="light-green darken-3 hoverable" href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
+                <li><a class="light-green darken-3 hoverable" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a class="light-green darken-3 hoverable" href="{{ url_for('login') }}">Login</a></li>
+                <li><a class="light-green darken-3 hoverable" href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
         <!-- NavBar End -->
@@ -68,10 +80,10 @@
         <!-- Check to see if user is logged in before being displayed -->
         {% if session.user %}
             <div class="fixed-action-btn">
-                <a class="btn-floating btn-large right"><i class="fas fa-user-cog"></i></a>
+                <a class="btn-floating btn-large right"><i class="fas fa-user-cog deep-orange darken-4"></i></a>
                 <ul>
-                    <li><a class="btn-floating green" href="#"><i class="fas fa-home"></i></a></li>
-                    <li><a class="btn-floating blue" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
+                    <li><a class="btn-floating green" href="#"><i class="fas fa-home deep-orange darken-4"></i></a></li>
+                    <li><a class="btn-floating blue" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt deep-orange darken-4"></i></a></li>
                 </ul>
             </div>
         {% endif %}
@@ -90,25 +102,14 @@
         <div class="row">  
             <div class="media-links col s12 center-align">
                 <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
-                    aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium"></i></a>
+                    aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow"></i></a>
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
-                    aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium"></i></a>
+                    aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow"></i></a>
                 <a href="https://www.facebook.com" target="_blank" rel="noopener" 
-                    aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium"></i></a>
+                    aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow"></i></a>
                 <a href="https://www.twitter.com" target="_blank" rel="noopener" 
-                    aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium"></i></a>
+                    aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow"></i></a>
             </div>
-            <div class="messages col s12 center-align">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="{{ category }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>  
         </div>
 
     </footer>
