@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-
+    <div class="row">
+        <div class="col s12 m6 image-wrapper"></div>
+        <div class="hide-on-small-only col m6 top-wrapper center-align">
+            <h3 class="orange-text text-lighten-3">Add an item to the collection</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col s10 offset-s1">
             <div class="card-panel">
-                <h1>{{ user.username }}' Profile</h1>
                 <!-- Registration form card Start -->
                 <div class="row">
-                    <div class="col s12 m6">
+                    <div class="col s12 l6">
                         <img src="{{ user.avatar }}" alt="" class="circle responsive-img">
                     </div>
-                    <form class="col s12 m6" method="POST" action="">
+                    <form class="col s12 l6" method="POST" action="">
                         <div class="card-panel">
                             {{ form.hidden_tag() }}
                             <fieldset>
@@ -21,8 +25,8 @@
                                     <label for="username">Username - Can't be changed</label>
                                     
                                     {% if form.username.errors %}
-                                        {{ form.username(class="invalid") }}
-                                        <div class="invalid">
+                                        {{ form.username }}
+                                        <div class="deep-orange darken-4 yellow-text text-lighten-5">
                                             {% for error in form.username.errors %}
                                                 <span>{{ error }}</span>
                                             {% endfor %}
@@ -37,8 +41,8 @@
                                     <label for="email">Email - Can't be changed</label>
 
                                     {% if form.email.errors %}
-                                        {{ form.email(class="invalid") }}
-                                        <div class="invalid">
+                                        {{ form.email }}
+                                        <div class="deep-orange darken-4 yellow-text text-lighten-5">
                                             {% for error in form.email.errors %}
                                                 <span>{{ error }}</span>
                                             {% endfor %}
@@ -53,14 +57,14 @@
                                     {{ form.password.label }}
                 
                                     {% if form.password.errors %}
-                                    {{ form.password(class="invalid") }}
-                                    <div class="invalid">
+                                    {{ form.password }}
+                                    <div class="deep-orange darken-4 yellow-text text-lighten-5">
                                         {% for error in form.password.errors %}
                                         <span>{{ error }}</span>
                                         {% endfor %}
                                     </div>
                                     {% else %}
-                                    {{ form.password(class="valid")}}
+                                    {{ form.password(class="valid") }}
                                     {% endif %}
                                 </div>
 
@@ -69,14 +73,14 @@
                                     {{ form.password_check.label }}
                 
                                     {% if form.password_check.errors %}
-                                    {{ form.password_check(class="invalid") }}
-                                    <div class="invalid">
+                                    {{ form.password_check }}
+                                    <div class="deep-orange darken-4 yellow-text text-lighten-5">
                                         {% for error in form.password_check.errors %}
                                         <span>{{ error }}</span>
                                         {% endfor %}
                                     </div>
                                     {% else %}
-                                    {{ form.password_check(class="valid")}}
+                                    {{ form.password_check }}
                                     {% endif %}
                                 </div>
 
@@ -85,11 +89,11 @@
                                     <input class="form-control" id="avatar" name="avatar" value="{{ user.avatar }}" aria-describedby="avatar">
                                 </div>
                                 <!-- Form submit button -->
-                                <div class="right">
+                                <div class="right light-green darken-3 waves-effect waves-light hoverable">
                                     {{ form.submit(class="btn") }}
                                 </div>
                                 <div class="left">
-                                    <a href="{{ url_for('my_shelf') }}" class="btn">Cancel</a>
+                                    <a href="{{ url_for('my_shelf') }}" class="btn deep-orange darken-4 waves-effect waves-light hoverable yellow-text text-lighten-5">Cancel</a>
                                 </div>
                             </fieldset>
                         </div>
