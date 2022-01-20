@@ -49,19 +49,7 @@
                 </div>
             </nav>
         </div>
-                
-        <!-- Section displays flash messages to the user -->
-        <div class="messages center-align">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </div>
+
 
         <!-- Mobile navbar -->
         <ul class="sidenav center-align" id="mobile-demo">
@@ -76,6 +64,19 @@
             {% endif %}
         </ul>
         <!-- NavBar End -->
+                        
+        <!-- Section displays flash messages to the user -->
+        <section class="messages center-align">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </section>
 
         <!-- Fixed Action Button at the bottom of page was build using Materialize Component -->
         <!-- Check to see if user is logged in before being displayed -->
@@ -97,21 +98,27 @@
         {% endblock %}
     </section>
 
-    <!-- Footer Start -->
-    <footer class="orange lighten-3">
-        <div class="row">  
-            <div class="media-links col s12 center-align">
-                <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
-                    aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
-                    aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener" 
-                    aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener" 
-                    aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+    <!-- Footer Section Start -->
+    <section>
+        <footer class="orange lighten-3">
+            <div class="row">  
+                <div class="media-links col s12 center-align">
+                    <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
+                        aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
+                        aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" 
+                        aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener" 
+                        aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                </div>
             </div>
-        </div>
-    </footer>
+            <div class="row footer-copyright">
+                <div class="col s6 left-align">© 2022 Copyright Top Shelf</div>
+                <div class="col s6 right-align">Developed for educational purposes only</div>
+              </div>
+        </footer>
+    </section>
     <!-- Footer End -->
 
     <!-- Scripts -->
