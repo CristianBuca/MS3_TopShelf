@@ -53,14 +53,14 @@
 
         <!-- Mobile navbar -->
         <ul class="sidenav center-align" id="mobile-demo">
-            <li><a class="light-green darken-3 hoverable" href="{{ url_for('get_items') }}">All Shelves</a></li>
+            <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('get_items') }}">All Shelves</a></li>
             {% if session.user %}
-                <li><a class="light-green darken-3 hoverable" href="{{ url_for('my_shelf') }}">My Shelf</a></li>
-                <li><a class="light-green darken-3 hoverable" href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
-                <li><a class="light-green darken-3 hoverable" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('my_shelf') }}">My Shelf</a></li>
+                <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
+                <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             {% else %}
-                <li><a class="light-green darken-3 hoverable" href="{{ url_for('login') }}">Login</a></li>
-                <li><a class="light-green darken-3 hoverable" href="{{ url_for('register') }}">Register</a></li>
+                <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('login') }}">Login</a></li>
+                <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
         <!-- NavBar End -->
