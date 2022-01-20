@@ -1,120 +1,121 @@
 {% extends "base.html" %}
 {% block content %}
-
-<!-- Add item to DB form card Start -->
-<div class="row">
-    <div class="col s12 m6 image-wrapper"></div>
-    <div class="hide-on-small-only col m6 top-wrapper center-align">
-        <h3 class="orange-text text-lighten-3">Add an item to the collection</h3>
+    <div class="row">
+        <div class="col s12 m6 image-wrapper"></div>
+        <div class="hide-on-small-only col m6 top-wrapper center-align valign-wrapper">
+            <h3 class="orange-text text-lighten-3">Add an item to the collection</h3>
+        </div>
     </div>
-    <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="">
-        <div class="card-panel">
-            {{ form.hidden_tag() }}
-            <fieldset>
-                <legend>Add to your shelf</legend>
-                <div>
-                    {{ form.region.label }}
+    <!-- Add item to DB form card Start -->
+    <div class="row">
+        <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="">
+            <div class="card-panel z-depth-4">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <legend>Add to your shelf</legend>
+                    <div>
+                        {{ form.region.label }}
 
-                    {% if form.region.errors %}
-                        {{ form.region(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.region.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.region(class="browser-default")}}
-                    {% endif %}
-                </div>
-                <div>
-                    {{ form.name.label }}
-                    
-                    {% if form.name.errors %}
-                        {{ form.name(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.name.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.name(class="valid")}}
-                    {% endif %}
-                </div>
-                <div>
-                    {{ form.age.label }}
-                    
-                    {% if form.age.errors %}
-                        {{ form.age(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.age.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.age(class="valid")}}
-                    {% endif %}
-                </div>
-                <div>
-                    {{ form.distillery.label }}
-                    
-                    {% if form.distillery.errors %}
-                        {{ form.distillery(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.distillery.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.distillery(class="valid")}}
-                    {% endif %}
-                </div>
-                <div>
-                    {{ form.notes.label }}
-                    
-                    {% if form.notes.errors %}
-                        {{ form.notes(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.notes.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.notes(class="valid")}}
-                    {% endif %}
-                </div>
-                <div>
-                    {{ form.image.label }}
-                    
-                    {% if form.image.errors %}
-                        {{ form.image(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.image.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.image(class="valid")}}
-                    {% endif %}
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <div class="switch">
-                            <label for="share">
-                                <input type="checkbox" id="share" name="share" checked>
-                                <span class="lever"></span>
-                                Share with others
-                            </label>
+                        {% if form.region.errors %}
+                            {{ form.region(class="invalid") }}
+                            <div class="invalid">
+                                {% for error in form.region.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.region(class="browser-default")}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{ form.name.label }}
+                        
+                        {% if form.name.errors %}
+                            {{ form.name(class="invalid") }}
+                            <div class="invalid">
+                                {% for error in form.name.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.name(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{ form.age.label }}
+                        
+                        {% if form.age.errors %}
+                            {{ form.age(class="invalid") }}
+                            <div class="invalid">
+                                {% for error in form.age.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.age(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{ form.distillery.label }}
+                        
+                        {% if form.distillery.errors %}
+                            {{ form.distillery(class="invalid") }}
+                            <div class="invalid">
+                                {% for error in form.distillery.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.distillery(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{ form.notes.label }}
+                        
+                        {% if form.notes.errors %}
+                            {{ form.notes(class="invalid") }}
+                            <div class="invalid">
+                                {% for error in form.notes.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.notes(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{ form.image.label }}
+                        
+                        {% if form.image.errors %}
+                            {{ form.image(class="invalid") }}
+                            <div class="invalid">
+                                {% for error in form.image.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.image(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="switch">
+                                <label for="share">
+                                    <input type="checkbox" id="share" name="share" checked>
+                                    <span class="lever"></span>
+                                    Share with others
+                                </label>
+                            </div>
                         </div>
                     </div>
+                </fieldset>
+                <br>
+                <div class="center-align">
+                    {{ form.submit(class="btn light-green darken-3 hoverable yellow-text text-lighten-5") }}
                 </div>
-            </fieldset>
-            <br>
-            <div class="center-align">
-                {{ form.submit(class="btn light-green darken-3 waves-effect waves-light hoverable") }}
             </div>
-        </div>
-    </form>
-</div>
-<!-- Add item to DB form card End -->
+        </form>
+    </div>
+    <!-- Add item to DB form card End -->
 
 {% endblock %}
