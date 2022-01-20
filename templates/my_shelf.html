@@ -1,59 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="row">
-    <div class="col s12 m6 image-wrapper"></div>
-    <div class="hide-on-small-only col m6 form-wrapper center-align">
-        <h3 class="orange-text text-lighten-3">Here you can view your personal collection</h3>
-        <h4 class="yellow-text text-lighten-5">Select any of the items in the collapsible list to change or remove from your shelf</h4>
+    <div class="row">
+        <div class="col s12 m6 image-wrapper"></div>
+        <div class="hide-on-small-only col m6 top-wrapper center-align">
+            <h3 class="orange-text text-lighten-3">Here you can view your personal collection</h3>
+            <h4 class="yellow-text text-lighten-5">Select any of the items in the collapsible list to change or remove from your shelf</h4>
+        </div>
     </div>
-    <div class="col s12 l8 offset-l2">
-        <ul class="collapsible popout">
-            {% for item in my_shelf %}
-                <li>
-                    <div class="collapsible-header hoverable title text-shadow">{{ item.item_name }}</div>
-                    <div class="collapsible-body">
-                        <div class="row">
-                            <div class="col s12">
-                                <div class="row">
-                                    <div class="col s12 m6">
-                                    {% if item.image %}
-                                        <img src="{{ item.image }}" alt="Bottle of {{ item.item_name }}">
-                                    {% else %}
-                                        <img src="/static/images/avatar_default.jpg" alt="Default image">
-                                    {% endif %}
-                                    </div>
-                                    <div class="col s12 m6">
-                                        <p class="card-text"><strong>AGED:</strong> {{ item.age }} years</p>
-                                        <div class="divider"></div>
-                                        <p class="card-text">REGION: {{ item.region_name }}</p>
-                                        <div class="divider"></div>
-                                        <p class="card-text">DISTILLERY: {{ item.distillery }}</p>
-                                        <div class="divider"></div>
-                                        <p class="card-text">NOTES: {{ item.notes }}</p>
+    <div class="row">
+        <div class="col s12 l8 offset-l2">
+            <ul class="collapsible popout">
+                {% for item in my_shelf %}
+                    <li>
+                        <div class="collapsible-header hoverable title text-shadow">{{ item.item_name }}</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="col s12 m6">
+                                        {% if item.image %}
+                                            <img src="{{ item.image }}" alt="Bottle of {{ item.item_name }}">
+                                        {% else %}
+                                            <img src="/static/images/avatar_default.jpg" alt="Default image">
+                                        {% endif %}
+                                        </div>
+                                        <div class="col s12 m6">
+                                            <p class="card-text"><strong>AGED:</strong> {{ item.age }} years</p>
+                                            <div class="divider"></div>
+                                            <p class="card-text">REGION: {{ item.region_name }}</p>
+                                            <div class="divider"></div>
+                                            <p class="card-text">DISTILLERY: {{ item.distillery }}</p>
+                                            <div class="divider"></div>
+                                            <p class="card-text">NOTES:</p>
+                                            <p class="card-text">{{ item.notes }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col s12 center-align">
-                                <a class="waves-effect waves-light btn light-green darken-3 hoverable" href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
-                                <button data-target="remove-{{ item._id }}" class="btn modal-trigger deep-orange darken-4 hoverable">Remove from Shelf</button>
+                                <div class="col s12 center-align">
+                                    <a class="waves-effect waves-light btn light-green darken-3 hoverable" href="{{ url_for('change_stock', item_id=item._id) }}">Change</a>
+                                    <button data-target="remove-{{ item._id }}" class="btn modal-trigger deep-orange darken-4 hoverable">Remove from Shelf</button>
+                                </div>
                             </div>
                         </div>
+                    </li>
+                    <div id="remove-{{ item._id }}" class="modal">
+                        <div class="modal-content">
+                            <h4>{{ item.item_name }}</h4>
+                            <p>Are you sure you want to remove {{ item.item_name }} from your shelf?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close btn light-green darken-3 hoverable">Keep it</a>
+                            <a class="btn deep-orange darken-4 hoverable" href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove from Shelf</a>
+                        </div>
                     </div>
-                </li>
-                <div id="remove-{{ item._id }}" class="modal">
-                    <div class="modal-content">
-                        <h4>{{ item.item_name }}</h4>
-                        <p>Are you sure you want to remove {{ item.item_name }} from your shelf?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close btn light-green darken-3 hoverable">Keep it</a>
-                        <a class="btn deep-orange darken-4 hoverable" href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove from Shelf</a>
-                    </div>
-                </div>
-            {% endfor %}
-        </ul>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-</div>
 
 {% endblock %}
