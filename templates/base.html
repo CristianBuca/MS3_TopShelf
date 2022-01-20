@@ -25,14 +25,13 @@
 </head>
 
 <body>
-    
     <header>
         <!-- Navbar Start. Was built with Materialize Mobile Component Navbar, styled and modified to suit this site's purpose  -->
         <!-- Extended navbar -->
         <div class="navbar-fixed">
             <nav class="blue-grey darken-4">
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('get_items') }}" class="brand-logo" aria-label="Site Logo">
+                    <a href="{{ url_for('get_items') }}" class="brand-logo hoverable" aria-label="Site Logo">
                         <img src="/static/images/icons/logo.png" alt="Logo">
                     </a>
                     <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -50,6 +49,8 @@
                 </div>
             </nav>
         </div>
+                
+        <!-- Section displays flash messages to the user -->
         <div class="messages center-align">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
@@ -80,10 +81,10 @@
         <!-- Check to see if user is logged in before being displayed -->
         {% if session.user %}
             <div class="fixed-action-btn">
-                <a class="btn-floating btn-large right"><i class="fas fa-user-cog deep-orange darken-4"></i></a>
+                <a class="btn-floating btn-large right hoverable"><i class="fas fa-user-cog deep-orange darken-4"></i></a>
                 <ul>
-                    <li><a class="btn-floating green" href="#"><i class="fas fa-home deep-orange darken-4"></i></a></li>
-                    <li><a class="btn-floating blue" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt deep-orange darken-4"></i></a></li>
+                    <li><a class="btn-floating green hoverable" href="#"><i class="fas fa-home deep-orange darken-4"></i></a></li>
+                    <li><a class="btn-floating blue hoverable" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt deep-orange darken-4"></i></a></li>
                 </ul>
             </div>
         {% endif %}
@@ -98,29 +99,27 @@
 
     <!-- Footer Start -->
     <footer class="orange lighten-3">
-        <!-- Section displays flash messages to the user -->
         <div class="row">  
             <div class="media-links col s12 center-align">
                 <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
-                    aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow"></i></a>
+                    aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
-                    aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow"></i></a>
+                    aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                 <a href="https://www.facebook.com" target="_blank" rel="noopener" 
-                    aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow"></i></a>
+                    aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                 <a href="https://www.twitter.com" target="_blank" rel="noopener" 
-                    aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow"></i></a>
+                    aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
             </div>
         </div>
-
     </footer>
     <!-- Footer End -->
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {% block scripts %}
+        {% endblock %}
 </body>
 </html>
