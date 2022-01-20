@@ -3,7 +3,7 @@
 
     <div class="row search-section black">
         <div class="col s12 m6 image-wrapper"></div>
-        <div class="col s12 m6 form-wrapper valign-wrapper">
+        <div class="col s12 m6 top-wrapper valign-wrapper">
             <form class="center-align" action="{{ url_for('search_items') }}" method="POST">
                 <div class="row">
                     <h4 class="orange-text text-lighten-3">Feel free to browse through items shared by our members</h4>
@@ -46,7 +46,8 @@
                             <div class="divider"></div>
                             <p class="card-text">DISTILLERY: {{ item.distillery }}</p>
                             <div class="divider"></div>
-                            <p class="card-text">NOTES: {{ item.notes }}</p>
+                            <p class="card-text">NOTES:</p>
+                            <p class="card-text">{{ item.notes }}</p>
                             <div class="divider"></div>
                             <p class="right card-text">OWNER: {{ item.owned_by }}</p>
                         </div>
