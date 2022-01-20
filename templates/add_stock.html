@@ -3,7 +3,11 @@
 
 <!-- Add item to DB form card Start -->
 <div class="row">
-    <form class="col s12 m6" method="POST" action="">
+    <div class="col s12 m6 image-wrapper"></div>
+    <div class="hide-on-small-only col m6 top-wrapper center-align">
+        <h3 class="orange-text text-lighten-3">Add an item to the collection</h3>
+    </div>
+    <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="">
         <div class="card-panel">
             {{ form.hidden_tag() }}
             <fieldset>
@@ -96,7 +100,7 @@
                     <div class="input-field col s12">
                         <div class="switch">
                             <label for="share">
-                                <input type="checkbox" id="share" name="share">
+                                <input type="checkbox" id="share" name="share" checked>
                                 <span class="lever"></span>
                                 Share with others
                             </label>
@@ -104,8 +108,9 @@
                     </div>
                 </div>
             </fieldset>
-            <div>
-                {{ form.submit }}
+            <br>
+            <div class="center-align">
+                {{ form.submit(class="btn light-green darken-3 waves-effect waves-light hoverable") }}
             </div>
         </div>
     </form>
