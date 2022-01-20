@@ -62,9 +62,13 @@
                         {% else %}
                             <img src="/static/images/avatar_default.jpg" alt="Image of {{item_name}}" class="circle">
                         {% endif %}
-                        <span class="title">{{ item.item_name }}</span>
-                        <p>{{ item.owned_by }}</p>
-                        <button data-target="remove-{{ item._id }}" class="btn modal-trigger secondary-content deep-orange darken-4">Remove from Shelf</button>
+                        <div class="col s6">
+                            <span class="title">{{ item.item_name }}</span>
+                            <p>by {{ item.owned_by }}</p>
+                        </div>
+                        <div class="col s6">
+                            <button data-target="remove-{{ item._id }}" class="btn modal-trigger secondary-content deep-orange darken-4">Remove from Shelf</button>
+                        </div>
                     </div>
                 </li>
                 <div id="remove-{{ item._id }}" class="modal">
