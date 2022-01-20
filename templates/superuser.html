@@ -21,36 +21,39 @@
         </div>
     </div>
 
-    <ul class="collection">
-        {% for user in users %}
-            {% if user.superuser == False %}
-                <li class="collection-item avatar">
-                    <div class="row">
-                        {% if user.avatar %}
-                        <img src="{{ user.avatar }}" alt="user avatar" class="circle">
+    <section class="row">
+        <ul class="collection col s12 m8 l6 offset-m2 offset-l3 z-depth-4">
+            {% for user in users %}
+                {% if user.superuser == False %}
+                    <li class="collection-item avatar">
+                        <div class="row">
+                            {% if user.avatar %}
+                                <img src="{{ user.avatar }}" alt="user avatar" class="circle">
                             {% else %}
-                        <img src="/static/images/avatar_default.jpg" alt="user avatar" class="circle">
+                                <img src="/static/images/avatar_default.jpg" alt="user avatar" class="circle">
                             {% endif %}
-                        <span class="title">{{ user.username }}</span>
-                        <p>{{ user.email }}</p>
-                        <button data-target="remove-{{ user._id }}" class="btn modal-trigger secondary-content">Remove User</button>
+                            <span class="title">{{ user.username }}</span>
+                            <p>{{ user.email }}</p>
+                            <button data-target="remove-{{ user._id }}" class="btn modal-trigger secondary-content deep-orange darken-4">Remove User</button>
+                        </div>
+                    </li>
+                    <div id="remove-{{ user._id }}" class="modal">
+                        <div class="modal-content">
+                            <h4>{{ user.username }}</h4>
+                            <p>Are you sure you want to remove user from database</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close btn light-green darken-3 hoverable">Keep it</a>
+                            <a href="{{ url_for('remove_user', user_id=user._id) }}" class="modal-close btn deep-orange darken-4 hoverable">Remove</a>
+                        </div>
                     </div>
-                </li>
-                <div id="remove-{{ user._id }}" class="modal">
-                    <div class="modal-content">
-                        <h4>{{ user.username }}</h4>
-                        <p>Are you sure you want to remove user from database</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn">Keep it</a>
-                        <a class="waves-effect waves-light btn" href="{{ url_for('remove_user', user_id=user._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove</a>
-                    </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </ul>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
 
-    <ul class="collection">
+    <section class="row">
+    <ul class="collection col s12 m8 l6 offset-m2 offset-l3 z-depth-4">
         {% for item in items %}
                 <li class="collection-item avatar">
                     <div class="row">
@@ -61,7 +64,7 @@
                         {% endif %}
                         <span class="title">{{ item.item_name }}</span>
                         <p>{{ item.owned_by }}</p>
-                        <button data-target="remove-{{ item._id }}" class="btn modal-trigger secondary-content">Remove from Shelf</button>
+                        <button data-target="remove-{{ item._id }}" class="btn modal-trigger secondary-content deep-orange darken-4">Remove from Shelf</button>
                     </div>
                 </li>
                 <div id="remove-{{ item._id }}" class="modal">
@@ -70,11 +73,12 @@
                         <p>Are you sure you want to remove from database</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn">Keep it</a>
-                        <a class="waves-effect waves-light btn" href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close waves-effect waves-green btn-flat">Remove</a>
+                        <a href="#!" class="modal-close btn light-green darken-3 hoverable">Keep it</a>
+                        <a href="{{ url_for('remove_stock', item_id=item._id) }}" class="modal-close btn deep-orange darken-4 hoverable">Remove</a>
                     </div>
                 </div>
         {% endfor %}
     </ul>
+    </section>
 
 {% endblock %}
