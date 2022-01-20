@@ -8,6 +8,7 @@
             {{ form.hidden_tag() }}
             <fieldset>
                 <legend>Join Us!</legend>
+                <!-- Username input field-->
                 <div>
                     {{ form.username.label }}
                     
@@ -22,6 +23,7 @@
                         {{ form.username(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Email input field -->
                 <div>
                     {{ form.email.label }}
 
@@ -36,6 +38,7 @@
                         {{ form.email(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Password input field -->
                 <div>
                     {{ form.password.label }}
 
@@ -50,6 +53,7 @@
                         {{ form.password(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Password confirmation input field -->
                 <div>
                     {{ form.password_check.label }}
 
@@ -65,6 +69,7 @@
                     {% endif %}
                 </div>
             </fieldset>
+            <!-- Form submit button -->
             <div>
                 {{ form.submit }}
             </div>
