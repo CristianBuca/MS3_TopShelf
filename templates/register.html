@@ -1,84 +1,95 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Registration form card Start -->
-<div class="row">
-    <form class="col s12 m6" method="POST" action="">
-        <div class="card-panel">
-            {{ form.hidden_tag() }}
-            <fieldset>
-                <legend>Join Us!</legend>
-                <!-- Username input field-->
-                <div>
-                    {{ form.username.label }}
-                    
-                    {% if form.username.errors %}
-                        {{ form.username(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.username.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.username(class="valid")}}
-                    {% endif %}
-                </div>
-                <!-- Email input field -->
-                <div>
-                    {{ form.email.label }}
-
-                    {% if form.email.errors %}
-                        {{ form.email(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.email(class="valid")}}
-                    {% endif %}
-                </div>
-                <!-- Password input field -->
-                <div>
-                    {{ form.password.label }}
-
-                    {% if form.password.errors %}
-                        {{ form.password(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.password(class="valid")}}
-                    {% endif %}
-                </div>
-                <!-- Password confirmation input field -->
-                <div>
-                    {{ form.password_check.label }}
-
-                    {% if form.password_check.errors %}
-                        {{ form.password_check(class="invalid") }}
-                        <div class="invalid">
-                            {% for error in form.password_check.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.password_check(class="valid")}}
-                    {% endif %}
-                </div>
-            </fieldset>
-            <!-- Form submit button -->
-            <div>
-                {{ form.submit }}
-            </div>
-            <div>
-                Already have an account? <a href="{{ url_for('login')}}">Log In</a>
-            </div>
+    <!-- Hero Image and Title Area -->
+    <div class="row">
+        <div class="col s12 m6 image-wrapper"></div>
+        <div class="hide-on-small-only col m6 top-wrapper center-align">
+            <h3 class="orange-text text-lighten-3">Welcome to Top Shelf</h3>
+            <h4 class="yellow-text text-lighten-5">By registering with us you will gain access to your own shelf</h4>
         </div>
-    </form>
-</div>
-<!-- Registration form End -->
+    </div>
+
+    <!-- Registration form card Start -->
+    <div class="row">
+        <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="">
+            <div class="card-panel">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <legend>Join Us!</legend>
+                    <!-- Username input field-->
+                    <div>
+                        {{ form.username.label }}
+                        
+                        {% if form.username.errors %}
+                            {{ form.username(class="invalid") }}
+                            <div class="deep-orange darken-4 yellow-text text-lighten-5">
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.username(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <!-- Email input field -->
+                    <div>
+                        {{ form.email.label }}
+
+                        {% if form.email.errors %}
+                            {{ form.email(class="invalid") }}
+                            <div class="deep-orange darken-4 yellow-text text-lighten-5">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.email(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <!-- Password input field -->
+                    <div>
+                        {{ form.password.label }}
+
+                        {% if form.password.errors %}
+                            {{ form.password(class="invalid") }}
+                            <div class="deep-orange darken-4 yellow-text text-lighten-5">
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.password(class="valid")}}
+                        {% endif %}
+                    </div>
+                    <!-- Password confirmation input field -->
+                    <div>
+                        {{ form.password_check.label }}
+
+                        {% if form.password_check.errors %}
+                            {{ form.password_check(class="invalid") }}
+                            <div class="deep-orange darken-4 yellow-text text-lighten-5">
+                                {% for error in form.password_check.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.password_check(class="valid")}}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <br>
+                <!-- Form submit button -->
+                <div class="center">
+                    {{ form.submit(class="btn-large light-green darken-3 hoverable yellow-text text-lighten-5") }}
+                </div>
+                <div class="right">
+                    Already have an account? <a href="{{ url_for('login')}}">Log In</a>
+                </div>
+                <br>
+            </div>
+        </form>
+    </div>
+    <!-- Registration form End -->
 
 {% endblock %}
