@@ -51,10 +51,13 @@ User Routes
 def register():
     '''
     Register function uses the RegistrationForm from forms.py,
-    Searches the database for all user names and emails and
-    checks against user inputs for a match.
-    If not taken already function calls the wtforms built-in validate
-    function for the form.
+    Checks username and email against the DB for duplicate,
+    Checks if all inputs are valid,
+    Redirects user accordingly based on form validation outcome
+    If valid
+    :return redirect to get_items
+    If invalid
+    :return render_template of register
     '''
     form = RegistrationForm()
     if request.method == 'POST':
@@ -68,9 +71,12 @@ def register():
         elif form.validate_on_submit():
             register = {
                 'username': form.username.data.lower(),
+                # Password is hashed using werkzeug.security before being added to DB
                 'password': generate_password_hash(form.password.data),
                 'email': form.email.data,
+                # User is assigned default avatar that he can later change from profile page
                 'avatar': '/static/images/avatar_default.jpg',
+                # Superuser status set false by default. Only DB admin can promote users
                 'superuser': False
             }
             # If form passes field validation then new account data is inserted in the DB
@@ -222,5 +228,12 @@ if __name__ == '__main__':
             debug=True)
 
 
-# ERROR HANDLING
+'''
+ERROR HANDLING
+'''
 
+
+#Error 404
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('errors/404.html', title='404 Error', error=error), 404
