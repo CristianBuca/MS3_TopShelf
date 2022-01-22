@@ -20,6 +20,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+'''
+DATABASE READ ROUTES
+'''
+
+
 @app.route('/')
 @app.route('/get_items')
 def get_items():
@@ -27,23 +32,28 @@ def get_items():
     return render_template('items.html', items=items)
 
 
-@app.route('/search_items', methods=['GET', 'POST'])
-def search_items():
-    search_items = request.form.get('search_items')
-    items = mongo.db.items.find({'$text': {'$search': search_items}})
-    return render_template('items.html', Title='Search Results', items=items)
+@app.route('/my_shelf', methods=['GET', 'POST'])
+def my_shelf():
+    user = session['user']
+    my_shelf = mongo.db.items.find({'owned_by': user})
+    return render_template('my_shelf.html', title='My Shelf', my_shelf=my_shelf)
 
 
-@app.route('/super_search', methods=['GET', 'POST'])
-def super_search():
-    super_search = request.form.get('super_search')
-    users = mongo.db.users.find({'$text': {'$search': super_search}})
-    items = mongo.db.items.find({'$text': {'$search': super_search}})
-    return render_template('superuser.html', Title='Search Results', users=users, items=items)
+@app.route('/superuser', methods=['GET', 'POST'])
+def superuser():
+    if session.get('user') is not None:
+        user = mongo.db.users.find_one({'username': session['user']})
+        if user['superuser']:
+            items = mongo.db.items.find()
+            users = mongo.db.users.find()
+            return render_template('superuser.html', title='Admin', users=users, items=items)
+        else:
+            flash(f'You do not have the required permission to access this feature', 'deep-orange darken-4 yellow-text text-lighten-5')
+            return redirect(url_for('my_shelf'))
 
 
 '''
-User Routes
+USER AUTHENTICATION ROUTES
 '''
 
 # Register Route
@@ -110,6 +120,25 @@ def logout():
     return redirect(url_for('login'))
 
 
+'''
+DATABASE SEARCH ROUTES
+'''
+
+@app.route('/search_items', methods=['GET', 'POST'])
+def search_items():
+    search_items = request.form.get('search_items')
+    items = mongo.db.items.find({'$text': {'$search': search_items}})
+    return render_template('items.html', Title='Search Results', items=items)
+
+
+@app.route('/super_search', methods=['GET', 'POST'])
+def super_search():
+    super_search = request.form.get('super_search')
+    users = mongo.db.users.find({'$text': {'$search': super_search}})
+    items = mongo.db.items.find({'$text': {'$search': super_search}})
+    return render_template('superuser.html', Title='Search Results', users=users, items=items)
+
+
 @app.route('/add_stock', methods=['GET', 'POST'])
 def add_stock():
     form = AddStock()
@@ -132,6 +161,34 @@ def add_stock():
     return render_template('add_stock.html', title='Add Stock', form=form)
 
 
+'''
+DATABASE UPDATE/DELETE ROUTES
+'''
+
+@app.route('/profile/<username>', methods=['GET', 'POST'])
+def profile(username):
+    if session.get('user') is not None:
+        user = mongo.db.users.find_one({'username': session['user']})
+        user_id = user['_id']
+        form = RegistrationForm()
+        if request.method == 'GET':
+            form.username.data = user['username']
+            form.email.data = user['email']
+        if request.method == 'POST':
+            if form.validate_on_submit():
+                update = {
+                    'username': request.form.get('username'),
+                    'email': request.form.get('email'),
+                    'password': generate_password_hash(form.password.data),
+                    'avatar': request.form.get('avatar'),
+                    'superuser': user['superuser']
+                }
+                mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
+                flash(f'Profile successfully updated', 'light-green darken-3 yellow-text text-lighten-5')
+                return render_template('profile.html', title='Profile', user=user, form=form)
+        return render_template('profile.html', title='Profile', user=user, form=form)
+
+        
 @app.route('/change_stock/<item_id>', methods=['GET', 'POST'])
 def change_stock(item_id):
     item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
@@ -176,50 +233,6 @@ def remove_user(user_id):
     mongo.db.users.delete_one({'_id': ObjectId(user_id)})
     flash(f'User removed from database', 'light-green darken-3 yellow-text text-lighten-5')
     return redirect(url_for('superuser'))
-    
-
-@app.route('/my_shelf', methods=['GET', 'POST'])
-def my_shelf():
-    user = session['user']
-    my_shelf = mongo.db.items.find({'owned_by': user})
-    return render_template('my_shelf.html', title='My Shelf', my_shelf=my_shelf)
-
-
-@app.route('/profile/<username>', methods=['GET', 'POST'])
-def profile(username):
-    if session.get('user') is not None:
-        user = mongo.db.users.find_one({'username': session['user']})
-        user_id = user['_id']
-        form = RegistrationForm()
-        if request.method == 'GET':
-            form.username.data = user['username']
-            form.email.data = user['email']
-        if request.method == 'POST':
-            if form.validate_on_submit():
-                update = {
-                    'username': request.form.get('username'),
-                    'email': request.form.get('email'),
-                    'password': generate_password_hash(form.password.data),
-                    'avatar': request.form.get('avatar'),
-                    'superuser': user['superuser']
-                }
-                mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
-                flash(f'Profile successfully updated', 'light-green darken-3 yellow-text text-lighten-5')
-                return render_template('profile.html', title='Profile', user=user, form=form)
-        return render_template('profile.html', title='Profile', user=user, form=form)
-
-
-@app.route('/superuser', methods=['GET', 'POST'])
-def superuser():
-    if session.get('user') is not None:
-        user = mongo.db.users.find_one({'username': session['user']})
-        if user['superuser']:
-            items = mongo.db.items.find()
-            users = mongo.db.users.find()
-            return render_template('superuser.html', title='Admin', users=users, items=items)
-        else:
-            flash(f'You do not have the required permission to access this feature', 'deep-orange darken-4 yellow-text text-lighten-5')
-            return redirect(url_for('my_shelf'))
 
 
 '''
