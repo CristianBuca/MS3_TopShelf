@@ -249,6 +249,13 @@ def page_not_found(e: object) -> object:
 def method_not_allowed(e: object) -> object:
     return render_template('errors/error_405.html', title='405 Error', error=e), 405
 
+
+# Error 500
+@app.errorhandler(500)
+def internal_server_error(e: object) -> object:
+    return render_template('error/error_500.html', title='500 Error', error=e), 500
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
