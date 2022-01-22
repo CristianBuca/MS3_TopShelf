@@ -18,7 +18,8 @@ class RegistrationForm(FlaskForm):
         'Email', validators=[DataRequired(), Email()]
     )
     password = PasswordField(
-        'Password - Must include at least one uppercase letter and one number', validators=[DataRequired(), Length(min=5, max=20),
+        'Password - Must include at least one uppercase letter and one number',
+            validators=[DataRequired(), Length(min=5, max=20),
             Regexp('^(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,}).{5,}$',
             message='Your password does not meet the requirements'),
     ])
