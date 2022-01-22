@@ -222,18 +222,23 @@ def superuser():
             return redirect(url_for('my_shelf'))
 
 
-if __name__ == '__main__':
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
-
-
 '''
 ERROR HANDLING
 '''
 
+# Error 400
+@app.errorhandler(400)
+def bad_request(e: object) -> object:
+    return render_template('errors/error_400.html', title='400 Error', error=e), 400
 
-#Error 404
+# Error 404
 @app.errorhandler(404)
-def page_not_found(error):
-    return render_template('errors/404.html', title='404 Error', error=error), 404
+def page_not_found(e: object) -> object:
+    return render_template('errors/error_404.html', title='404 Error', error=e), 404
+
+
+if __name__ == '__main__':
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=False)
+
