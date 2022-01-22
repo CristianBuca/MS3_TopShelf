@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Add item to DB form card Start -->
+<!-- Credit for WTForms use and input error display to Corey Schafer - Python Flask Tutorial -->
+
+<!-- Change existing item from DB form card Start -->
 <div class="row">
     <div class="col s12 m6 image-wrapper"></div>
     <div class="hide-on-small-only col m6 top-wrapper center-align">
@@ -12,6 +14,7 @@
             {{ form.hidden_tag() }}
             <fieldset>
                 <legend>Change Item on Your Shelf</legend>
+                <!-- Region dropdown field -->
                 <div>
                     {{ form.region.label }}
 
@@ -26,6 +29,7 @@
                         {{ form.region(class="browser-default")}}
                     {% endif %}
                 </div>
+                <!-- Item name input field -->
                 <div>
                     {{ form.name.label }}
                     
@@ -40,6 +44,7 @@
                         {{ form.name(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Item age input field -->
                 <div>
                     {{ form.age.label }}
                     
@@ -54,6 +59,7 @@
                         {{ form.age(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Item distillery input field -->
                 <div>
                     {{ form.distillery.label }}
                     
@@ -68,6 +74,7 @@
                         {{ form.distillery(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Item notes input field -->
                 <div>
                     {{ form.notes.label }}
                     
@@ -82,6 +89,7 @@
                         {{ form.notes(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Item Image Link input field -->
                 <div>
                     {{ form.image.label }}
                     
@@ -96,6 +104,7 @@
                         {{ form.image(class="valid")}}
                     {% endif %}
                 </div>
+                <!-- Item Share status switch field -->
                 <div class="row">
                     <div class="input-field col s12">
                         <div class="switch">
@@ -107,9 +116,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- Form submit button -->
                 <div class="right">
                     {{ form.submit (class="btn light-green darken-3 hoverable")}}
                 </div>
+                <!-- Cancel form submission and return to my_shelf page button -->
                 <div class="left">
                     <a href="{{ url_for('my_shelf') }}" class="btn deep-orange darken-4 hoverable">Cancel</a>
                 </div>
@@ -117,6 +128,6 @@
         </div>
     </form>
 </div>
-<!-- Add item to DB form card End -->
+<!-- Change existing item from DB form card End -->
 
 {% endblock %}
