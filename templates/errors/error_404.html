@@ -3,9 +3,20 @@
 
     <!-- Hero Image and Title Area -->
     <div class="row">
-        <div class="col s12 m6 image-wrapper"></div>
-        <div class="hide-on-small-only col m6 top-wrapper center-align">
-            <h3 class="orange-text text-lighten-3">Page not found: Error 404</h3>
+        <div class="hide-on-small-only col s12 m6 image-wrapper"></div>
+        <div class="col m6 top-wrapper center-align">
+            <h4 class="orange-text text-lighten-3">You are not supposed to be HERE!</h4>
+            <h4 class="orange-text text-lighten-3">Use the button to go back to the Shelving Area</h4>
+            <h5 class="yellow-text text-lighten-5">{{ error }}</h5>
+        </div>
+    </div>
+
+    <!-- Main Page content -->
+    <div class="row">
+        <div class="col s12 m8 l6 offset-m2 offset-l3">
+            <div class="card-panel error z-depth-4 valign-wrapper">
+                <a href="{{ url_for('get_items') }}" class="error-btn btn-large deep-orange darken-4 waves-effect waves-light hoverable">Go Back</a>
+            </div>
         </div>
     </div>
 
