@@ -12,7 +12,7 @@
 
     <!-- Registration form card Start -->
     <div class="row">
-        <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="">
+        <form class="col s12 m8 l6 offset-m2 offset-l3 reg-form" method="POST" action="">
             <div class="card-panel">
                 {{ form.hidden_tag() }}
                 <fieldset>
@@ -92,4 +92,9 @@
     </div>
     <!-- Registration form End -->
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="{{url_for('static', filename='js/form_validation.js') }}"></script>
 {% endblock %}
