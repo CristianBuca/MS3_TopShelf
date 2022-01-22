@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Credits to Tim Nelson - Code Institute Flask Project Lessons -->
+
+    <!-- Hero image and page title area -->
     <div class="row search-section black">
         <div class="col s12 m6 image-wrapper"></div>
         <div class="col s12 m6 top-wrapper valign-wrapper">
             <form class="center-align" action="{{ url_for('search_items') }}" method="POST">
                 <div class="row">
                     <h4 class="orange-text text-lighten-3">Feel free to browse through items shared by our members</h4>
+    
+                    <!-- Database search field. Database index for item search is built by name, region or distillery -->
                     <div class="input-field col s12">
                         <input type="text" name="search_items" id="search_items" minlength="3" class="validate orange-text text-lighten-3" required>
                         <label for="search_items" class="orange-text text-lighten-3">You can search by Name, Region or Distillery</label>
@@ -20,13 +25,16 @@
         </div>
     </div>
 
+    <!-- Loop through all items in DB with share status = True and display then in form of card-reveal -->
     <div class="row item-container">
         {% for item in items %}
             {% if item.share %}
                 <div class="col s12 m6 l4 xl3">
                     <div class="card medium col-content hoverable">
                         <div class="card-image waves-effect waves-block waves-light">
+                            <!-- Check if image link exists and if absent default picture is displayed -->
                             {% if item.image %}
+                            <!-- Clicking on images triggers corresponding modal displaying the full image -->
                                 <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}">
                             {% else %}
                                 <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/avatar_default.jpg">
@@ -54,9 +62,11 @@
                     </div>
                 </div>
 
+                <!-- Modal to display full item image -->
                 <div id="image-{{ item._id }}" class="modal">
                     <div class="modal-content">
                         <h4 class="center-align">{{ item.item_name }}</h4>
+                        <!-- Check if image link exists and if absent default picture is displayed -->
                         {% if item.image %}
                             <img data-target="image-{{ item._id }}" src="{{ item.image }}">
                         {% else %}
