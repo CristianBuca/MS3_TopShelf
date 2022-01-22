@@ -9,7 +9,7 @@
     <div class="hide-on-small-only col m6 top-wrapper center-align">
         <h3 class="orange-text text-lighten-3">You are updating {{ form.name.data }}</h3>
     </div>
-    <form class="col s12 m6 offset-m3" method="POST" action="">
+    <form class="col s12 m6 offset-m3 add-stock-form" method="POST" action="">
         <div class="card-panel">
             {{ form.hidden_tag() }}
             <fieldset>
@@ -130,4 +130,10 @@
 </div>
 <!-- Change existing item from DB form card End -->
 
+{% endblock %}
+
+<!-- Page specific scripts -->
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="{{url_for('static', filename='js/form_validation.js') }}"></script>
 {% endblock %}
