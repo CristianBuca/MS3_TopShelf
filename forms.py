@@ -9,15 +9,18 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, Regexp
 
 class RegistrationForm(FlaskForm):
     username = StringField(
-        'Username', validators=[DataRequired(), Length(min=3, max=15)]
-    )
+        'Username - Only letters and numbers',
+            validators=[DataRequired(), Length(min=3, max=15),
+            Regexp('^(?=.*[a-z])\w{3,}$',
+            message='No special characters allowed'),
+    ])
     email = StringField(
         'Email', validators=[DataRequired(), Email()]
     )
     password = PasswordField(
-        'Password', validators=[DataRequired(), Length(min=5, max=20),
+        'Password - Must include at least one uppercase letter and one number', validators=[DataRequired(), Length(min=5, max=20),
             Regexp('^(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,}).{5,}$',
-            message='Please include one at least one uppercase letter and one number'),
+            message='Your password does not meet the requirements'),
     ])
     password_check = PasswordField(
         'Confirm Password', validators=[DataRequired(), EqualTo('password')]
