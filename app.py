@@ -244,7 +244,10 @@ def page_not_found(e: object) -> object:
     return render_template('errors/error_404.html', title='404 Error', error=e), 404
 
 
-
+# Error 405
+@app.errorhandler(405)
+def method_not_allowed(e: object) -> object:
+    return render_template('errors/error_405.html', title='405 Error', error=e), 405
 
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
