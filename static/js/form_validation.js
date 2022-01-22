@@ -1,3 +1,14 @@
+$.validator.methods.email = function( value, element ) {
+    return this.optional( element ) || /[a-z]+@[a-z]+\.[a-z]+/.test( value );
+}
+$.validator.methods.pass = function( value, element ) {
+    return this.optional( element ) || /^(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,}).{5,}$/.test( value );
+}
+
+$.validator.methods.user = function( value, element ) {
+    return this.optional( element ) || /^(?=.*[a-z])\w{3,}$/.test( value );
+}
+
 $('.reg-form').validate({
 // Validation Rules
 rules: {
