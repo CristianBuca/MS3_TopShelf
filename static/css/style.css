@@ -108,6 +108,18 @@ img {
     background-color: #bababa;
 }
 
+.error {
+    width: 100%;
+    height: 40vh;
+    background-image: url("/static/images/error.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.error-btn {
+    margin: auto;
+}
+
 /* Media Queries */
 /* Overwrite Materialize container width on screens larger than 993px */
 
