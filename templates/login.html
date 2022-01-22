@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Credit for WTForms use and input error display to Corey Schafer - Python Flask Tutorial -->
+
     <!-- Hero Image and Title Area -->
     <div class="row">
         <div class="col s12 m6 image-wrapper"></div>
@@ -14,9 +16,11 @@
     <div class="row">
         <form class="col s12 m8 l6 offset-m2 offset-l3 login-form" method="POST" action="">
             <div class="card-panel z-depth-4">
+                <!-- Form Tag to get around C.O.R.S. errors -->
                 {{ form.hidden_tag() }}
                 <fieldset>
                     <legend>Login Us!</legend>
+                    <!-- Username input field -->
                     <div>
                         {{ form.username.label }}
                         
@@ -31,6 +35,7 @@
                             {{ form.username(class="valid")}}
                         {% endif %}
                     </div>
+                    <!-- Password input field -->
                     <div>
                         {{ form.password.label }}
 
@@ -47,9 +52,11 @@
                     </div>
                 </fieldset>
                 <br>
+                <!-- Form submit button -->
                 <div class="center">
                     {{ form.submit(class="btn-large light-green darken-3 hoverable yellow-text text-lighten-5") }}
                 </div>
+                <!-- Option to go to registration page -->
                 <div class="right">
                     Not Registered Yet? <a href="{{ url_for('register')}}">Register</a>
                 </div>
