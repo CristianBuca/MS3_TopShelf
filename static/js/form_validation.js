@@ -36,3 +36,23 @@ rules: {
        },      
     }
 });
+
+$('.login-form').validate({
+    // Validation Rules
+    rules: {
+        username: {
+            required: true,
+            user: true
+        },
+        password: {
+            required: true,
+            minlength: 5,
+            pass: true,
+        }
+        },
+        messages: {
+            password: {
+            pass: "Password does not match the format",
+           },      
+        }
+    });
