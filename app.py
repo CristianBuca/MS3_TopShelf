@@ -253,7 +253,7 @@ def method_not_allowed(e: object) -> object:
 # Error 500
 @app.errorhandler(500)
 def internal_server_error(e: object) -> object:
-    return render_template('error/error_500.html', title='500 Error', error=e), 500
+    return render_template('errors/error_500.html', title='500 Error', error=e), 500
 
 
 if __name__ == '__main__':
