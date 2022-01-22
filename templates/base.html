@@ -14,9 +14,11 @@
         crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+
     {% block styles %}
     {% endblock %}
 
+<!-- Check if title variable is provided by the route and display it -->
     {% if title %}
         <title>Top Shelf Scotch - {{ title }}</title>
     {% else %}
@@ -85,7 +87,8 @@
                 <a class="btn-floating btn-large right hoverable"><i class="fas fa-user-cog deep-orange darken-4"></i></a>
                 <ul>
                     <li><a class="btn-floating green hoverable" href="#"><i class="fas fa-home deep-orange darken-4"></i></a></li>
-                    <li><a class="btn-floating blue hoverable" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt deep-orange darken-4"></i></a></li>
+                    <li><a class="btn-floating blue hoverable" href="{{ url_for('logout') }}">
+                        <i class="fas fa-sign-out-alt deep-orange darken-4"></i></a></li>
                 </ul>
             </div>
         {% endif %}
@@ -104,13 +107,17 @@
             <div class="row">  
                 <div class="media-links col s12 center-align">
                     <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
-                        aria-label="Find us on Github (link opens in a new tab)"><i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        aria-label="Find us on Github (link opens in a new tab)">
+                        <i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
-                        aria-label="Connect with us on LinkedIn (link opens in a new tab)"><i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        aria-label="Connect with us on LinkedIn (link opens in a new tab)">
+                        <i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                     <a href="https://www.facebook.com" target="_blank" rel="noopener" 
-                        aria-label="Find us in Facebook (link opens in a new tab"><i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        aria-label="Find us in Facebook (link opens in a new tab">
+                        <i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                     <a href="https://www.twitter.com" target="_blank" rel="noopener" 
-                        aria-label="Find us on Twitter (link opens in a new tab"><i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        aria-label="Find us on Twitter (link opens in a new tab">
+                        <i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                 </div>
             </div>
             <div class="row footer-copyright">
@@ -121,12 +128,14 @@
     </section>
     <!-- Footer End -->
 
-    <!-- Scripts -->
+    <!-- Global Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        {% block scripts %}
-        {% endblock %}
+    
+    {% block scripts %}
+    {% endblock %}
+
 </body>
 </html>
