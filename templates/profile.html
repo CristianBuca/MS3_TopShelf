@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col s12 m6 image-wrapper"></div>
         <div class="hide-on-small-only col m6 top-wrapper center-align">
-            <h3 class="orange-text text-lighten-3">Add an item to the collection</h3>
+            <h3 class="orange-text text-lighten-3">{{ user.username|capitalize }}'s profile page</h3>
+            <h4 class="yellow-text text-lighten-5">Here you can change your password or avatar</h4>
         </div>
     </div>
     <div class="row">
@@ -15,10 +16,10 @@
                         {% if user.avatar %}
                             <img src="{{ user.avatar }}" alt="Picture of {{ user.name }}" class="circle responsive-img">
                         {% else %}
-                            <img src="/static/images/avatar_default.jpg" alt="Picture of {{ user.name }}" class="circle responsive-img">
+                            <img src="/static/images/avatar_default.jpg" alt="Picture of {{ user.username }}" class="circle responsive-img">
                         {% endif %}
                     </div>
-                    <form class="col s12 l6" method="POST" action="">
+                    <form class="col s12 l6 reg-form" method="POST" action="">
                         <div class="card-panel">
                             {{ form.hidden_tag() }}
                             <fieldset>
@@ -109,9 +110,14 @@
     </div>
     {% if user.superuser %}
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large red waves-effect waves-block waves-light" href="{{ url_for('superuser') }}">
+            <a class="btn-floating btn-large orange darken-3 waves-effect waves-block waves-light" href="{{ url_for('superuser') }}">
                 <i class="fas fa-tools"></i>
             </a>
         </div>
     {% endif %}}
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="{{url_for('static', filename='js/form_validation.js') }}"></script>
 {% endblock %}
