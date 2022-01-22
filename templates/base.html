@@ -39,6 +39,7 @@
                     <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                     <ul class="hide-on-med-and-down right ">
                         <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('get_items') }}">All Shelves</a></li>
+                        <!-- Check session cookies if user is logged in and display Navbar links accordingly -->
                         {% if session.user %}
                             <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('my_shelf') }}">My Shelf</a></li>
                             <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
@@ -56,6 +57,7 @@
         <!-- Mobile navbar -->
         <ul class="sidenav center-align" id="mobile-demo">
             <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('get_items') }}">All Shelves</a></li>
+            <!-- Check session cookies if user is logged in and display Navbar links accordingly -->
             {% if session.user %}
                 <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('my_shelf') }}">My Shelf</a></li>
                 <li><a class="deep-orange darken-4 hoverable btn" href="{{ url_for('add_stock') }}">Add to Shelf</a></li>
