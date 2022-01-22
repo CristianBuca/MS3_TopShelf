@@ -42,8 +42,20 @@ def super_search():
     return render_template('superuser.html', Title='Search Results', users=users, items=items)
 
 
+'''
+User Routes
+'''
+
+# Register Route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    '''
+    Register function uses the RegistrationForm from forms.py,
+    Searches the database for all user names and emails and
+    checks against user inputs for a match.
+    If not taken already function calls the wtforms built-in validate
+    function for the form.
+    '''
     form = RegistrationForm()
     if request.method == 'POST':
         user_exists = mongo.db.users.find_one({'username': form.username.data.lower()})
@@ -61,7 +73,9 @@ def register():
                 'avatar': '/static/images/avatar_default.jpg',
                 'superuser': False
             }
+            # If form passes field validation then new account data is inserted in the DB
             mongo.db.users.insert_one(register)
+            # User is added to session cookies and redirected to landing page
             session['user'] = form.username.data.lower()
             flash(f'Account created {form.username.data}. Welcome aboard!', 'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('get_items'))
@@ -81,6 +95,13 @@ def login():
             flash(f'Login Unsuccessful. Double check your username and password!', 'deep-orange darken-4 yellow-text text-lighten-5')
             return redirect(url_for('login'))
     return render_template('login.html', title='Login', form=form)
+
+
+@app.route('/logout')
+def logout():
+    flash(f'You have been logged out', 'light-green darken-3 yellow-text text-lighten-5')
+    session.pop('user')
+    return redirect(url_for('login'))
 
 
 @app.route('/add_stock', methods=['GET', 'POST'])
@@ -195,14 +216,11 @@ def superuser():
             return redirect(url_for('my_shelf'))
 
 
-@app.route('/logout')
-def logout():
-    flash(f'You have been logged out', 'light-green darken-3 yellow-text text-lighten-5')
-    session.pop('user')
-    return redirect(url_for('login'))
-
-
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+
+# ERROR HANDLING
+
