@@ -231,10 +231,19 @@ ERROR HANDLING
 def bad_request(e: object) -> object:
     return render_template('errors/error_400.html', title='400 Error', error=e), 400
 
+
+# Error 401
+@app.errorhandler(401)
+def unauthorized(e: object) -> object:
+    return render_template('errors/error_401.html', title='401 Error', error=e), 401
+
+
 # Error 404
 @app.errorhandler(404)
 def page_not_found(e: object) -> object:
     return render_template('errors/error_404.html', title='404 Error', error=e), 404
+
+
 
 
 if __name__ == '__main__':
