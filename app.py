@@ -28,7 +28,7 @@ DATABASE READ ROUTES
 @app.route('/')
 @app.route('/get_items')
 def get_items():
-    items = mongo.db.items.find()
+    items = mongo.db.items.find().sort('_id', -1)
     return render_template('items.html', items=items)
 
 
@@ -67,7 +67,7 @@ def register():
     If valid
     :return redirect to get_items
     If invalid
-    :return render_template of register
+    :return render_template of register.html 
     '''
     form = RegistrationForm()
     if request.method == 'POST':
@@ -97,13 +97,23 @@ def register():
             return redirect(url_for('get_items'))
     return render_template('register.html', title='Register', form=form)
 
-
+# Login Route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    '''
+    Login function uses LoginForm from forms.py,
+    Checks if user exists in DB and password is correct,
+    Stores user in session cookies
+    :return redirect to my_shelf.
+    If inputs are not matched
+    :return render_template of login.html
+    '''
     form = LoginForm()
     if request.method == 'POST':
         user_exists = mongo.db.users.find_one({"username": form.username.data.lower()})
+        # Use check_password_hash from werkzeug.security to check password
         if user_exists and check_password_hash(user_exists['password'], form.password.data):
+            # Add user to session cookies
             session['user'] = form.username.data.lower()
             flash(f'Welcome {form.username.data}. This is what your shelf looks like',  'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('my_shelf', username=session['user']))
@@ -112,9 +122,14 @@ def login():
             return redirect(url_for('login'))
     return render_template('login.html', title='Login', form=form)
 
-
+# Logout Route
 @app.route('/logout')
 def logout():
+    '''
+    Logout function removes user from session cookies,
+    Displays flash message to confirm logout,
+    :return redirect to login
+    '''
     flash(f'You have been logged out', 'light-green darken-3 yellow-text text-lighten-5')
     session.pop('user')
     return redirect(url_for('login'))
@@ -124,23 +139,36 @@ def logout():
 DATABASE SEARCH ROUTES
 '''
 
+
+# Search Route for items in DB
 @app.route('/search_items', methods=['GET', 'POST'])
 def search_items():
+    '''
+    Search_items function checks the items collection index for a match
+    with the search input from user
+    :return render_template of items.html
+    '''
     search_items = request.form.get('search_items')
     items = mongo.db.items.find({'$text': {'$search': search_items}})
-    return render_template('items.html', Title='Search Results', items=items)
+    return render_template('items.html', title='Search Results', items=items)
 
-
+#Super Search Route for users and items in DB
 @app.route('/super_search', methods=['GET', 'POST'])
 def super_search():
+    '''
+    Super_search is available only to superusers,
+    Function checks the items and users collection indexes for a match
+    :return render_template of superuser.html
+    '''
     super_search = request.form.get('super_search')
     users = mongo.db.users.find({'$text': {'$search': super_search}})
     items = mongo.db.items.find({'$text': {'$search': super_search}})
     return render_template('superuser.html', Title='Search Results', users=users, items=items)
 
-
+#Add Stock Route
 @app.route('/add_stock', methods=['GET', 'POST'])
 def add_stock():
+    ''''''
     form = AddStock()
     if request.method == 'POST':
         share = True if request.form.get("share") else False
