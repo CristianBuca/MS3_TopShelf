@@ -1,6 +1,6 @@
 # **Third Milestone Project - Backend Development - Code Institute**
 
-![Top Shelf Scotch]()
+![Top Shelf Scotch](/static/icons/logo.png)
 
 ## **You can find the deployed website** [**HERE**](https://ms3-top-shelf.herokuapp.com)
 
@@ -15,7 +15,6 @@ Users are able to create their own collection of Scotch and store them on their 
 Users have access to full CRUD functionality on their shelf once they register an account.
 
 # **Strategy**
-
 
 ##  **Project Goals**
 
@@ -177,7 +176,82 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 ![Admin Management Page Wireframes](docs/wireframes/admin_management_page.png)
 </details>
 
-## **Website Pages**
+## **App Routes**
+
+### **Landing Page**
+
+* Accessible from the Navbar **Logo** and the **All Shelves** link.
+* Flask route: "/", "/get_items".
+
+### **Registration Page**
+
+* Accessible from the **Register** link in the navbar while user is logged out.
+* Includes registration form validation for POST method.
+* Flask route: "/register".
+
+### **Login Page**
+
+* Accessible from the **Login** link in the navbar while user is logged out.
+* Includes login form validation for POST method.
+* Flask route: "/login".
+
+### **My Shelf Page**
+
+* Accessible from the **My Shelf** link in the navbar while user is logged in.
+* Flask route: "/my_shelf".
+
+### **Profile Page**
+
+* Accessible from the **Profile** link in the navbar while user is logged in.
+* Flask route: "/profile/<username>".
+
+## **Superuser Administration Page**
+
+* Accessible from the Floating action button **Only while on profile page and logged in with superuser account**.
+* Flask route: "/superuser".
+
+## **Add Stock Page**
+
+* Accessible from the **Add to Shelf** link in the navbar while user is logged in.
+* Includes add stock form validation for POST method.
+* Flask route: "/add_stock".
+
+## **Change Stock Page**
+
+* Accessible from the **Change** button present on each item in the dropdown collection on My Shelf Page.
+* Includes add stock form validation for POST method.
+* Flask route: "/change_stock/<item_id>".
+
+## **Remove Stock functionality**
+
+* Accessible from the **Remove from Shelf** button present on each item in the dropdown collection on My Shelf Page.
+* Accessible from the **Remove from Shelf** button present on each item in the collection on Superuser Page.
+* Includes confirmation modal pop-up.
+* Flask route: "/remove_stock/<item_id>".
+
+## **Remove User functionality**
+
+* Accessible from the **Remove User** button present on each user in the collection on Superuser Page.
+* Includes confirmation modal pop-up.
+* Flask route: "/remove_user/<user_id>".
+
+## **Logout User functionality**
+
+* Accessible from the Floating action button on the bottom right corner of the page.
+* Flask route: "/logout".
+
+## **Search items functionality**
+
+* Accessible from top of Landing Page.
+* Results are limited to items with share status as TRUE.
+* Flask route: "/search_items".
+
+## **Super Search functionality**
+
+* Accessible from top of Superuser Page.
+* Results include items with share status as FALSE.
+* Results are limited to normal users and not superusers.
+* Flask route: "/super_search".
 
 # **Surface**
 
