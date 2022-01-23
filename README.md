@@ -6,11 +6,16 @@
 
 # **User Experience**
 
+The webapp Top Shelf - Scotch is a full-stack project created in Python. It is based on the Flask framework and uses MongoDB as it's database. The project was created as the Third Milestone Project for Code Institute. 
+It's main purpose is to allow the user to store and manipulate data records in a database using full CRUD (create, read, update, delete) functionality.
+Users are able to create their own collection of Scotch and store them on their own personal shelf. If they choose to they are able to share their collection with other users. All shared items are displayed on the home page for everyone to admire.
+Users have access to full CRUD functionality on their shelf once they register an account.
 
 # **Strategy**
 
 
 ##  **Project Goals**
+
 
 
 ## **User Goals**
