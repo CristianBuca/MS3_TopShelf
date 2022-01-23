@@ -239,9 +239,20 @@ def profile(username):
                 return render_template('profile.html', title='Profile', user=user, form=form)
         return render_template('profile.html', title='Profile', user=user, form=form)
 
-        
+
+# Change stock route
 @app.route('/change_stock/<item_id>', methods=['GET', 'POST'])
 def change_stock(item_id):
+    '''
+    Change_stock function uses AddStock form from forms.py,
+    Matches the item selected by user to be updated based on _id,
+    Checks if user in session is the same as the one that created the item,
+    For GET method retrieves the item data and populates the form
+    :return render_template of change_stock.html
+    For POST updates the item in DB
+    :param _id: user id from DB
+    :return redirect to my_shelf
+    '''
     item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
     if item['owned_by'] != session['user']:
         abort(403)
@@ -249,6 +260,7 @@ def change_stock(item_id):
     if request.method == 'POST':
         share = True if request.form.get("share") else False
         if form.validate_on_submit():
+            # Store new form data in stock dictionary
             stock = {
                 'item_name' : form.name.data,
                 'region_name' : form.region.data,
@@ -259,6 +271,7 @@ def change_stock(item_id):
                 'share' : share,
                 'owned_by': session['user'].lower()
             }
+            # replace item data in DB with data from stock dictionary
             mongo.db.items.replace_one({'_id': ObjectId(item_id)}, stock)
             flash(f'Your Shelf has been updated', 'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('my_shelf'))
