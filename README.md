@@ -19,6 +19,7 @@ Users have access to full CRUD functionality on their shelf once they register a
 * Use MongoDB to store user data.
 * Use Python and Flask Framework to offer a way for the user to interact with the database.
 * Give the users full CRUD functionality over their collections.
+* Offer a responsive and mobile-friendly experience to users.
 
 ## **User Goals**
 
@@ -26,34 +27,55 @@ Users have access to full CRUD functionality on their shelf once they register a
 * Create and manage individual collections in the database.
 * View other users' collections.
 
-## **User Stories**
+# **Scope**
 
+## **User Stories**
 
 **New Users:** 
 
+1. As a new user, I want to be able to register an account.
+2. As a new user, I want to be able to login and access my account.
+3. As a new user, I want to be able to logout.
+4. As a new user, I want to view collections in the database.
+5. As a new user, I want to be able to search in the database.
+6. As a new user, I want to be able to add my own items to the database.
+7. As a new user, I want to be able to view my collection in the database.
 
 **Regular Users:**
+
+8. As a regular user, I want to be able to edit entries in my collection.
+9. As a regular user, I want to be able to delete entries in my collection.
+10. As a regular user, I want to be able to change my password.
+11. As a regular user, I want to be able to change my avatar.
+
+**Super Users:**
+
 
 
 **Site Owner:**
 
+# **Structure**
+
+## **Code Structure**
+
+## **Database structure**
+
+## **Feature requirements**
+
+# **Skeleton**
+
+## **Wireframes**
+
+## **Website Pages**
+
+# **Surface**
 
 ## **Design**
 
-
 ### **Colour Palette**
-
 
 ### **Font Scheme**
 
-
-# **Scope**
-
-## Feature requirements:
-
-# **Structure**
-
-## **Wireframes**
 
 <details>
   <summary> (Expand) Landing Page Wireframes.</summary>
