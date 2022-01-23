@@ -16,10 +16,15 @@ Users have access to full CRUD functionality on their shelf once they register a
 
 ##  **Project Goals**
 
-
+* Use MongoDB to store user data.
+* Use Python and Flask Framework to offer a way for the user to interact with the database.
+* Give the users full CRUD functionality over their collections.
 
 ## **User Goals**
 
+* Create an account on the webpage.
+* Create and manage individual collections in the database.
+* View other users' collections.
 
 ## **User Stories**
 
