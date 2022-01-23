@@ -118,20 +118,22 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 
 ## **Feature requirements**
 
+* Responsive app for all device sizes.
+* Collapsible Navigation bar on small devices.
+* Landing Page showcasing (Read) items from the database.
+* Registration Page with form validation.
+* Login Page with form validation.
+* Search feature for main collection.
+* Page where users can Create entries in the database.
+* Personal user collection Page with Update/ Delete functionality.
+* Profile Page where users can Update personal details.
+* Administration Page where superusers can Delete entries and users from the database.
+* Footer with social media links.
+* Logout functionality.
+
 # **Skeleton**
 
 ## **Wireframes**
-
-## **Website Pages**
-
-# **Surface**
-
-## **Design**
-
-### **Colour Palette**
-
-### **Font Scheme**
-
 
 <details>
   <summary> (Expand) Landing Page Wireframes.</summary>
@@ -174,6 +176,16 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 
 ![Admin Management Page Wireframes](docs/wireframes/admin_management_page.png)
 </details>
+
+## **Website Pages**
+
+# **Surface**
+
+## **Design**
+
+### **Colour Palette**
+
+### **Font Scheme**
 
 # **Features**
 
