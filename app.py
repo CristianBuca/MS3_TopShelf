@@ -204,8 +204,18 @@ def add_stock():
 DATABASE UPDATE/DELETE ROUTES
 '''
 
+
+# User profile route
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
+    '''
+    Profile function uses the RegistrationForm from forms.py,
+    Matches the user in session cookies and pulls it's information from DB
+    Populates the form with username and e-mail and let's the user
+    change password and link to avatar
+    :param username: username in session cookies
+    :return render template profile.html
+    '''
     if session.get('user') is not None:
         user = mongo.db.users.find_one({'username': session['user']})
         user_id = user['_id']
@@ -215,6 +225,7 @@ def profile(username):
             form.email.data = user['email']
         if request.method == 'POST':
             if form.validate_on_submit():
+                # Store user input in update dictionary
                 update = {
                     'username': request.form.get('username'),
                     'email': request.form.get('email'),
@@ -222,6 +233,7 @@ def profile(username):
                     'avatar': request.form.get('avatar'),
                     'superuser': user['superuser']
                 }
+                # replace user data based on user_id
                 mongo.db.users.replace_one({'_id': ObjectId(user_id)}, update)
                 flash(f'Profile successfully updated', 'light-green darken-3 yellow-text text-lighten-5')
                 return render_template('profile.html', title='Profile', user=user, form=form)
