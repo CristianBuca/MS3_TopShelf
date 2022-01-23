@@ -152,6 +152,7 @@ def search_items():
     items = mongo.db.items.find({'$text': {'$search': search_items}})
     return render_template('items.html', title='Search Results', items=items)
 
+
 #Super Search Route for users and items in DB
 @app.route('/super_search', methods=['GET', 'POST'])
 def super_search():
@@ -165,14 +166,23 @@ def super_search():
     items = mongo.db.items.find({'$text': {'$search': super_search}})
     return render_template('superuser.html', Title='Search Results', users=users, items=items)
 
+
 #Add Stock Route
 @app.route('/add_stock', methods=['GET', 'POST'])
 def add_stock():
-    ''''''
+    '''
+    Add_stock function uses AddStock form from forms.py,
+    Stores user inputs and validates them,
+    Inserts new item in items collection in DB
+    :return render_template for add_stock.html for GET method
+    :return redirect to get_items for POST method
+    '''
     form = AddStock()
     if request.method == 'POST':
         share = True if request.form.get("share") else False
+        # Check input validations
         if form.validate_on_submit():
+            # Store form data in stock dictionary
             stock = {
                 'item_name' : form.name.data,
                 'region_name' : form.region.data,
@@ -183,6 +193,7 @@ def add_stock():
                 'share' : share,
                 'owned_by': session['user'].lower()
             }
+            # Insert stock dictionary in DB
             mongo.db.items.insert_one(stock)
             flash(f'New item was added to your shelf', 'light-green darken-3 yellow-text text-lighten-5')
             return redirect(url_for('get_items'))
