@@ -67,6 +67,17 @@ Users have access to full CRUD functionality on their shelf once they register a
 
 ## **Code Structure**
 
+* app.py - contains app initialization and routes
+* forms.py - contains form classes that are imported into app.py routes
+* templates - contains all Flask page templates.
+    - errors - contains all error page templates.
+* static
+    - css - contains project's global style.css.
+    - js - contains project's global script.js and form_validation.js used only pages that include forms.
+    - images - contains images used in the design of the app
+        - icons - contains small images like logo and favicon icons
+* requirements.txt - contains information on python dependencies used for this app.
+
 ## **Database structure**
 
 ## **Feature requirements**
