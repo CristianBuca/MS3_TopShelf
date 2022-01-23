@@ -4,11 +4,14 @@
 
 ## **You can find the deployed website** [**HERE**](https://ms3-top-shelf.herokuapp.com)
 
+# **Project Overview**
+
+The webapp Top Shelf - Scotch is a full-stack data-centric project created in Python. It is based on the Flask framework and uses MongoDB as it's database. The project was created as the Third Milestone Project for Code Institute. 
+It's main purpose is to allow the user to store and manipulate data records in a database using full CRUD (create, read, update, delete) functionality.
+
 # **User Experience**
 
-The webapp Top Shelf - Scotch is a full-stack project created in Python. It is based on the Flask framework and uses MongoDB as it's database. The project was created as the Third Milestone Project for Code Institute. 
-It's main purpose is to allow the user to store and manipulate data records in a database using full CRUD (create, read, update, delete) functionality.
-Users are able to create their own collection of Scotch and store them on their own personal shelf. If they choose to they are able to share their collection with other users. All shared items are displayed on the home page for everyone to admire.
+Users are able to create their own collection of Scotch and store them on their own personal shelf. If they choose they are able to share their collection with other users. All shared items are displayed on the home page for everyone to admire.
 Users have access to full CRUD functionality on their shelf once they register an account.
 
 # **Strategy**
@@ -78,7 +81,40 @@ Users have access to full CRUD functionality on their shelf once they register a
         - icons - contains small images like logo and favicon icons
 * requirements.txt - contains information on python dependencies used for this app.
 
-## **Database structure**
+## **Database Structure**
+
+* Database document-oriented and created with [MongoDB](https://www.mongodb.com). 
+* Backend is implemented using Python with the PyMongo driver
+
+### **Conceptual Database Model**
+
+Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
+
+<details>
+  <summary> (Expand) Conceptual Structure.</summary>
+
+![Conceptual Database](/docs/database/conceptual_database_model.png)
+</details>
+
+### **Physical Database Model**
+
+<details>
+  <summary> (Expand) items Collection.</summary>
+
+![items Collection](/docs/database/items_collection.png)
+</details>
+
+<details>
+  <summary> (Expand) regions Collection.</summary>
+
+![regions Collection](/docs/database/regions_collection.png)
+</details>
+
+<details>
+  <summary> (Expand) users Collection.</summary>
+
+![users Collection](/docs/database/users_collection.png)
+</details>
 
 ## **Feature requirements**
 
