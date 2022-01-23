@@ -50,9 +50,18 @@ Users have access to full CRUD functionality on their shelf once they register a
 
 **Super Users:**
 
-
+12. As a superuser, I want to be able to search the database for users and entries.
+13. As a superuser, I want to be able to remove users from the database.
+14. As a superuser, I want to be able to remove user created entries from the database.
 
 **Site Owner:**
+
+15. As a site owner, I want the app to be responsive.
+16. As a site owner, I want to have users with admin privileges.
+17. As a site owner, I want to showcase my social media.
+18. As a site owner, I want to provide feedback to the user when errors occur.
+19. As a site owner, I want forms to be validated on the client side.
+20. As a site owner, I want forms to be validated on the backend as a fallback.
 
 # **Structure**
 
