@@ -288,7 +288,7 @@ def change_stock(item_id):
 @app.route('/remove_stock/<item_id>')
 def remove_stock(item_id):
     '''
-    Function remove_stock deletes the item in the database,
+    Function remove_stock deletes the item from the database,
     :param item_id: the id of the item in the DB
     :return redirect to my_shelf
     '''
@@ -296,9 +296,15 @@ def remove_stock(item_id):
     flash(f'Item Removed from Shelf', 'light-green darken-3 yellow-text text-lighten-5')
     return  redirect(url_for('my_shelf'))
 
-
+#Remove User route
 @app.route('/remove_user/<user_id>')
 def remove_user(user_id):
+    '''
+    Function remove_user delete the user from the database,
+    Only accessible by superusers.
+    :param: user_id: the id of the user in the DB
+    :return redirect to superuser
+    '''
     mongo.db.users.delete_one({'_id': ObjectId(user_id)})
     flash(f'User removed from database', 'light-green darken-3 yellow-text text-lighten-5')
     return redirect(url_for('superuser'))
