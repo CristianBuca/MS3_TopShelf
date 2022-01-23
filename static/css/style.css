@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;400;600;700&display=swap');
 
+/* Override Materialize components fonts */
 body, button, .btn, .card, .card-title {
-    font-family: 'Barlow Condensed';
+    font-family: 'Barlow Condensed' !important;
     font-weight: 400 !important;
 }
 
@@ -15,6 +16,10 @@ body, button, .btn, .card, .card-title {
 .top-wrapper {
     height: 30vh;
     background-color: #0b0b0b !important;
+}
+
+.title {
+    font-size: 2rem;
 }
 
 .main-content {
@@ -35,18 +40,7 @@ footer {
     font-size: large;
 }
 
-.media-links {
-    height: 5vh;
-    margin: 20px;
-}
-
-img {
-    max-width: 100%;
-    display:block;
-    margin-left: auto;
-    margin-right:auto;
-}
-
+/* Navbar styles */
 .brand-logo {
     top: 35%;
     left: 5%;
@@ -55,15 +49,13 @@ img {
     font-size: 0;
 }
 
+/* Materialize component style override */
+
 .sidenav {
     background-image: url("/static/images/side-nav.jpg");
     background-position: center center;
     background-size: cover;
     padding-top: 10vh;
-}
-
-.messages {
-    font-size: 2rem;
 }
 
 .card-content {
@@ -89,12 +81,33 @@ img {
     max-width: 70% !important;
 }
 
-.title {
+/* Image and text styles */
+
+.media-links {
+    height: 5vh;
+    margin: 20px;
+}
+
+img {
+    max-width: 100%;
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.messages {
     font-size: 2rem;
 }
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Elements styles */
+
+label {
+    font-size: 1rem;
+    color: black;
 }
 
 .switch label .lever:after {
@@ -107,6 +120,8 @@ img {
 .switch label input[type=checkbox]:checked+.lever {
     background-color: #bababa;
 }
+
+/* Custom Error styles */
 
 .error-page {
     width: 100%;
@@ -125,14 +140,9 @@ img {
     color: #bf360c;
 }
 
-label {
-    font-size: 1rem;
-    color: black;
-}
-
 /* Media Queries */
-/* Overwrite Materialize container width on screens larger than 993px */
 
+/* Overwrite Materialize container width on screens larger than 993px */
 @media only screen and (min-width: 993px) {
     .item-container {
         width: 80% !important;
@@ -150,6 +160,7 @@ label {
     }
 }
 
+/* On screens bigger than 1600px replace hero image with a larger version */
 @media only screen and (min-width : 1600px)  {
     .image-wrapper {
         background-image: url("/static/images/landing_image_large.jpg");
