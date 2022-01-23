@@ -284,9 +284,14 @@ def change_stock(item_id):
         form.image.data = item['image']
     return render_template('change_stock.html', title='Change Stock', item=item, form=form)
 
-
+#Remove Stock route
 @app.route('/remove_stock/<item_id>')
 def remove_stock(item_id):
+    '''
+    Function remove_stock deletes the item in the database,
+    :param item_id: the id of the item in the DB
+    :return redirect to my_shelf
+    '''
     mongo.db.items.delete_one({'_id': ObjectId(item_id)})
     flash(f'Item Removed from Shelf', 'light-green darken-3 yellow-text text-lighten-5')
     return  redirect(url_for('my_shelf'))
