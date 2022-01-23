@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Credits to Tim Nelson - Code Institute Flask Project Lessons -->
+
+    <!-- Hero Image Area -->
     <div class="row search-section black">
         <div class="col s12 m6 image-wrapper"></div>
         <div class="col s12 m6 top-wrapper valign-wrapper">
+            <!-- Search Form Area - Admin can search the Databse for users or items -->
             <form class="center-align" action="{{ url_for('super_search') }}" method="POST">
                 <div class="row">
                     <h4 class="orange-text text-lighten-3 col s12">Search user or items database</h4>
@@ -21,12 +25,16 @@
         </div>
     </div>
 
+    <!-- Users are displayed using the Materialize Collection Component -->
     <section class="row">
         <ul class="collection col s12 m8 l6 offset-m2 offset-l3 z-depth-4">
+            <!-- Loop through users in Database. Superusers are not able to see other superusers. 
+            Check is performed before displaying the user collection -->
             {% for user in users %}
                 {% if user.superuser == False %}
                     <li class="collection-item avatar">
                         <div class="row">
+                            <!-- Check to see if user avatar image link exists. If not display stock image -->
                             {% if user.avatar %}
                                 <img src="{{ user.avatar }}" alt="user avatar" class="circle">
                             {% else %}
@@ -34,9 +42,11 @@
                             {% endif %}
                             <span class="title">{{ user.username }}</span>
                             <p>{{ user.email }}</p>
+                            <!-- Button to Delete the user from Database triggers confirmation modal -->
                             <button data-target="remove-{{ user._id }}" class="btn modal-trigger secondary-content deep-orange darken-4">Remove User</button>
                         </div>
                     </li>
+                    <!-- Modal requiring confirmation before Deletion -->
                     <div id="remove-{{ user._id }}" class="modal">
                         <div class="modal-content">
                             <h4>{{ user.username }}</h4>
@@ -52,11 +62,14 @@
         </ul>
     </section>
 
+    <!-- Items from Database are displayed using the Materialize Collection Component -->
     <section class="row">
     <ul class="collection col s12 m8 l6 offset-m2 offset-l3 z-depth-4">
+        <!-- Loop through items in database and display image, name and user that Created the entry -->
         {% for item in items %}
                 <li class="collection-item avatar">
                     <div class="row">
+                        <!-- Check to see if image link exists. If not display stock image --> 
                         {% if item.image %}
                             <img src="{{ item.image }}" alt="Image of {{item_name}}" class="circle">
                         {% else %}
@@ -66,11 +79,13 @@
                             <span class="title">{{ item.item_name }}</span>
                             <p>by {{ item.owned_by }}</p>
                         </div>
+                        <!-- Button to Delete the item from Database triggers confirmation modal -->
                         <div class="col s6">
                             <button data-target="remove-{{ item._id }}" class="btn modal-trigger secondary-content deep-orange darken-4">Remove from Shelf</button>
                         </div>
                     </div>
                 </li>
+                <!-- Modal requiring confirmation before Deletion -->
                 <div id="remove-{{ item._id }}" class="modal">
                     <div class="modal-content">
                         <h4>{{ item.item_name }}</h4>
