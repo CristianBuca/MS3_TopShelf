@@ -178,75 +178,75 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 
 ## **App Routes**
 
-### **Landing Page**
+**Landing Page**
 
 * Accessible from the Navbar **Logo** and the **All Shelves** link.
 * Flask route: "/", "/get_items".
 
-### **Registration Page**
+**Registration Page**
 
 * Accessible from the **Register** link in the navbar while user is logged out.
 * Includes registration form validation for POST method.
 * Flask route: "/register".
 
-### **Login Page**
+**Login Page**
 
 * Accessible from the **Login** link in the navbar while user is logged out.
 * Includes login form validation for POST method.
 * Flask route: "/login".
 
-### **My Shelf Page**
+**My Shelf Page**
 
 * Accessible from the **My Shelf** link in the navbar while user is logged in.
 * Flask route: "/my_shelf".
 
-### **Profile Page**
+**Profile Page**
 
 * Accessible from the **Profile** link in the navbar while user is logged in.
 * Flask route: "/profile/<username>".
 
-## **Superuser Administration Page**
+**Superuser Administration Page**
 
 * Accessible from the Floating action button **Only while on profile page and logged in with superuser account**.
 * Flask route: "/superuser".
 
-## **Add Stock Page**
+**Add Stock Page**
 
 * Accessible from the **Add to Shelf** link in the navbar while user is logged in.
 * Includes add stock form validation for POST method.
 * Flask route: "/add_stock".
 
-## **Change Stock Page**
+**Change Stock Page**
 
 * Accessible from the **Change** button present on each item in the dropdown collection on My Shelf Page.
 * Includes add stock form validation for POST method.
 * Flask route: "/change_stock/<item_id>".
 
-## **Remove Stock functionality**
+**Remove Stock functionality**
 
 * Accessible from the **Remove from Shelf** button present on each item in the dropdown collection on My Shelf Page.
 * Accessible from the **Remove from Shelf** button present on each item in the collection on Superuser Page.
 * Includes confirmation modal pop-up.
 * Flask route: "/remove_stock/<item_id>".
 
-## **Remove User functionality**
+**Remove User functionality**
 
 * Accessible from the **Remove User** button present on each user in the collection on Superuser Page.
 * Includes confirmation modal pop-up.
 * Flask route: "/remove_user/<user_id>".
 
-## **Logout User functionality**
+**Logout User functionality**
 
 * Accessible from the Floating action button on the bottom right corner of the page.
 * Flask route: "/logout".
 
-## **Search items functionality**
+**Search items functionality**
 
 * Accessible from top of Landing Page.
 * Results are limited to items with share status as TRUE.
 * Flask route: "/search_items".
 
-## **Super Search functionality**
+**Super Search functionality**
 
 * Accessible from top of Superuser Page.
 * Results include items with share status as FALSE.
@@ -261,10 +261,23 @@ The design of the site is inspired by an opened bottle of Scotch and is maintain
 It is a mobile-first design that is fully responsive on all device sizes. Top section includes hero image and title and represents the neck of the bottle. Main section has a white background and content is centered resembling the label on the bottle. Footer color and size is supposed to remind the users of the scotch left in the bottle that they can still enjoy.
 
 ![Design](/docs/design/layout.png)
-### **Colour Palette**
+
+**UI**
+
+Top Shelf Scotch makes use of the (MaterializeCSS)[https://materializecss.com] UI component library which is created and designed by Google and is also known as Material Design.
+
+**Typography**
+
+As the app is using MaterializeCSS library it inherits a lot of it's fonts as fallback. For the main components I have opted to overwrite those fonts with Barlow Condensed imported from Google Fonts library.
+Barlow is a slightly rounded, low-contrast, grotesk type family.
 
 
-### **Font Scheme**
+**Color Palette**
+
+![Color Pallette](/docs/design/colors.png)
+
+Colors for this app were inspired by the colors a user would find when looking at a bottle of Scotch.
+
 
 # **Features**
 
