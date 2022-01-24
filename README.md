@@ -283,10 +283,13 @@ Colors for this app were inspired by the colors a user would find when looking a
 
 ### **Landing Page**
 
+The Landing Page features the hero image and the search feature in at the top of the page which users are able to take advantage of and search the database for a specific item.
+Main content of the page is comprised of a card grid that is responsive to the user's device width. Cards displayed range from 1 card on small to 4 cards on extra large devices. Clicking on the "+" icon on each card will reveal the information associated with the specific item RED from the database.
 
 *User stories solved by this feature:*
 
-* 
+* 4. As a new user, I want to view collections in the database.
+* 5. As a new user, I want to be able to search in the database.
 
 <details>
   <summary> (Expand) Landing Page on different device widths.</summary>
@@ -303,9 +306,7 @@ Colors for this app were inspired by the colors a user would find when looking a
 
 ### **Registration Page**
 
-*User stories solved by this feature:*
 
-* 
 
 <details>
   <summary> (Expand) Registration Feature.</summary>
@@ -446,9 +447,9 @@ In the footer, the user can find links the owner social medial.
 
 </details>
 
-### **404 Page**
+### **Custom Error Pages**
 
-The 404 Error Page is displayed in case of broken or absent links. It provides the user with the ability to go back to one of the webapp pages and maintains user engagement.
+The Error Pages are displayed in case an error occurs on client, server or database side. It provides the user with the ability to go back to one of the webapp pages and maintains user engagement.
 
 <details>
   <summary> (expand) 404 Error Page</summary>
