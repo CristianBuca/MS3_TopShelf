@@ -469,9 +469,15 @@ Superusers are not able to see or delete other Superusers.
 
 ### **Navbar**
 
+The navigation bar houses the app's Logo and the main navigation links.
+The links accessible will change based on wether the user is logged in or logged out.
+It is collapsible on small devices and the side navigation is accessible from the burger menu on the right hand side.
+Messages being flashed to the user as feedback for their interactions with the app are displayed in the section right under the navbar.
+
 *User stories solved by this feature:*
 
-* 
+* 15 - As a site owner, I want the app to be responsive.
+* 18 - As a site owner, I want to provide feedback to the user when errors occur.
 
 <details>
   <summary> (Expand) Navbar </summary>
@@ -498,6 +504,13 @@ In the footer, the user can find links the owner social medial.
 </details>
 
 ### **Floating Action Button**
+
+<details>
+  <summary> (Expand) Footer </summary>
+
+![Footer]()
+
+</details>
 
 ### **Custom Error Pages**
 
