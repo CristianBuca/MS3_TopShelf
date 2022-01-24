@@ -523,12 +523,42 @@ While on their profile page, Superusers will find the regular floating action bu
 ### **Custom Error Pages**
 
 The Error Pages are displayed in case an error occurs on client, server or database side. It provides the user with the ability to go back to one of the webapp pages and maintains user engagement.
+Each error page displays it's specific error in the title. The user can still use the app's navbar to navigate or click the big button in the middle of the page to return to the Landing Page.
+
+*User stories solved by this feature:*
+
+* 18 - As a site owner, I want to provide feedback to the user when errors occur.
+
+<details>
+  <summary> (expand) 400 Error Page</summary>
+
+![400 Page]()
+</details>
+
+<details>
+  <summary> (expand) 401 Error Page</summary>
+
+![401 Page]()
+</details>
 
 <details>
   <summary> (expand) 404 Error Page</summary>
 
 ![404 Page]()
 </details>
+
+<details>
+  <summary> (expand) 405 Error Page</summary>
+
+![405 Page]()
+</details>
+
+<details>
+  <summary> (expand) 500 Error Page</summary>
+
+![500 Page]()
+</details>
+
 
 ## **Technologies Used**
 
