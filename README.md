@@ -490,11 +490,11 @@ Messages being flashed to the user as feedback for their interactions with the a
 
 ### **Footer**
 
-In the footer, the user can find links the owner social medial.
+In the footer, the user can find links the owner's social media.
 
 *User stories solved by this feature:*
 
-* 13 - As a site owner, I want to showcase my social media.
+* 17 - As a site owner, I want to showcase my social media.
 
 <details>
   <summary> (Expand) Footer </summary>
@@ -505,10 +505,18 @@ In the footer, the user can find links the owner social medial.
 
 ### **Floating Action Button**
 
-<details>
-  <summary> (Expand) Footer </summary>
+The floating action button at the bottom right hand side corner of the page extends to provide extra functionality to the user. It can be used to go back to the top of the page or to logout.
 
-![Footer]()
+While on their profile page, Superusers will find the regular floating action button replaced with a different one that links to the Superuser Administration Page.
+
+*User stories solved by this feature:*
+
+* 3 - As a new user, I want to be able to logout.
+
+<details>
+  <summary> (Expand) Floating Action Button </summary>
+
+![Floating Action Button]()
 
 </details>
 
