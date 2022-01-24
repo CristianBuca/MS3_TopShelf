@@ -288,8 +288,8 @@ Main content of the page is comprised of a card grid that is responsive to the u
 
 *User stories solved by this feature:*
 
-* 4. As a new user, I want to view collections in the database.
-* 5. As a new user, I want to be able to search in the database.
+* 4 - As a new user, I want to view collections in the database.
+* 5 - As a new user, I want to be able to search in the database.
 
 <details>
   <summary> (Expand) Landing Page on different device widths.</summary>
@@ -306,7 +306,7 @@ Main content of the page is comprised of a card grid that is responsive to the u
 
 ### **Registration Page**
 
-Registration Page is comprised of the hero image and a welcoming title at the top of the page.
+Registration Page is comprised of the hero image and a welcome message as title at the top of the page.
 Main content of the page is the Registration Form which is used to CREATE a user entry in the database collection "users".
 The form fields are validated via JQuery on client's side and via wtForms on server side.
 In the event of invalid inputs a message explaining the error appears under each input field.
@@ -315,10 +315,10 @@ In the event of database duplicates for username and/or email a flash message is
 
 *User stories solved by this feature:*
 
-* 1. As a new user, I want to be able to register an account.
-* 18. As a site owner, I want to provide feedback to the user when errors occur.
-* 19. As a site owner, I want forms to be validated on the client side.
-* 20. As a site owner, I want forms to be validated on the backend as a fallback
+* 1 - As a new user, I want to be able to register an account.
+* 18 - As a site owner, I want to provide feedback to the user when errors occur.
+* 19 - As a site owner, I want forms to be validated on the client side.
+* 20 - As a site owner, I want forms to be validated on the backend as a fallback
 
 <details>
   <summary> (Expand) Registration Feature.</summary>
@@ -335,10 +335,15 @@ In the event of database duplicates for username and/or email a flash message is
 
 ### **Login Page**
 
+Login Page uses the same main components as the Registration Page.
+It's main content is a login form with built in client side JQuery validation and server side validation matching the user with an entry in the database.
 
 *User stories solved by this feature:*
 
-* 
+* 2 - As a new user, I want to be able to login and access my account.
+* 18 - As a site owner, I want to provide feedback to the user when errors occur.
+* 19 - As a site owner, I want forms to be validated on the client side.
+* 20 - As a site owner, I want forms to be validated on the backend as a fallback
 
 <details>
   <summary> (Expand) Login Feature.</summary>
