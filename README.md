@@ -306,7 +306,19 @@ Main content of the page is comprised of a card grid that is responsive to the u
 
 ### **Registration Page**
 
+Registration Page is comprised of the hero image and a welcoming title at the top of the page.
+Main content of the page is the Registration Form which is used to CREATE a user entry in the database collection "users".
+The form fields are validated via JQuery on client's side and via wtForms on server side.
+In the event of invalid inputs a message explaining the error appears under each input field.
+In the event of database duplicates for username and/or email a flash message is displayed at the top of the page.
 
+
+*User stories solved by this feature:*
+
+* 1. As a new user, I want to be able to register an account.
+* 18. As a site owner, I want to provide feedback to the user when errors occur.
+* 19. As a site owner, I want forms to be validated on the client side.
+* 20. As a site owner, I want forms to be validated on the backend as a fallback
 
 <details>
   <summary> (Expand) Registration Feature.</summary>
