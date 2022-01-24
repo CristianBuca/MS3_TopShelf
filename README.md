@@ -367,7 +367,6 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 
 *User stories solved by this feature:*
 
-* 6 - As a new user, I want to be able to add my own items to the database.
 * 7 - As a new user, I want to be able to view my collection in the database.
 * 8 - As a regular user, I want to be able to edit entries in my collection.
 * 9 - As a regular user, I want to be able to delete entries in my collection.
@@ -387,9 +386,18 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 
 ### **Profile Page**
 
+The Profile Page's main purpose is to enable the users to UPDATE their password and/or avatar.
+The Page's main content consists of the user's avatar image and the UPDATE form.
+The form is populated with current data from the database and is subject to the same validation methods used by the Registration Form.
+
+For Superusers the Profile Page serves as a way to access the Superuser Administration Page. On the bottom right hand side of the page the Floating Action Button changes it's appearance and clicking it will redirect to the Administration Page.
+
 *User stories solved by this feature:*
 
-* 
+* 10 - As a regular user, I want to be able to change my password.
+* 11 - As a regular user, I want to be able to change my avatar.
+* 19 - As a site owner, I want forms to be validated on the client side.
+* 20 - As a site owner, I want forms to be validated on the backend as a fallback.
 
 <details>
   <summary> (Expand) Profile Feature </summary>
