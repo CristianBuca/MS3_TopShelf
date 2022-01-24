@@ -931,20 +931,24 @@ The website is hosted and deployed from Github. The steps taken for deployment w
 
 ## **Credits**
 
-_I have followed dozens of projects and video tutorials trying to find the solutions that would fit this project.
-Some influenced my approach on how to build this site and others were specific to a particular issue I encountered.
-Any code that was borrowed has been modified and adapted to fit my particular needs._
+This Project was created based on the Code Institute - Flask Task Manager Project Lessons by Tim Nelson and Python Flask Tutorial - by [Corey Schafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g). 
+There are inevitable similarities between this project and the project from these 2 tutorials, more specifically:
 
-**JavaScript/Jquery code:**
+**From Tim Nelson's lessons I used:**
 
+* The app initialization method,
+* Overall approach on building the app using Flask and Jinja,
+* Structure of the routes.
 
-**HTML/CSS**
+**From Corey Schafer's tutorial I used:**
 
-* Using CSS Variables [Fireship](https://www.youtube.com/watch?v=NtRmIp4eMjs).
-* CSS style for the Theme Switch checkbox was taken from [Online Tutorials](https://www.youtube.com/watch?v=z3TgmTi42ic).
-* For the Quiz Info Modal I watched [Florin Pop](https://www.youtube.com/watch?v=XH5OW46yO8I).
-* CSS for the custom buttons was inspired from [CSS Scan](https://getcssscan.com/css-buttons-examples).
-* The pop-up in the e-mail form for invalid entries was taken from [W3 Schools](https://www.w3schools.com/howto/howto_js_popup.asp) in combination with [PreTagTeam](https://pretagteam.com/question/jquery-position-popup-in-relative-to-buttons) for positioning it on each input.
+* The approach of form validation using [wtForms](https://wtforms.readthedocs.io/en/3.0.x/) in python.
+
+**JQuery component initialization** is from [MaterializeCSS](https://materializecss.com).
+
+**JQuery form validation** was done using the [Jquery Validation Plugin](https://jqueryvalidation.org/documentation/).
+
+**Ajax method to replace broken links** solution is from [Sitepoint](https://www.sitepoint.com/jquery-replace-broken-images/).
 
 **Media**
 
@@ -960,8 +964,9 @@ Any code that was borrowed has been modified and adapted to fit my particular ne
 ## **Acknowledgements**
 
 * Special thanks to my mentor Mo Shami for his suggestions and guidance.
+* Special thanks to my brother for his feedback and suggestions.
 * My family for their encouragement and support.
-* Special thanks to Neil from Student Care for helping me through a tough time and everyone else in the Student Care Team that touched bases making sure I am on track.
+* The Code Institute tutors that helped me when I was hitting walls.
 * The Code Institute team for all the effort and energy they put into creating and curating the content for this programme.
 
 ## Disclaimer
