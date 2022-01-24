@@ -566,6 +566,9 @@ Each error page displays it's specific error in the title. The user can still us
 * **[CSS3](https://www.w3.org/Style/CSS/Overview.en.html)**
 * **[JavaScript](https://www.javascript.com)**
 * **[JQuery 3.6.0](https://jquery.com)** Was used for dom manipulation.
+* **[Flask](https://flask.palletsprojects.com/en/2.0.x/)** Was used as the framework for the app.
+* **[Jinja](https://jinja.palletsprojects.com/en/3.0.x/)** As the template engine for Flask.
+* **[MaterializeCSS](https://materializecss.com)** The app's main front-end framework.
 * **[Github](https://github.com)** For storing my repository.
 * **[Github Desktop](https://desktop.github.com)** For managing synchronizations between local and cloud-stored repositories.
 * **[Git](https://git-scm.com)** For version control.
