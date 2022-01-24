@@ -437,22 +437,33 @@ The form also contains a "Share with others" switch which is ON by default but g
 </details>
 
 
-### **Admin Management Page Page**
+### **Superuser Management Page Page**
+
+The Superuser Administration Page is designed to allow superusers to view all registered users and all items added to the database.
+The top of the page is comprised of the hero image and a search field that can search through users and items collection indexes.
+Main section of the page is comprised of two collection lists. The user collection displays the user's avatar, username and email address and a "Remove User" which Deletes the user from the database.
+The item collection displays the image linked by the used with each item and the user that CREATED the item in database. The "Remove from Shelf" button allows the Superuser to DELETE the entry from the database.
+
+This page is designed to allow users with administrative privileges to browse and search the database and quickly DELETE entries that contain sensitive images or text.
+Superusers are not able to see or delete other Superusers.
 
 *User stories solved by this feature:*
 
-* 
+* 12 - As a superuser, I want to be able to search the database for users and entries.
+* 13 - As a superuser, I want to be able to remove users from the database.
+* 14 - As a superuser, I want to be able to remove user created entries from the database
+* 16 - As a site owner, I want to have users with admin privileges.
 
 <details>
   <summary> (Expand) Admin Management Feature </summary>
 
-![Admin Management Page mobile]()
+![Superuser Management Page Page mobile]()
 
-![Admin Management Page tablet]()
+![Superuser Management Page Page tablet]()
 
-![Admin Management Page 1080p]()
+![Superuser Management Page Page 1080p]()
 
-![Admin Management Page 1440p]()
+![Superuser Management Page Page 1440p]()
 </details>
 
 
