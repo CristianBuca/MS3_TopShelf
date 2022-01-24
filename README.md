@@ -257,7 +257,12 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 
 ## **Design**
 
+The design of the site is inspired by an opened bottle of Scotch and is maintained through all pages.
+It is a mobile-first design that is fully responsive on all device sizes. Top section includes hero image and title and represents the neck of the bottle. Main section has a white background and content is centered resembling the label on the bottle. Footer color and size is supposed to remind the users of the scotch left in the bottle that they can still enjoy.
+
+![Design](/docs/design/layout.png)
 ### **Colour Palette**
+
 
 ### **Font Scheme**
 
