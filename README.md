@@ -358,22 +358,30 @@ It's main content is a login form with built in client side JQuery validation an
 </details>
 
 
-### **User Collection Page**
+### **My Shelf - User Collection Page**
+
+My Shelf Page features a dropdown collection of cards as it's main content.
+Each dropdown item READS the items from the database that were Created by the user.
+By expanding each item the user find the picture associated with the item and the information fields.
+Each card contains two buttons used to access the UPDATE form for each item or to DELETE that specific item from the database. Clicking the "Remove from Shelf" button will trigger a confirmation modal.
 
 *User stories solved by this feature:*
 
-* 
+* 6 - As a new user, I want to be able to add my own items to the database.
+* 7 - As a new user, I want to be able to view my collection in the database.
+* 8 - As a regular user, I want to be able to edit entries in my collection.
+* 9 - As a regular user, I want to be able to delete entries in my collection.
 
 <details>
-  <summary> (Expand) User Collection Feature </summary>
+  <summary> (Expand) My Shelf - User Collection Page </summary>
 
-![User Collection Page mobile]()
+![My Shelf - User Collection Page mobile]()
 
-![User Collection Page tablet]()
+![My Shelf - User Collection Page tablet]()
 
-![User Collection Page 1080p]()
+![My Shelf - User Collection Page 1080p]()
 
-![User Collection Page 1440p]()
+![My Shelf - User Collection Page 1440p]()
 </details>
 
 
@@ -463,6 +471,8 @@ In the footer, the user can find links the owner social medial.
 ![Footer]()
 
 </details>
+
+### **Floating Action Button**
 
 ### **Custom Error Pages**
 
