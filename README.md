@@ -412,22 +412,28 @@ For Superusers the Profile Page serves as a way to access the Superuser Administ
 </details>
 
 
-### **Add item to Database Page**
+### **Add to Shelf Page**
+
+Add to Shelf Page provides the user with the ability to CREATE and store their entries in the database.
+Main content of the page is the form used to submit the data for each particular entry. The form uses client-side and server-side validation with Region, Name, Distillery fields being mandatory while Note and Image being optional.
+The form also contains a "Share with others" switch which is ON by default but gives the user the option to keep their entry private.
 
 *User stories solved by this feature:*
 
-* 
+* 6 - As a new user, I want to be able to add my own items to the database.
+* 19 - As a site owner, I want forms to be validated on the client side.
+* 20 - As a site owner, I want forms to be validated on the backend as a fallback.
 
 <details>
-  <summary> (Expand) Add item to Database Feature </summary>
+  <summary> (Expand) Add to Shelf Feature </summary>
 
-![Add item to Database Page mobile]()
+![Add to Shelf Page mobile]()
 
-![Add item to Database Page tablet]()
+![Add to Shelf Page tablet]()
 
-![Add item to Database Page 1080p]()
+![Add to Shelf Page 1080p]()
 
-![Add item to Database Page 1440p]()
+![Add to Shelf Page 1440p]()
 </details>
 
 
