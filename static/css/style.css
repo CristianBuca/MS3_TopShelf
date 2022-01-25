@@ -52,7 +52,7 @@ footer {
 /* Materialize component style override */
 
 .sidenav {
-    background-image: url("/static/images/side-nav.jpg");
+    background-image: url("/static/images/sidenav.jpg");
     background-position: center center;
     background-size: cover;
     padding-top: 10vh;
