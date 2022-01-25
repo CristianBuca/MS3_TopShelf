@@ -1,6 +1,6 @@
 # **Third Milestone Project - Backend Development - Code Institute**
 
-![Top Shelf Scotch](/static/icons/logo.png)
+![Top Shelf Scotch](/static/images/icons/logo.png)
 
 ## **You can find the deployed website** [**HERE**](https://ms3-top-shelf.herokuapp.com)
 
@@ -952,9 +952,8 @@ There are inevitable similarities between this project and the project from thes
 
 **Media**
 
-* Quiz questions/ answers and layout from [CoinTelegraph](https://cointelegraph.com/quiz/think-you-know-the-crypto-basics-take-our-quiz-to-find-out).
-* Quiz images from [Pexels](https://www.pexels.com/search/cryptocurrency/).
-* 404 Page background image from [Stockvault](https://www.stockvault.net).
+* Hero Image, Error page background image, default avatar and default item images from [Pexels](https://www.pexels.com/search/cryptocurrency/).
+* Individual bottle images and information sourced from [Whisky Shop](https://www.whiskyshop.com) and [Whisky Hunter](https://whiskyhunter.net)
 
 ### **Code Institute colleagues who's work I followed for guidance:**
 
