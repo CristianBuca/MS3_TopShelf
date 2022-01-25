@@ -66,7 +66,7 @@ can be picked up by the JQuery form validation plugin on client side.
 '''
 class AddStock(FlaskForm):
     name = StringField(
-        'Name', validators=[DataRequired(), Length(min=5, max=30)]
+        'Name', validators=[DataRequired(), Length(min=5, max=50)]
     )
     age = IntegerField(
         'Age', validators=[DataRequired()]
