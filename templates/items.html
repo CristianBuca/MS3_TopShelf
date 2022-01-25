@@ -35,9 +35,9 @@
                             <!-- Check if image link exists and if absent default picture is displayed -->
                             {% if item.image %}
                             <!-- Clicking on images triggers corresponding modal displaying the full image -->
-                                <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}">
+                                <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}" alt="Bottle of {{item.name}}">
                             {% else %}
-                                <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/item_default.jpg">
+                                <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/item_default.jpg" alt="default image">
                             {% endif %}
                         </div>
                         <div class="card-content">
@@ -68,9 +68,9 @@
                         <h4 class="center-align">{{ item.item_name }}</h4>
                         <!-- Check if image link exists and if absent default picture is displayed -->
                         {% if item.image %}
-                            <img data-target="image-{{ item._id }}" src="{{ item.image }}">
+                            <img data-target="image-{{ item._id }}" src="{{ item.image }}" alt="Bottle of {{item.name}}">
                         {% else %}
-                            <img data-target="image-{{ item._id }}" src="/static/images/item_default.jpg">
+                            <img data-target="image-{{ item._id }}" src="/static/images/item_default.jpg" alt="default image">
                         {% endif %}
                     </div>
                 </div>
