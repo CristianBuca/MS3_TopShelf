@@ -17,7 +17,7 @@ $("img").each( function ()
 	$.ajax({
 		url:$(this).attr('src'),
 		type:'HEAD',
-		async: false,
+		async: true,
 		error:
 			function(e)
 			{
