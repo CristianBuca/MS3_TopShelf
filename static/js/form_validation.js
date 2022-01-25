@@ -1,6 +1,4 @@
 // Client Side Form Validation is done with the Jquery Validate Plugin
-// Documentation for the plugin can be found at: https://jqueryvalidation.org/documentation/
-
 
 // Custom validator methods for the app's specifications
 
