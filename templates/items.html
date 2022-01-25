@@ -37,7 +37,7 @@
                             <!-- Clicking on images triggers corresponding modal displaying the full image -->
                                 <img data-target="image-{{ item._id }}" class="modal-trigger responsive-image" src="{{ item.image }}">
                             {% else %}
-                                <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/avatar_default.jpg">
+                                <img data-target="image-{{ item._id }}" class="modal-trigger" src="/static/images/item_default.jpg">
                             {% endif %}
                         </div>
                         <div class="card-content">
@@ -70,7 +70,7 @@
                         {% if item.image %}
                             <img data-target="image-{{ item._id }}" src="{{ item.image }}">
                         {% else %}
-                            <img data-target="image-{{ item._id }}" src="/static/images/avatar_default.jpg">
+                            <img data-target="image-{{ item._id }}" src="/static/images/item_default.jpg">
                         {% endif %}
                     </div>
                 </div>
