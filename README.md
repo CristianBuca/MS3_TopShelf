@@ -368,7 +368,6 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 *User stories solved by this feature:*
 
 * 7 - As a new user, I want to be able to view my collection in the database.
-* 8 - As a regular user, I want to be able to edit entries in my collection.
 * 9 - As a regular user, I want to be able to delete entries in my collection.
 
 <details>
@@ -382,6 +381,41 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 
 ![My Shelf - User Collection Page 1440p]()
 </details>
+
+
+### **Add to Shelf Page**
+
+Add to Shelf Page provides the user with the ability to CREATE and store their entries in the database.
+Main content of the page is the form used to submit the data for each particular entry. The form uses client-side and server-side validation with Region, Name, Distillery fields being mandatory while Note and Image being optional.
+The form also contains a "Share with others" switch which is ON by default but gives the user the option to keep their entry private.
+
+*User stories solved by this feature:*
+
+* 6 - As a new user, I want to be able to add my own items to the database.
+* 19 - As a site owner, I want forms to be validated on the client side.
+* 20 - As a site owner, I want forms to be validated on the backend as a fallback.
+
+<details>
+  <summary> (Expand) Add to Shelf Feature </summary>
+
+![Add to Shelf Page mobile]()
+
+![Add to Shelf Page tablet]()
+
+![Add to Shelf Page 1080p]()
+
+![Add to Shelf Page 1440p]()
+</details>
+
+
+### **Change Stock Page**
+
+This page is accessed through the "Change" button present on each item's card in the My Shelf Page.
+It consists of a form populated with the current information associated with the item the user is trying to UPDATE. Form is validated based on the same criteria as the Add to Stock form and upon submission the user is able to UPDATE the item in the database.
+
+*User stories solved by this feature:*
+
+* 8 - As a regular user, I want to be able to edit entries in my collection.
 
 
 ### **Profile Page**
@@ -409,31 +443,6 @@ For Superusers the Profile Page serves as a way to access the Superuser Administ
 ![Profile Page 1080p]()
 
 ![Profile Page 1440p]()
-</details>
-
-
-### **Add to Shelf Page**
-
-Add to Shelf Page provides the user with the ability to CREATE and store their entries in the database.
-Main content of the page is the form used to submit the data for each particular entry. The form uses client-side and server-side validation with Region, Name, Distillery fields being mandatory while Note and Image being optional.
-The form also contains a "Share with others" switch which is ON by default but gives the user the option to keep their entry private.
-
-*User stories solved by this feature:*
-
-* 6 - As a new user, I want to be able to add my own items to the database.
-* 19 - As a site owner, I want forms to be validated on the client side.
-* 20 - As a site owner, I want forms to be validated on the backend as a fallback.
-
-<details>
-  <summary> (Expand) Add to Shelf Feature </summary>
-
-![Add to Shelf Page mobile]()
-
-![Add to Shelf Page tablet]()
-
-![Add to Shelf Page 1080p]()
-
-![Add to Shelf Page 1440p]()
 </details>
 
 
