@@ -37,7 +37,7 @@
                         <img src="/static/images/icons/logo.png" alt="Logo">
                     </a>
                     <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-                    <ul class="hide-on-med-and-down right ">
+                    <ul class="hide-on-med-and-down right ext-links">
                         <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('get_items') }}">All Shelves</a></li>
                         <!-- Check session cookies if user is logged in and display Navbar links accordingly -->
                         {% if session.user %}
@@ -110,16 +110,16 @@
                 <div class="media-links col s12 center-align">
                     <a href="https://github.com/CristianBuca" target="_blank" rel="noopener" 
                         aria-label="Find us on Github (link opens in a new tab)">
-                        <i class="fab fa-github-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        <i class="fab fa-github-square blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener" 
                         aria-label="Connect with us on LinkedIn (link opens in a new tab)">
-                        <i class="fab fa-linkedin medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        <i class="fab fa-linkedinblue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                     <a href="https://www.facebook.com" target="_blank" rel="noopener" 
                         aria-label="Find us in Facebook (link opens in a new tab">
-                        <i class="fab fa-facebook-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        <i class="fab fa-facebook-square blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                     <a href="https://www.twitter.com" target="_blank" rel="noopener" 
                         aria-label="Find us on Twitter (link opens in a new tab">
-                        <i class="fab fa-twitter-square medium blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
+                        <i class="fab fa-twitter-square blue-grey-text text-darken-4 text-shadow hoverable"></i></a>
                 </div>
             </div>
             <div class="row footer-copyright">

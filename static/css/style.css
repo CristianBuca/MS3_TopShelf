@@ -32,6 +32,10 @@ footer {
     height: 30vh;
 }
 
+.media-links a i {
+    font-size: 3rem;
+}
+
 .footer-copyright {
     width: 100%;
     position: absolute;
@@ -47,6 +51,10 @@ footer {
     width: 8rem;
     height: 4rem;
     font-size: 0;
+}
+
+.ext-links {
+    margin-right: 5%;
 }
 
 /* Materialize component style override */
