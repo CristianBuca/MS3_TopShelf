@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;400;600;700&display=swap');
 
 /* Override Materialize components fonts */
-body, button, .btn, .card, .card-title {
+body, button, .btn, .card {
     font-family: 'Barlow Condensed' !important;
     font-weight: 400 !important;
 }
@@ -64,6 +64,11 @@ footer {
     background-position: center center;
     background-size: cover;
     padding-top: 10vh;
+}
+
+.card-title {
+    font-family: 'Barlow Condensed' !important;
+    font-weight: 600 !important;
 }
 
 .card-content {
