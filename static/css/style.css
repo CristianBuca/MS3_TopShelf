@@ -3,7 +3,7 @@
 /* Override Materialize components fonts */
 body, button, .btn, .card {
     font-family: 'Barlow Condensed' !important;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
 }
 
 .image-wrapper {
@@ -45,12 +45,13 @@ footer {
 }
 
 /* Navbar styles */
+
 .brand-logo {
     top: 35%;
     left: 5%;
     width: 8rem;
     height: 4rem;
-    font-size: 0;
+    font-size: 0 !important;
 }
 
 .ext-links {
