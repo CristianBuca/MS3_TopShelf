@@ -71,7 +71,58 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 
+### Accessibility Evaluation was carried out with [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org).
 
+<details>
+  <summary> (expand) Landing Page WAVE Validation found 0 errors:</summary>
+
+![Landing Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_landing.png)
+</details>
+
+<details>
+  <summary> (expand) Login Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
+
+![Login Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_login.png)
+</details>
+
+<details>
+  <summary> (expand) Registration Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
+
+![Registration WAVE WAVE Validation](/docs/test_img/wave_validator/wave_valid_register.png)
+</details>
+
+<details>
+  <summary> (expand) My Shelf Page WAVE Validation found 0 errors:</summary>
+
+![My Shelf Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_myshelf.png)
+</details>
+
+<details>
+  <summary> (expand) Add to Shelf Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
+
+![Add to Shelf Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_addtoshelf.png)
+</details>
+
+<details>
+  <summary> (expand) Profile Page WAVE Validation found 0 errors:</summary>
+
+![Profile Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_profile.png)
+</details>
+
+<details>
+  <summary> (expand) Superuser Page WAVE Validation found 0 errors:</summary>
+
+![Superuser Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_superuser.png)
+</details>
+
+<details>
+  <summary> (expand) Change Stock Page WAVE Validation found 0 errors:</summary>
+
+![Change Stock Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_changestock.png)
+</details>
+
+
+[Back to Top](#Testing-Documentation)
 
 
 ### Performance Tests were carried out using Chrome Lighthouse DevTools.
