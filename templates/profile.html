@@ -99,8 +99,8 @@
                                     <input class="form-control" id="avatar" name="avatar" value="{{ user.avatar }}" aria-describedby="avatar">
                                 </div>
                                 <!-- Form submit button -->
-                                <div class="right light-green darken-3 waves-effect waves-light hoverable">
-                                    {{ form.submit(class="btn") }}
+                                <div class="right">
+                                    {{ form.submit(class="btn light-green darken-3 waves-effect waves-light hoverable black-text") }}
                                 </div>
                                 <!-- Cancel button return user to personal collection -->
                                 <div class="left">
@@ -120,7 +120,7 @@
     {% if user.superuser %}
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large light-green darken-3 black-text waves-effect waves-block waves-light" href="{{ url_for('superuser') }}">
-                <i class="fas fa-tools"></i>
+                <i class="fas fa-tools"></i>Administration
             </a>
         </div>
     {% endif %}}

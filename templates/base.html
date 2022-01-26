@@ -36,7 +36,7 @@
                     <a href="{{ url_for('get_items') }}" class="brand-logo hoverable" aria-label="Site Logo">
                         <img src="/static/images/icons/logo.png" alt="Logo">Logo
                     </a>
-                    <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                    <a href="{{ url_for('get_items') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i>Sidenav</a>
                     <ul class="hide-on-med-and-down right ext-links">
                         <li><a class="yellow-text text-lighten-5 hoverable" href="{{ url_for('get_items') }}">All Shelves</a></li>
                         <!-- Check session cookies if user is logged in and display Navbar links accordingly -->
@@ -88,9 +88,8 @@
             <div class="fixed-action-btn">
                 <a class="btn-floating btn-large right hoverable"><i class="fas fa-user-cog deep-orange darken-4"></i></a>
                 <ul>
-                    <li><a class="btn-floating green hoverable" href="#"><i class="fas fa-home deep-orange darken-4"></i></a></li>
-                    <li><a class="btn-floating blue hoverable" href="{{ url_for('logout') }}">
-                        <i class="fas fa-sign-out-alt deep-orange darken-4"></i></a></li>
+                    <li><a class="btn-floating hoverable" href="#"><i class="fas fa-home deep-orange darken-4"></i>Go to Top</a></li>
+                    <li><a class="btn-floating hoverable" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt deep-orange darken-4"></i>Logout</a></li>
                 </ul>
             </div>
         {% endif %}
