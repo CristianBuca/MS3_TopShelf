@@ -1,38 +1,66 @@
-# Testing and Problems Solved
+# Testing Documentation
 
 [Return to Readme.md](https://github.com/CristianBuca/MS3_TopShelf/blob/main/README.md)
 
 Link to Live Site can be found [HERE](https://ms3-top-shelf.herokuapp.com/)
 
-## Testing of User Stories
 
 ## HTML Validation
 
 ### HTML validation was carried out with [W3 Validator](https://validator.w3.org).
 
-<details>
-  <summary> (expand) Home Page HTML Validation found 0 errors:</summary>
+_The same 2 warnings are present on all pages dues to missing headings on sections._
 
-![Home Page HTML Validation](/docs/test_img/html_validator/html_valid_index.png)
+<details>
+  <summary> (expand) Landing Page HTML Validation found 0 errors:</summary>
+
+![Landing Page HTML Validation](/docs/test_img/html_validator/html_valid_landing.png)
 </details>
 
 <details>
-  <summary> (expand) Quiz Page HTML Validation found 0 errors, 2 warnings:</summary>
+  <summary> (expand) Login Page HTML Validation found 0 errors:</summary>
 
-![Quiz Page HTML Validation](/docs/test_img/html_validator/html_valid_quiz.png)
+![Login Page HTML Validation](/docs/test_img/html_validator/html_valid_login.png)
 </details>
 
 <details>
-  <summary> (expand) Portfolio Page HTML Validation found 0 errors, 2 warnings:</summary>
+  <summary> (expand) Registration Page HTML Validation found 0 errors:</summary>
 
-![Portfolio Page HTML Validation](/docs/test_img/html_validator/html_valid_portfolio.png)
+![Registration Page HTML Validation](/docs/test_img/html_validator/html_valid_register.png)
 </details>
 
 <details>
-  <summary> (expand) 404 Page HTML Validation found 0 errors:</summary>
+  <summary> (expand) My Shelf Page HTML Validation found 0 errors:</summary>
 
-![404 Page HTML Validation](/docs/test_img/html_validator/html_valid_404.png)
+![My Shelf Page HTML Validation](/docs/test_img/html_validator/html_valid_myshelf.png)
 </details>
+
+<details>
+  <summary> (expand) Add to Shelf Page HTML Validation found 0 errors:</summary>
+
+![Add to Shelf Page HTML Validation](/docs/test_img/html_validator/html_valid_addtoshelf.png)
+</details>
+
+<details>
+  <summary> (expand) Profile Page HTML Validation found 0 errors:</summary>
+
+![Profile Page HTML Validation](/docs/test_img/html_validator/html_valid_profile.png)
+</details>
+
+<details>
+  <summary> (expand) Superuser Page HTML Validation found 0 errors:</summary>
+
+![Superuser Page HTML Validation](/docs/test_img/html_validator/html_valid_superuser.png)
+</details>
+
+<details>
+  <summary> (expand) Change Stock Page HTML Validation found 0 errors:</summary>
+
+![Change Stock Page HTML Validation](/docs/test_img/html_validator/html_valid_changestock.png)
+</details>
+
+
+[Back to Top](#Testing-Documentation)
 
 ### CSS validation was carried out with [W3 Jigsaw](https://jigsaw.w3.org/css-validator/).
 
@@ -42,31 +70,9 @@ Link to Live Site can be found [HERE](https://ms3-top-shelf.herokuapp.com/)
 ![CSS Validation](/docs/test_img/css_validator/css_valid.png)
 </details>
 
-### Accessibility Evaluation was carried out with [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org).
 
-<details>
-  <summary> (expand) Home Page WAVE Validation found 0 errors, 2 alerts:</summary>
 
-![Home Page HTML Validation](/docs/test_img/wave_validator/wave_index.png)
-</details>
 
-<details>
-  <summary> (expand) Quiz Page WAVE Validation found 0 errors, 3 alerts:</summary>
-
-![Quiz Page HTML Validation](/docs/test_img/wave_validator/wave_quiz.png)
-</details>
-
-<details>
-  <summary> (expand) Portfolio Page WAVE Validation found 0 errors, 3 alerts:</summary>
-
-![Portfolio Page HTML Validation](/docs/test_img/wave_validator/wave_portfolio.png)
-</details>
-
-<details>
-  <summary> (expand) 404 Page WAVE Validation found 0 errors, 2 alerts:</summary>
-
-![404 Page HTML Validation](/docs/test_img/wave_validator/wave_404.png)
-</details>
 
 ### Performance Tests were carried out using Chrome Lighthouse DevTools.
 
@@ -329,3 +335,5 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 
 ## **Bugs**
+
+
