@@ -5,15 +5,15 @@
 // Uses Regex to define email format
 $.validator.methods.email = function( value, element ) {
     return this.optional( element ) || /[a-z]+@[a-z]+\.[a-z]+/.test( value );
-}
+};
 // Uses regex to ensure password includes at least one uppercase letter and one number
 $.validator.methods.pass = function( value, element ) {
     return this.optional( element ) || /^(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,}).{5,}$/.test( value );
-}
+};
 // Uses regex to exclude special characters from username
 $.validator.methods.user = function( value, element ) {
     return this.optional( element ) || /^(?=.*[a-z])\w{3,}$/.test( value );
-}
+};
 
 // Calls the validate method on the registration form
 $('.reg-form').validate({
@@ -69,4 +69,4 @@ $('.login-form').validate({
 
 // Calls the validate method on the add stock Form
 // No custom rules or messages are required
-$('.add-stock-form').validate()
+$('.add-stock-form').validate();
