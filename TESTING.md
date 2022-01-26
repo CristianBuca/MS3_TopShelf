@@ -88,7 +88,7 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 <details>
   <summary> (expand) Registration Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
 
-![Registration WAVE WAVE Validation](/docs/test_img/wave_validator/wave_valid_register.png)
+![Registration Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_register.png)
 </details>
 
 <details>
@@ -128,27 +128,51 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ### Performance Tests were carried out using Chrome Lighthouse DevTools.
 
 <details>
-  <summary> (expand) Home Page Lighthouse Test:</summary>
+  <summary> (expand) Landing Page Lighthouse Test:</summary>
 
-![Home Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_index.PNG)
+![Landing Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_landing.jpg)
 </details>
 
 <details>
-  <summary> (expand) Quiz Page Lighthouse Test:</summary>
+  <summary> (expand) Login Page Lighthouse Test:</summary>
 
-![Quiz Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_quiz.PNG)
+![Login Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_login.jpg)
 </details>
 
 <details>
-  <summary> (expand) Portfolio Page Lighthouse Test:</summary>
+  <summary> (expand) Registration Page Lighthouse Test:</summary>
 
-![Portfolio Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_portfolio.PNG)
+![Registration Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_register.jpg)
 </details>
 
 <details>
-  <summary> (expand) 404 Page Lighthouse Test:</summary>
+  <summary> (expand) My Shelf Page Lighthouse Test:</summary>
 
-![404 Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_404.PNG)
+![My Shelf Lighthouse Test](/docs/test_img/lighthouse/lighthouse_myshelf.jpg)
+</details>
+
+<details>
+  <summary> (expand) Add to Shelf Page Lighthouse Test:</summary>
+
+![Add to Shelf Lighthouse Test](/docs/test_img/lighthouse/lighthouse_addtoshelf.jpg)
+</details>
+
+<details>
+  <summary> (expand) Profile Page Lighthouse Test:</summary>
+
+![Profile Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_profile.jpg)
+</details>
+
+<details>
+  <summary> (expand) Superuser Page Lighthouse Test:</summary>
+
+![Superuser Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_superuser.jpg)
+</details>
+
+<details>
+  <summary> (expand) Change Stock Page Lighthouse Test:</summary>
+
+![Change Stock Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_changeitem.jpg)
 </details>
 
 ### JavaScript Code Tests were carried out with [JShint](https://jshint.com).
