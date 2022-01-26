@@ -180,15 +180,28 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 <details>
   <summary> (expand) script.js JSHint found 0 errors:</summary>
 
-![Script.js](/docs/test_img/jshint_validator/jshint_valid_script.png)
+![script.js JSHint Test](/docs/test_img/jshint_validator/jshint_valid_script.png)
 </details>
 
 <details>
   <summary> (expand) form_validation.js JSHint found 0 errors:</summary>
 
-![form_validation.js script](/docs/test_img/jshint_validator/jshint_valid_form.png)
+![form_validation.js JSHint Test](/docs/test_img/jshint_validator/jshint_valid_form.png)
 </details>
 
+### Python Code Tests were carried out with [Pep8](http://pep8online.com)
+
+<details>
+  <summary> (expand) app.py Pep8 found 0 errors:</summary>
+
+![app.py Pep8 Test](/docs/test_img/pep8_valid/pep8_valid_app.png)
+</details>
+
+<details>
+  <summary> (expand) forms.py Pep8 found 0 errors:</summary>
+
+![forms.py Pep8 Test](/docs/test_img/pep8_valid/pep8_valid_forms.png)
+</details>
 
 ### Devices used for physical testing: 
 
@@ -200,31 +213,35 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 
 Application performs as intended on all devices.
 
+
+[Back to Top](#Testing-Documentation)
+
+
 ## **Testing of User Stories**
 
 _GitHub does not allow videos hosted in the local repository to be played on the repository page.
 Although when viewing on GitHub these videos appear fine, they might not be available in this format if this project is forked. Please refer to the Local Links if needed._
 
 
-### 1. As a new user, I want to see recent data on major crypto-currencies by market capitalization.
+### 1. As a new user, I want to be able to register an account.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Coin Badges on Landing Page | Load Landing Page. Hover over individual badges. | View current price for each currency. View 24 hour price highs and lows. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 1 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140587509-0f297a4c-b235-48f1-add7-e797432f4f5a.mp4
+ 
 
   [Local Link](docs/test_user_stories/user_story_1_test.mp4)
 </details>
 
-### 2. As a new user, I want to add personal crypto-currency assets.
+### 2. As a new user, I want to be able to login and access my account.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Portfolio Page | Click the "Portfolio" Link in navbar. Click on Asset Input Field. Input symbol, name or select from list the asset. Click on "Enter amount" Input Field. Enter amount. Click "Add" button. | See the asset added to the table. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 2 testing video) </summary>
@@ -234,11 +251,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_2_test.mp4)
 </details>
 
-### 3. As a new user, I want to see the asset valuation.
+### 3. As a new user, I want to be able to logout.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Asset table on Portfolio Page | Assets added as described in User Story 2 are stored in Local Storage. Refresh Page, view table containing assets. | View current price and valuation for each asset added. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 3 testing video) </summary>
@@ -248,11 +265,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_3_test.mp4)
 </details>
 
-### 4. As a new user, I want to see the total portfolio valuation.
+### 4. As a new user, I want to view collections in the database.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Current Portfolio Value section at the top of Portfolio Page | Refresh Page. View total portfolio valuation. | See the total valuation of all assets. | Works as expected.
+
 
 <details>
   <summary> (Expand - User Story 4 testing video) </summary>
@@ -262,11 +279,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_4_test.mp4)
 </details>
 
-### 5. As a new user, I want to learn new information relating to the blockchain.
+5. As a new user, I want to be able to search in the database.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Quiz Page | Click the Quiz Link on the navigation bar. Click the start button on the quiz. Play the game. | Find information related to the blockchain. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 5 testing video) </summary>
@@ -276,11 +293,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_5_test.mp4)
 </details>
 
-### 6. As a new user, I want to learn more about the knowledge quiz.
+### 6. As a new user, I want to be able to add my own items to the database.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Quiz info button in the quiz title | Click on the information button. | See modal with information about the quiz. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 6 testing video) </summary>
@@ -290,11 +307,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_6_test.mp4)
 </details>
 
-### 7. As a regular user, I want to store my portfolio data.
+### 7. As a new user, I want to be able to view my collection in the database.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Add asset section on portfolio page | Click on portfolio link in navigation bar. Add asset as described in User Story 2. Close page / browser. Open page again. | To see added assets persist through different browsing session. See added data stored in Local Storage | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 7 testing video) </summary>
@@ -304,11 +321,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_7_test.mp4)
 </details>
 
-### 8. As a regular user, I want the option to change the current webapp color theme.
+### 8. As a regular user, I want to be able to edit entries in my collection.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Theme Switch in the Navbar | Click the theme switch in the Navbar | Page color scheme to change | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 8 testing video) </summary>
@@ -318,11 +335,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_8_test.mp4)
 </details>
 
-### 9. As a regular user, I want the ability to edit previous portfolio entries.
+### 9. As a regular user, I want to be able to delete entries in my collection.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Portfolio Page input fields and trash bin icons | To change the Holding amount of an existing asset, select the same asset in the dropdown menu and input new amount. To remove asset from table click the trash bin icon in the asset's table row. | Updated amount to show in table when updating. Asset to be removed when clicking trash bin. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 9 testing video) </summary>
@@ -332,11 +349,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_9_test.mp4)
 </details>
 
-### 10. As a regular user, I want to test the previously acquired knowledge.
+### 10. As a regular user, I want to be able to change my password.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| End screen on quiz game | Click on try again button at the end of the quiz | The quiz game starts over and offers the chance to gain a better score and better completion time | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 10 testing video) </summary>
@@ -346,11 +363,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_10_test.mp4)
 </details>
 
-### 11. As a site owner, I want the knowledge quiz to be versatile and easy to update.
+### 11. As a regular user, I want to be able to change my avatar.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| quiz_data.js script housing all the questions and answers for the quiz | Open project repository. Locate quiz_data.js in assets/js/. Open quiz_data.js and replace questions and answers. The quiz data is displayed dynamically thus making it easy for variable number of answers to be displayed for one question and not being hard coded in HTML to a specific number. | View new questions being displayed in the quiz. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 11 testing video) </summary>
@@ -360,11 +377,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_11_test.mp4)
 </details>
 
-### 12. As a site owner, I want to provide the user a way to get in contact.
+### 12. As a superuser, I want to be able to search the database for users and entries.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Email modal that uses EmailJS API | Click on "Get in touch" Link in the Navbar. Fill in the input fields. Click Send | Validation when the API sends the message to the site owners inbox. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 12 testing video) </summary>
@@ -374,11 +391,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_12_test.mp4)
 </details>
 
-### 13. As a site owner, I want to showcase my social media.
+### 13. As a superuser, I want to be able to remove users from the database.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Social media links in the page footer | Click on the social media icons in the page footer | Social media pages to open in new tab. | Works as expected |
+
 
 <details>
   <summary> (Expand - User Story 13 testing video) </summary>
@@ -388,6 +405,103 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_13_test.mp4)
 </details>
 
+### 14. As a superuser, I want to be able to remove user created entries from the database.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 14 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
+
+### 15. As a site owner, I want the app to be responsive.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 15 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
+
+### 16. As a site owner, I want to have users with admin privileges.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 16 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
+
+### 17. As a site owner, I want to showcase my social media.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 17 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
+
+### 18. As a site owner, I want to provide feedback to the user when errors occur.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 18 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
+
+### 19. As a site owner, I want forms to be validated on the client side.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 19 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
+
+### 20. As a site owner, I want forms to be validated on the backend as a fallback.
+
+|Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+
+
+<details>
+  <summary> (Expand - User Story 20 testing video) </summary>
+
+  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
+
+  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+</details>
 
 ## **Bugs**
 
