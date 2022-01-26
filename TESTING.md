@@ -505,4 +505,82 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 ## **Bugs**
 
+**Bug 1**: 
 
+```
+pymongo.errors.ServerSelectionTimeoutError: myfirstcluster-shard-00-01.leode.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129),myfirstcluster-shard-00-02.leode.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129),myfirstcluster-shard-00-00.leode.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129), Timeout: 30s, Topology Description: <TopologyDescription id: 61ccc65dc46da4714b1e084e, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('myfirstcluster-shard-00-00.leode.mongodb.net', 
+27017) server_type: Unknown, rtt: None, error=AutoReconnect('myfirstcluster-shard-00-00.leode.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)')>, <ServerDescription ('myfirstcluster-shard-00-01.leode.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('myfirstcluster-shard-00-01.leode.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)')>, <ServerDescription ('myfirstcluster-shard-00-02.leode.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('myfirstcluster-shard-00-02.leode.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)')>]>
+
+```
+
+**Try**: Code Institute Tutor came across a thread stating that pyMongo and Python v10 might throw SSL certificate errors. Suggested installing virtual environments and trying different versions of Python. Unfortunately that did not solve the issue but did help with overall development process.
+
+**Fix**: Found the solution [HERE](https://www.mongodb.com/community/forums/t/keep-getting-serverselectiontimeouterror/126190/12). I needed to download new certificates for Windows.
+
+**Bug 2**: Cookie Key Error when running this route
+
+```python
+@app.route("/profile/<username>", methods=["GET", "POST"])
+	def profile(username):
+	    #grab the session user's username from db
+	    username = mongo.db.users.find_one(
+	        {"username": session["user"]})["username"]
+	    
+	    if session["user"]:
+	        return render_template("profile.html", username=username)
+	
+
+	    return redirect(url_for("login"))
+```
+**Fix**: 
+
+```python
+if session.get('user') is not None:
+```
+
+**Bug 3**: Confirmation modal for removal of items from database removes first item on list and not item that activates the modal.
+
+**Fix**: Change modal id and the data target that calls the modal to be dynamic based on item ID.
+
+```html
+<button data-target="remove-{{ item._id }}" class="btn modal-trigger">Remove from Shelf</button>
+<div id="remove-{{ item._id }}" class="modal">
+```
+
+**Problem:** 
+
+Images for items or user avatars are entered by the user in the form of external links. If external link is broken or user decides to enter a random string instead of functional link, I wanted to replace the missing image with a default image for display purposes.
+
+**Try:**
+
+```javascript
+$('img').on('error', function() {
+    $(this).attr('src', '/static/images/avatar_default.jpg');
+})
+```
+
+Unfortunately this would not trigger 100% of the time. It behaved differently on different browsers but most of the time it would only work after a page refresh.
+
+**Solution:**
+
+Use Ajax to check if there is a 404 status on each <img> field and replace the source:
+
+```javascript
+$("img").each( function () 
+{
+    var _this = $(this);
+    
+    $.ajax({
+        url:$(this).attr('src'),
+        type:'HEAD',
+        async: false,
+        error:
+            function(e)
+            {
+                if (e.status == '404') {
+                    $(_this).attr('src', '/static/images/avatar_default.jpg');
+                }
+            }
+    });
+});
+```
