@@ -18,13 +18,13 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 <details>
-  <summary> (expand) Login Page HTML Validation found 0 errors:</summary>
+  <summary> (expand) Login Page HTML Validation found 1 false error due to wtForms handling the form's action on the backend::</summary>
 
 ![Login Page HTML Validation](/docs/test_img/html_validator/html_valid_login.png)
 </details>
 
 <details>
-  <summary> (expand) Registration Page HTML Validation found 0 errors:</summary>
+  <summary> (expand) Registration Page HTML Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
 
 ![Registration Page HTML Validation](/docs/test_img/html_validator/html_valid_register.png)
 </details>
@@ -36,7 +36,7 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 <details>
-  <summary> (expand) Add to Shelf Page HTML Validation found 0 errors:</summary>
+  <summary> (expand) Add to Shelf Page HTML Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
 
 ![Add to Shelf Page HTML Validation](/docs/test_img/html_validator/html_valid_addtoshelf.png)
 </details>
@@ -60,8 +60,6 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 
-[Back to Top](#Testing-Documentation)
-
 ### CSS validation was carried out with [W3 Jigsaw](https://jigsaw.w3.org/css-validator/).
 
 <details>
@@ -80,13 +78,13 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 <details>
-  <summary> (expand) Login Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
+  <summary> (expand) Login Page WAVE Validation found 0 errors:</summary>
 
 ![Login Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_login.png)
 </details>
 
 <details>
-  <summary> (expand) Registration Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
+  <summary> (expand) Registration Page WAVE Validation found 0 errors:</summary>
 
 ![Registration Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_register.png)
 </details>
@@ -98,7 +96,7 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 <details>
-  <summary> (expand) Add to Shelf Page WAVE Validation found 1 false error due to wtForms handling the form's action on the backend:</summary>
+  <summary> (expand) Add to Shelf Page WAVE Validation found 0 errors:</summary>
 
 ![Add to Shelf Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_addtoshelf.png)
 </details>
@@ -175,38 +173,20 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![Change Stock Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_changeitem.jpg)
 </details>
 
+
 ### JavaScript Code Tests were carried out with [JShint](https://jshint.com).
 
-JSHint warnings are due to the use of shorthand for IF statements and the use of JQuery where JSHint interprets "$" as an unknown variable.
 
 <details>
-  <summary> (expand) email.js JSHint found 0 errors:</summary>
+  <summary> (expand) script.js JSHint found 0 errors:</summary>
 
-![EmailJS script](/docs/test_img/jshint_validator/jshint_valid_email.png)
+![Script.js](/docs/test_img/jshint_validator/jshint_valid_script.png)
 </details>
 
 <details>
-  <summary> (expand) home.js JSHint found 0 errors 1 warning:</summary>
+  <summary> (expand) form_validation.js JSHint found 0 errors:</summary>
 
-![EmailJS script](/docs/test_img/jshint_validator/jshint_valid_home.png)
-</details>
-
-<details>
-  <summary> (expand) quiz.js JSHint found 0 errors 1 warning:</summary>
-
-![EmailJS script](/docs/test_img/jshint_validator/jshint_valid_quiz.png)
-</details>
-
-<details>
-  <summary> (expand) quiz_data.js JSHint found 0 errors:</summary>
-
-![EmailJS script](/docs/test_img/jshint_validator/jshint_valid_quiz_data.png)
-</details>
-
-<details>
-  <summary> (expand) portfolio.js JSHint found 0 errors, 3 warnings:</summary>
-
-![EmailJS script](/docs/test_img/jshint_validator/jshint_valid_portfolio.png)
+![form_validation.js script](/docs/test_img/jshint_validator/jshint_valid_form.png)
 </details>
 
 
