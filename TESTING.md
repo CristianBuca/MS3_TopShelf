@@ -313,6 +313,9 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 | --- | --- | --- | --- |
 
 
+[Back to Top](#Testing-Documentation)
+
+
 <details>
   <summary> (Expand - User Story 7 testing video) </summary>
 
@@ -376,6 +379,10 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   [Local Link](docs/test_user_stories/user_story_11_test.mp4)
 </details>
+
+
+[Back to Top](#Testing-Documentation)
+
 
 ### 12. As a superuser, I want to be able to search the database for users and entries.
 
@@ -503,6 +510,10 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_13_test.mp4)
 </details>
 
+
+[Back to Top](#Testing-Documentation)
+
+
 ## **Bugs**
 
 **Bug 1**: 
@@ -584,3 +595,6 @@ $("img").each( function ()
     });
 });
 ```
+
+[Back to Top](#Testing-Documentation)
+
