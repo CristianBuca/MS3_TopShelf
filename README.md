@@ -527,11 +527,11 @@ Messages being flashed to the user as feedback for their interactions with the a
 <details>
   <summary> (Expand) Navbar </summary>
 
-![Expanded Navbar]()
+![Collapsed Navbar on mobile devices](/docs/features/navbar_collapse.jpg)
 
-![Collapsed Navbar on mobile devices]()
+![Collapsed Navbar on mobile devices with sidenav](/docs/features/navbar_collapse_sidenav.jpg)
 
-![Collapsed Navbar on mobile devices with sidenav]()
+![Expanded Navbar](/docs/features/navbar_expand.jpg)
 </details>
 
 
