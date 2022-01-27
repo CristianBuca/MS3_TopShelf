@@ -392,13 +392,13 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 <details>
   <summary> (Expand) My Shelf - User Collection Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![My Shelf - User Collection Page mobile]()
+![My Shelf - User Collection Page mobile](/docs/features/myshelf_mobile.jpg)
 
-![My Shelf - User Collection Page tablet]()
+![My Shelf - User Collection Page tablet](/docs/features/myshelf_tablet.jpg)
 
-![My Shelf - User Collection Page 1080p]()
+![My Shelf - User Collection Page 1080p](/docs/features/myshelf_1080.jpg)
 
-![My Shelf - User Collection Page 1440p]()
+![My Shelf - User Collection Page 1440p](/docs/features/myshelf_1440.jpg)
 </details>
 
 
