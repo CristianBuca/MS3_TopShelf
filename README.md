@@ -499,13 +499,13 @@ Superusers are not able to see or delete other Superusers.
 <details>
   <summary> (Expand) Admin Management Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![Superuser Management Page Page mobile]()
+![Superuser Management Page Page mobile](/docs/features/superuser_mobile.jpg)
 
-![Superuser Management Page Page tablet]()
+![Superuser Management Page Page tablet](/docs/features/superuser_tablet.jpg)
 
-![Superuser Management Page Page 1080p]()
+![Superuser Management Page Page 1080p](/docs/features/superuser_1080.jpg)
 
-![Superuser Management Page Page 1440p]()
+![Superuser Management Page Page 1440p](/docs/features/superuser_1440.jpg)
 </details>
 
 
