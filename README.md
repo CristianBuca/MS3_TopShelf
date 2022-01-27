@@ -313,13 +313,13 @@ Main content of the page is comprised of a card grid that is responsive to the u
 <details>
   <summary> (Expand) Landing Page on different device widths.</summary>
 
-![Landing Page on mobile]()
+![Landing Page on mobile](/docs/features/landing_mobile.jpg)
 
-![Landing Page on tablet]()
+![Landing Page on tablet](/docs/features/landing_tablet.jpg)
 
-![Landing Page on 1080p]()
+![Landing Page on 1080p](/docs/features/landing_1080.jpg)
 
-![Landing Page on 1440p]()
+![Landing Page on 1440p](/docs/features/landing_1440.jpg)
 </details>
 
 
