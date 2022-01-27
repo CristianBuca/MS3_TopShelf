@@ -546,7 +546,7 @@ In the footer, the user can find links the owner's social media.
 <details>
   <summary> (Expand) Footer </summary>
 
-![Footer]()
+![Footer](/docs/features/footer.jpg)
 
 </details>
 
@@ -563,9 +563,9 @@ While on their profile page, Superusers will find the regular floating action bu
 <details>
   <summary> (Expand) Floating Action Button </summary>
 
-![Floating Action Button]()
+![Floating Action Button](/docs/features/fab.jpg)
 
-![Floating Action Button Superuser]()
+![Floating Action Button Superuser](/docs/features/fab_superuser.jpg)
 
 </details>
 
@@ -573,40 +573,25 @@ While on their profile page, Superusers will find the regular floating action bu
 
 The Error Pages are displayed in case an error occurs on client, server or database side. It provides the user with the ability to go back to one of the webapp pages and maintains user engagement.
 Each error page displays it's specific error in the title. The user can still use the app's navbar to navigate or click the big button in the middle of the page to return to the Landing Page.
+The errors that have specific routes on backend are:
+
+* 400 Bad Request,
+* 401 Unauthorized (RFC 7235),
+* 404 Not Found,
+* 405 Method Not Allowed,
+* 500 Internal Server Error
 
 *User stories solved by this feature:*
 
 * 18 - As a site owner, I want to provide feedback to the user when errors occur.
 
 <details>
-  <summary> (expand) 400 Error Page</summary>
+  <summary> (expand) Error Page</summary>
 
-![400 Page]()
+![Error Page](/docs/features/error.jpg)
 </details>
 
 <details>
-  <summary> (expand) 401 Error Page</summary>
-
-![401 Page]()
-</details>
-
-<details>
-  <summary> (expand) 404 Error Page</summary>
-
-![404 Page]()
-</details>
-
-<details>
-  <summary> (expand) 405 Error Page</summary>
-
-![405 Page]()
-</details>
-
-<details>
-  <summary> (expand) 500 Error Page</summary>
-
-![500 Page]()
-</details>
 
 
 [Back to Top](#Top-shelf)
