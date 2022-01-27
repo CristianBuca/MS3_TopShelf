@@ -420,13 +420,13 @@ The form also contains a "Share with others" switch which is ON by default but g
 <details>
   <summary> (Expand) Add to Shelf Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![Add to Shelf Page mobile]()
+![Add to Shelf Page mobile](/docs/features/addstock_mobile.jpg)
 
-![Add to Shelf Page tablet]()
+![Add to Shelf Page tablet](/docs/features/addstock_tablet.jpg)
 
-![Add to Shelf Page 1080p]()
+![Add to Shelf Page 1080p](/docs/features/addstock_1080.jpg)
 
-![Add to Shelf Page 1440p]()
+![Add to Shelf Page 1440p](/docs/features/addstock_1440.jpg)
 </details>
 
 
