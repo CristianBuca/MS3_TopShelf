@@ -623,26 +623,61 @@ Documentation on all bugs and solutions is available in [TESTING.md](/TESTING.md
 
 ## **Deployment**
 
-The website is hosted and deployed from Github. The steps taken for deployment were:
+The website is hosted [Github](https://github.com), deployed on [Heroku](https://id.heroku.com/login) and uses [MongoDB](https://www.mongodb.com) as it's database. To be able to deploy accounts need to be created on all 3 sites.
 
-1. Logged into my [Github](https://github.com) account,
-2. Selected the [Repository](https://github.com/CristianBuca/The-Aunans),
-3. Go to [Settings](https://github.com/CristianBuca/The-Aunans/settings),tab on the horizontal menu,
-4. Go to [Pages](https://github.com/CristianBuca/The-Aunans/settings/pages) tab on the vertical sub-menu,
-5. Selected the **Main Branch** from the drop-down menu under **Source**,
-6. Selected the **/(root)** folder where my **index.html** was located,
-7. Clicked **Save**,
-8. Once the page was refreshed I was presented with the link to the live website as seen in the image below:
+**Hosting Repository on Github:** 
 
-![Published site](docs/misc/published.png)
+1. Login into Github account,
+2. Select the button marked "New" and create a new repository,
+3. Open repository with favorite IDE.
 
-**Steps to follow for cloning this repository:**
+**Creating MongoDB Database:**
+
+1. Login into MongoDB,
+2. Create a new project,
+3. Under "Security" click "Database Access" and set up a user with read/write permissions,
+4. Create a database cluster,
+5. Click on the "Collections" tab and create the necessary collections,
+6. Under "Security" click "Network Access" and add the specific IP of the application you are connecting to the database or use 0.0.0.0/0 to allow global access.
+7. Under "Deployment" select "Databases" and click "Connect",
+8. Click "Connect your application" and select Python v3.6 or later,
+9. Copy the connection string generated (MONGO_URI) and replace <password> with the password for the root user. Replace myFirstDatabase with the name of the database that connections will use by default,
+
+**Connecting app to the database:**
+
+1. Created a env.py file in the root directory,
+2. Set the environment variables:
+```python
+import os
+
+os.environ.setdefault("IP", Enter IP here)
+os.environ.setdefault("PORT", Enter PORT here)
+os.environ.setdefault("SECRET_KEY", Enter your SECRET KEY)
+os.environ.setdefault("MONGO_URI", Enter MONGO_URI received at step 9 when creating MongoDB)
+os.environ.setdefault("MONGO_DBNAME", Enter name of the collection in the database)
+```
+
+**Deployment to Heroku:**
+
+1. Create a Procfile in the root directory with contents `web:python app.py`,
+2. Run `pip freeze > requirements.txt` in terminal,
+3. Login into Heroku,
+4. Click "Create new app",
+5. As Deployment method select GitHub,
+6. Select the relevant repository with the help of the search field and click Connect,
+7. Click "Settings" and select "Reveal Config Vars",
+8. Add the config vars used in env.py,
+9. Select "Deploy Brach",
+10. After deployment is successful enable automatic deploys. 
+
+**Steps to follow to clone this repository:**
 
 1. Log into your [Github](https://github.com) account,
-2. Select the [Repository](https://github.com/CristianBuca/The-Aunans),
+2. Select the [Repository](https://github.com/CristianBuca/MS3_TopShelf),
 3. Click on the drop-down menu title **Code** on the top right of the repository file tree,
 4. Copy the HTTPS address,
 5. In your Git Bash Terminal type *"git clone"* then paste the address.
+6. Install all python dependencies by running this command in the terminal: `pip install -r requirements.txt`
 
 *Alternatively you can download the repository as ZIP or use [Github Desktop](https://desktop.github.com) to ge the repository on you local machine*
 
