@@ -429,8 +429,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-|  |  |  |  |
-
+| Materialize Grid layout and collapsible navbar | Change the width of the browser window. | For the page to adapt to different width sizes and navbar to collapse/expand | Works as expected |
 
 <details>
   <summary> (Expand - User Story 15 testing video) </summary>
@@ -444,7 +443,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Superuser status in the database | As a database admin change the "superuser" field in the user collection to TRUE | For the selected user to be able to access the superuser page | Works as expected |
 
 <details>
   <summary> (Expand - User Story 16 testing video) </summary>
@@ -458,7 +457,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Page Footer | Navigate to the bottom of any page. Click on the social media links | For the links to take me to the respective social media sites | Works as expected |
 
 <details>
   <summary> (Expand - User Story 17 testing video) </summary>
@@ -472,7 +471,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Flash message section below the navbar | Perform any database CRUD operations, try to register with user/email already in the database, try to login with wrong credentials. | To see a flash message describing the success/failure of the operation | Works as expected |
 
 <details>
   <summary> (Expand - User Story 18 testing video) </summary>
@@ -486,6 +485,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| JQuery form validation | Fill in the input fields on forms | To see feedback when input does not match the required criteria | Works as expected |
 
 
 <details>
@@ -496,10 +496,11 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_13_test.mp4)
 </details>
 
-### 20. As a site owner, I want forms to be validated on the backend as a fallback.
+### 20. As a site owner, I want forms to be validated on the backend.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| wtForms validation in python | Fill in the input fields on the forms | To see feedback when input does not validate | Works as expected |
 
 
 <details>
