@@ -386,7 +386,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Superuser Page | Click on "Profile" link in the navbar. Click on the green Floating Action Button at the bottom right hand corner of the page. Access Superuser Page and click the search field at the top of the page. Input username or item. | To view the results of my search filtered from the database and displayed on the page | Works as expected |
 
 <details>
   <summary> (Expand - User Story 12 testing video) </summary>
@@ -400,6 +400,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| Superuser Page | Click on "Profile" link in the navbar. Click on the green Floating Action Button at the bottom right hand corner of the page. Access Superuser Page and click "Remove User" button present next to each user in the database. Confirm Removal from the pop-up modal | For the selected user to be removed from the database | Works as expected |
 
 
 <details>
@@ -414,7 +415,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Superuser Page | Click on "Profile" link in the navbar. Click on the green Floating Action Button at the bottom right hand corner of the page. Access Superuser Page and click "Remove from Shelf" button present next to each item in the database. Confirm Removal from the pop-up modal | For the selected item to be removed from the database | Works as expected |
 
 <details>
   <summary> (Expand - User Story 14 testing video) </summary>
@@ -428,6 +429,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+|  |  |  |  |
 
 
 <details>
