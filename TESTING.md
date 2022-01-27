@@ -1,6 +1,6 @@
 # Testing Documentation
 
-[Return to Readme.md](https://github.com/CristianBuca/MS3_TopShelf/blob/main/README.md)
+[Return to Readme.md](/README.md)
 
 Link to Live Site can be found [HERE](https://ms3-top-shelf.herokuapp.com/)
 
@@ -227,7 +227,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Registration Page | Click "Register" link on the Navbar. Fill in the registration form. Click Submit. | Account stored in database and access to user-only features on the app | Works as expected |
 
 <details>
   <summary> (Expand - User Story 1 testing video) </summary>
@@ -241,6 +241,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| Login Page | Click "Login" link on the Navbar. Fill in the login form with own credentials. Click Submit. | Gain access to previously registered account on app | Works as expected |
 
 
 <details>
@@ -255,7 +256,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Logout button in the expanded Floating Action Button | Hover over the Floating Action Button at the bottom right-hand corner of the page. Click the Logout button. | Being logged out of the app | Works as expected |
 
 <details>
   <summary> (Expand - User Story 3 testing video) </summary>
@@ -269,6 +270,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| Landing Page | Click the Logo or "All Shelves" button on the navbar | To view entries from other user's collections | Works as expected |
 
 
 <details>
@@ -283,7 +285,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Search bar at the top of the Landing Page | Click the Search Field at the top of the Landing Page. Enter the name of the item, region or distillery you are trying to find. Click Search | For all entries in the database containing my search parameters to be filtered and displayed | Works as expected |
 
 <details>
   <summary> (Expand - User Story 5 testing video) </summary>
@@ -297,6 +299,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| Add to Shelf Page | Click the "Add to Shelf" link in the navbar. Fill in the form. Submit the form. | Fot the entry to be created in the database and be displayed in personal and public collection | Works as expected |
 
 
 <details>
@@ -311,6 +314,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+| My Shelf Page | Click the "My Shelf" link in the navbar. View collection in the drop-down card collection. Click on each item to view individually | To view personal collection in the database | Works as expected |
 
 
 [Back to Top](#Testing-Documentation)
@@ -328,6 +332,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
+|  |  |  |  |
 
 
 <details>
