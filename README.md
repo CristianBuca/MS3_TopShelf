@@ -311,7 +311,7 @@ Main content of the page is comprised of a card grid that is responsive to the u
 * 5 - As a new user, I want to be able to search in the database.
 
 <details>
-  <summary> (Expand) Landing Page on different device widths.</summary>
+  <summary> (Expand) Landing Page on mobile, tablet, 1080p and 1440p.</summary>
 
 ![Landing Page on mobile](/docs/features/landing_mobile.jpg)
 
@@ -340,15 +340,15 @@ In the event of database duplicates for username and/or email a flash message is
 * 20 - As a site owner, I want forms to be validated on the backend as a fallback
 
 <details>
-  <summary> (Expand) Registration Feature.</summary>
+  <summary> (Expand) Registration Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![Registration Page on mobile]()
+![Registration Page on mobile](/docs/features/register_mobile.jpg)
 
-![Registration Page on tablet]()
+![Registration Page on tablet](/docs/features/register_tablet.jpg)
 
-![Registration Page on 1080p]()
+![Registration Page on 1080p](/docs/features/register_1080.jpg)
 
-![Registration Page on 1440p]()
+![Registration Page on 1440p](/docs/features/register_1440.jpg)
 </details>
 
 
@@ -365,7 +365,7 @@ It's main content is a login form with built in client side JQuery validation an
 * 20 - As a site owner, I want forms to be validated on the backend as a fallback
 
 <details>
-  <summary> (Expand) Login Feature.</summary>
+  <summary> (Expand) Login Page on mobile, tablet, 1080p and 1440p.</summary>
 
 ![Login Page mobile]()
 
@@ -390,7 +390,7 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 * 9 - As a regular user, I want to be able to delete entries in my collection.
 
 <details>
-  <summary> (Expand) My Shelf - User Collection Page </summary>
+  <summary> (Expand) My Shelf - User Collection Page on mobile, tablet, 1080p and 1440p.</summary>
 
 ![My Shelf - User Collection Page mobile]()
 
@@ -418,7 +418,7 @@ The form also contains a "Share with others" switch which is ON by default but g
 * 20 - As a site owner, I want forms to be validated on the backend as a fallback.
 
 <details>
-  <summary> (Expand) Add to Shelf Feature </summary>
+  <summary> (Expand) Add to Shelf Page on mobile, tablet, 1080p and 1440p.</summary>
 
 ![Add to Shelf Page mobile]()
 
@@ -439,6 +439,17 @@ It consists of a form populated with the current information associated with the
 
 * 8 - As a regular user, I want to be able to edit entries in my collection.
 
+<details>
+  <summary> (Expand) Change Stock Page on mobile, tablet, 1080p and 1440p.</summary>
+
+![Change Stock Page mobile]()
+
+![Change Stock Page tablet]()
+
+![Change Stock Page 1080p]()
+
+![Change Stock Page 1440p]()
+</details>
 
 ### **Profile Page**
 
@@ -456,7 +467,7 @@ For Superusers the Profile Page serves as a way to access the Superuser Administ
 * 20 - As a site owner, I want forms to be validated on the backend as a fallback.
 
 <details>
-  <summary> (Expand) Profile Feature </summary>
+  <summary> (Expand) Profile Page on mobile, tablet, 1080p and 1440p.</summary>
 
 ![Profile Page mobile]()
 
@@ -486,7 +497,7 @@ Superusers are not able to see or delete other Superusers.
 * 16 - As a site owner, I want to have users with admin privileges.
 
 <details>
-  <summary> (Expand) Admin Management Feature </summary>
+  <summary> (Expand) Admin Management Page on mobile, tablet, 1080p and 1440p.</summary>
 
 ![Superuser Management Page Page mobile]()
 
@@ -519,6 +530,8 @@ Messages being flashed to the user as feedback for their interactions with the a
 ![Expanded Navbar]()
 
 ![Collapsed Navbar on mobile devices]()
+
+![Collapsed Navbar on mobile devices with sidenav]()
 </details>
 
 
@@ -551,6 +564,8 @@ While on their profile page, Superusers will find the regular floating action bu
   <summary> (Expand) Floating Action Button </summary>
 
 ![Floating Action Button]()
+
+![Floating Action Button Superuser]()
 
 </details>
 
