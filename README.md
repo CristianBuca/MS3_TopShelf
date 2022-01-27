@@ -442,13 +442,13 @@ It consists of a form populated with the current information associated with the
 <details>
   <summary> (Expand) Change Stock Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![Change Stock Page mobile]()
+![Change Stock Page mobile](/docs/features/changestock_mobile.jpg)
 
-![Change Stock Page tablet]()
+![Change Stock Page tablet](/docs/features/changestock_tablet.jpg)
 
-![Change Stock Page 1080p]()
+![Change Stock Page 1080p](/docs/features/changestock_1080.jpg)
 
-![Change Stock Page 1440p]()
+![Change Stock Page 1440p](/docs/features/changestock_1440.jpg)
 </details>
 
 ### **Profile Page**
