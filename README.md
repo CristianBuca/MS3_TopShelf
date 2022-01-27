@@ -469,13 +469,13 @@ For Superusers the Profile Page serves as a way to access the Superuser Administ
 <details>
   <summary> (Expand) Profile Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![Profile Page mobile]()
+![Profile Page mobile](/docs/features/profile_mobile.jpg)
 
-![Profile Page tablet]()
+![Profile Page tablet](/docs/features/profile_tablet.jpg)
 
-![Profile Page 1080p]()
+![Profile Page 1080p](/docs/features/profile_1080.jpg)
 
-![Profile Page 1440p]()
+![Profile Page 1440p](/docs/features/profile_1440.jpg)
 </details>
 
 
