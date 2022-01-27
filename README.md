@@ -367,13 +367,13 @@ It's main content is a login form with built in client side JQuery validation an
 <details>
   <summary> (Expand) Login Page on mobile, tablet, 1080p and 1440p.</summary>
 
-![Login Page mobile]()
+![Login Page mobile](/docs/features/login_mobile.jpg)
 
-![Login Page tablet]()
+![Login Page tablet](/docs/features/login_tablet.jpg)
 
-![Login Page 1080p]()
+![Login Page 1080p](/docs/features/login_1080.jpg)
 
-![Login Page 1440p]()
+![Login Page 1440p](/docs/features/login_1440.jpg)
 </details>
 
 
