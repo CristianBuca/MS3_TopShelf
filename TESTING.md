@@ -232,8 +232,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 1 testing video) </summary>
 
- 
-
   [Local Link](docs/test_user_stories/user_story_1_test.mp4)
 </details>
 
@@ -242,7 +240,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Login Page | Click "Login" link on the Navbar. Fill in the login form with own credentials. Click Submit. | Gain access to previously registered account on app | Works as expected |
-
 
 <details>
   <summary> (Expand - User Story 2 testing video) </summary>
@@ -272,7 +269,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 | --- | --- | --- | --- |
 | Landing Page | Click the Logo or "All Shelves" button on the navbar | To view entries from other user's collections | Works as expected |
 
-
 <details>
   <summary> (Expand - User Story 4 testing video) </summary>
 
@@ -300,7 +296,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Add to Shelf Page | Click the "Add to Shelf" link in the navbar. Fill in the form. Submit the form. | Fot the entry to be created in the database and be displayed in personal and public collection | Works as expected |
-
 
 <details>
   <summary> (Expand - User Story 6 testing video) </summary>
@@ -332,8 +327,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-|  |  |  |  |
-
+| Change Stock Page | Click the "My Shelf" link in the navbar. Select the item to be updated from the drop-down collection. Click the "Change" button. Update the field in the form | For the entry to be updated in the databse and displayed accordingly | Works as expected |
 
 <details>
   <summary> (Expand - User Story 8 testing video) </summary>
@@ -347,7 +341,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| My Shelf Page | Click the "My Shelf" link in the navbar. Select the item to be updated from the drop-down collection. Click the "Remove from Shelf" button. Confirm removal in the pop-up | For the item to be deleted from the database and from personal and public collections | Works as expected |
 
 <details>
   <summary> (Expand - User Story 9 testing video) </summary>
@@ -361,7 +355,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Profile Page | Click the "Profile" link in the navbar. Fill in the form with new password and new password confirmation. Submit the form | For password associated with account in the database to be updated | Woks as expected |
 
 <details>
   <summary> (Expand - User Story 10 testing video) </summary>
@@ -375,7 +369,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-
+| Profile Page | Click the "Profile" link in the navbar. Update the avatar link in the form along with password and confirmation. Submit the form. Refresh page to view new avatar | For the avatar associated with account to be updated | Works as expected |
 
 <details>
   <summary> (Expand - User Story 11 testing video) </summary>
@@ -384,7 +378,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   [Local Link](docs/test_user_stories/user_story_11_test.mp4)
 </details>
-
 
 [Back to Top](#Testing-Documentation)
 
