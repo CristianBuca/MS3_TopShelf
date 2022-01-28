@@ -591,8 +591,6 @@ The errors that have specific routes on backend are:
 ![Error Page](/docs/features/error.jpg)
 </details>
 
-<details>
-
 
 [Back to Top](#Top-shelf)
 
