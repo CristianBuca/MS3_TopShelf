@@ -4,6 +4,8 @@
 
 ![Top Shelf Scotch](/docs/design/logos.png)
 
+![Responsive Design](/docs/responsive_design/responsive_design.jpg)
+
 ## **You can find the deployed website** [**HERE**](https://ms3-top-shelf.herokuapp.com)
 
 # **Project Overview**
