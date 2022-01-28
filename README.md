@@ -6,6 +6,47 @@
 
 ![Responsive Design](/docs/responsive_design/responsive_design.jpg)
 
+# Table of Contents
+
+- **[Project Overview](#project-overview)**
+- **[User Experience](#user-experience)**
+- **[Strategy](#strategy)**
+  * **[Project Goals](#project-goals)**
+  * **[User Goals](#user-goals)**
+- **[Scope](#scope)**
+  * **[User Stories](#user-stories)**
+- **[Structure](#structure)**
+  * **[Code Structure](#code-structure)**
+  * **[Database Structure](#database-structure)**
+    + **[Conceptual Database Model](#conceptual-database-model)**
+    + **[Physical Database Model](#physical-database-model)**
+  * **[Feature requirements](#feature-requirements)**
+- **[Skeleton](#skeleton)**
+  * **[Wireframes](#wireframes)**
+  * **[App Routes](#app-routes)**
+- **[Surface](#surface)**
+  * **[Design](#design)**
+- * **[Features](#features)**
+    + **[Landing Page](#landing-page)**
+    + **[**Registration Page](#registration-page)**
+    + **[Login Page](#login-page)**
+    + **[My Shelf - User Collection Page](#my-shelf---user-collection-page)**
+    + **[Add to Shelf Page](#add-to-shelf-page)**
+    + **[Change Stock Page](#change-stock-page)**
+    + **[Profile Page](#profile-page)**
+    + **[Superuser Management Page Page](#superuser-management-page-page)**
+    + **[Navbar](#navbar)**
+    + **[Footer](#footer)**
+    + **[Floating Action Button](#floating-action-button)**
+    + **[Custom Error Pages](#custom-error-pages)**
+  * **[Technologies Used](#technologies-used)**
+  * **[Testing](#testing)**
+  * **[Bugs](#bugs)**
+  * **[Deployment](#deployment)**
+  * **[Credits](#credits)**
+  * **[Acknowledgements](#acknowledgements)**
+  * **[Disclaimer](#disclaimer)**
+
 ## **You can find the deployed website** [**HERE**](https://ms3-top-shelf.herokuapp.com)
 
 # **Project Overview**
@@ -13,7 +54,7 @@
 The webapp Top Shelf - Scotch is a full-stack data-centric project created in Python. It is based on the Flask framework and uses MongoDB as it's database. The project was created as the Third Milestone Project for Code Institute. 
 It's main purpose is to allow the user to store and manipulate data records in a database using full CRUD (create, read, update, delete) functionality.
 
-For testing purposes I have set up the account with user: topshelftest and password: Password1
+For testing purposes I have set up the account with user: testuser and password: Password1
 
 # **User Experience**
 
@@ -72,7 +113,7 @@ Users have access to full CRUD functionality on their shelf once they register a
 20. As a site owner, I want forms to be validated on the backend as a fallback.
 
 
-[Back to Top](#Top-shelf)
+[Back to Top](#top-shelf)
 
 
 # **Structure**
@@ -141,7 +182,7 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 * Logout functionality.
 
 
-[Back to Top](#Top-shelf)
+[Back to Top](#top-shelf)
 
 
 # **Skeleton**
@@ -267,9 +308,7 @@ Database concept was created using [Lucid-Chart](https://www.lucidchart.com)
 * Results are limited to normal users and not superusers.
 * Flask route: "/super_search".
 
-
-[Back to Top](#Top-shelf)
-
+[Back to Top](#top-shelf)
 
 # **Surface**
 
@@ -296,9 +335,7 @@ Barlow is a slightly rounded, low-contrast, grotesk type family.
 
 Colors for this app were inspired by the colors a user would find when looking at a bottle of Scotch.
 
-
-[Back to Top](#Top-shelf)
-
+[Back to Top](#top-shelf)
 
 # **Features**
 
@@ -403,9 +440,7 @@ Each card contains two buttons used to access the UPDATE form for each item or t
 ![My Shelf - User Collection Page 1440p](/docs/features/myshelf_1440.jpg)
 </details>
 
-
-[Back to Top](#Top-shelf)
-
+[Back to Top](#top-shelf)
 
 ### **Add to Shelf Page**
 
@@ -510,9 +545,7 @@ Superusers are not able to see or delete other Superusers.
 ![Superuser Management Page Page 1440p](/docs/features/superuser_1440.jpg)
 </details>
 
-
-[Back to Top](#Top-shelf)
-
+[Back to Top](#top-shelf)
 
 ### **Navbar**
 
@@ -593,9 +626,7 @@ The errors that have specific routes on backend are:
 ![Error Page](/docs/features/error.jpg)
 </details>
 
-
-[Back to Top](#Top-shelf)
-
+[Back to Top](#top-shelf)
 
 ## **Technologies Used**
 
@@ -685,9 +716,7 @@ os.environ.setdefault("MONGO_DBNAME", Enter name of the collection in the databa
 
 *Alternatively you can download the repository as ZIP or use [Github Desktop](https://desktop.github.com) to ge the repository on you local machine*
 
-
-[Back to Top](#Top-shelf)
-
+[Back to Top](#top-shelf)
 
 ## **Credits**
 
@@ -738,3 +767,4 @@ _This project is for educational use only and was created as a Milestone Project
 
 Developed by Cristian Buca
 
+[Back to Top](#top-shelf)
