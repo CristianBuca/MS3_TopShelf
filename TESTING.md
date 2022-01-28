@@ -1,13 +1,15 @@
 # Testing Documentation
 
-[Return to Readme.md](/README.md)
-
-Link to Live Site can be found [HERE](https://ms3-top-shelf.herokuapp.com/)
+![Responsive Design](/docs/responsive_design/responsive_design.jpg)
 
 
-## HTML Validation
+## **[Return to Readme.md](/README.md)**
 
-### HTML validation was carried out with [W3 Validator](https://validator.w3.org).
+## **You can find the deployed website** [**HERE**](https://ms3-top-shelf.herokuapp.com/)
+
+# HTML Validation
+
+## HTML validation was carried out with [W3 Validator](https://validator.w3.org).
 
 _The same 2 warnings are present on all pages dues to missing headings on sections._
 
@@ -59,8 +61,9 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![Change Stock Page HTML Validation](/docs/test_img/html_validator/html_valid_changestock.png)
 </details>
 
+# CSS Validation
 
-### CSS validation was carried out with [W3 Jigsaw](https://jigsaw.w3.org/css-validator/).
+## CSS validation was carried out with [W3 Jigsaw](https://jigsaw.w3.org/css-validator/).
 
 <details>
   <summary> (expand) css.style Jigsaw Validation found 0 errors:</summary>
@@ -68,8 +71,9 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![CSS Validation](/docs/test_img/css_validator/css_valid.png)
 </details>
 
+# Accessibility Validation
 
-### Accessibility Evaluation was carried out with [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org).
+## Accessibility Evaluation was carried out with [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org).
 
 <details>
   <summary> (expand) Landing Page WAVE Validation found 0 errors:</summary>
@@ -120,10 +124,11 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 </details>
 
 
-[Back to Top](#Testing-Documentation)
+[Back to Top](#testing-documentation)
 
+# Lighthouse Tests
 
-### Performance Tests were carried out using Chrome Lighthouse DevTools.
+## Performance Tests were carried out using Chrome Lighthouse DevTools.
 
 <details>
   <summary> (expand) Landing Page Lighthouse Test:</summary>
@@ -173,8 +178,9 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![Change Stock Page Lighthouse Test](/docs/test_img/lighthouse/lighthouse_changeitem.jpg)
 </details>
 
+# Javascript Validation
 
-### JavaScript Code Tests were carried out with [JShint](https://jshint.com).
+## JavaScript Code Tests were carried out with [JShint](https://jshint.com).
 
 
 <details>
@@ -189,7 +195,9 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![form_validation.js JSHint Test](/docs/test_img/jshint_validator/jshint_valid_form.png)
 </details>
 
-### Python Code Tests were carried out with [Pep8](http://pep8online.com)
+# Python Validation
+
+## Python Code Tests were carried out with [Pep8](http://pep8online.com)
 
 <details>
   <summary> (expand) app.py Pep8 found 0 errors:</summary>
@@ -203,7 +211,9 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![forms.py Pep8 Test](/docs/test_img/pep8_valid/pep8_valid_forms.png)
 </details>
 
-### Devices used for physical testing: 
+# Physical Testing
+
+## Devices used for physical testing: 
 
 * Samsung Galaxy S8,
 * Samsung Tab A 9.7-inch tablet,
@@ -214,10 +224,10 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 Application performs as intended on all devices.
 
 
-[Back to Top](#Testing-Documentation)
+[Back to Top](#testing-documentation)
 
 
-## **Testing of User Stories**
+# Testing of User Stories
 
 _GitHub does not allow videos hosted in the local repository to be played on the repository page.
 Although when viewing on GitHub these videos appear fine, they might not be available in this format if this project is forked. Please refer to the Local Links if needed._
@@ -312,7 +322,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 | My Shelf Page | Click the "My Shelf" link in the navbar. View collection in the drop-down card collection. Click on each item to view individually | To view personal collection in the database | Works as expected |
 
 
-[Back to Top](#Testing-Documentation)
+[Back to Top](#testing-documentation)
 
 
 <details>
@@ -379,7 +389,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_11_test.mp4)
 </details>
 
-[Back to Top](#Testing-Documentation)
+[Back to Top](#testing-documentation)
 
 
 ### 12. As a superuser, I want to be able to search the database for users and entries.
@@ -512,10 +522,10 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 </details>
 
 
-[Back to Top](#Testing-Documentation)
+[Back to Top](#testing-documentation)
 
 
-## **Bugs**
+# Bugs
 
 **Bug 1**: 
 
@@ -597,5 +607,5 @@ $("img").each( function ()
 });
 ```
 
-[Back to Top](#Testing-Documentation)
+[Back to Top](#testing-documentation)
 
