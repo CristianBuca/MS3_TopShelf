@@ -1,7 +1,25 @@
 # Testing Documentation
 
+![Top Shelf Scotch](/docs/design/logos.png)
+
 ![Responsive Design](/docs/responsive_design/responsive_design.jpg)
 
+# Table of contents
+
+- **[HTML Validation](#html-validation)**
+- **[CSS Validation](#css-validation)**
+- **[Accessibility Validation](#accessibility-validation)**
+- **[Lighthouse Tests](#lighthouse-tests)**
+- **[Javascript Validation](#javascript-validation)**
+- **[Python Validation](#python-validation)**
+- **[Physical Testing](#physical-testing)**
+- **[Testing of User Stories](#testing-of-user-stories)**
+  * [New User Stories](#new-user-stories)
+  * [Regular User Stories](#regular-user-stories)
+  * [Superuser Stories](#superuser-stories)
+  * [Site Owner Stories](#site-owner-stories)
+
+- **[Bugs](#bugs)**
 
 ## **[Return to Readme.md](/README.md)**
 
@@ -232,8 +250,9 @@ Application performs as intended on all devices.
 _GitHub does not allow videos hosted in the local repository to be played on the repository page.
 Although when viewing on GitHub these videos appear fine, they might not be available in this format if this project is forked. Please refer to the Local Links if needed._
 
+## New User Stories
 
-### 1. As a new user, I want to be able to register an account.
+### 1. As a new user, I want to be able to register an account
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
@@ -333,6 +352,8 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_7_test.mp4)
 </details>
 
+## Regular User Stories
+
 ### 8. As a regular user, I want to be able to edit entries in my collection.
 
 |Feature | Action | Expected Result | Actual Result |
@@ -391,6 +412,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 [Back to Top](#testing-documentation)
 
+## Superuser Stories
 
 ### 12. As a superuser, I want to be able to search the database for users and entries.
 
@@ -434,6 +456,8 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   [Local Link](docs/test_user_stories/user_story_13_test.mp4)
 </details>
+
+## Site Owner Stories
 
 ### 15. As a site owner, I want the app to be responsive.
 
