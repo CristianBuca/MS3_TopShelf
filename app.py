@@ -28,7 +28,7 @@ DATABASE READ ROUTES
 # Landing/ get_items route
 @app.route('/')
 @app.route('/get_items')
-def get_items():
+def get_items() -> object:
     '''
     Get_items function queries the database for all items,
     Sorts them by most recent entry,
@@ -41,7 +41,7 @@ def get_items():
 
 # My shelf Route
 @app.route('/my_shelf', methods=['GET', 'POST'])
-def my_shelf():
+def my_shelf() -> object:
     '''
     My_shelf function pulls the current user name from session cookies,
     Queries the database for entries made by user,
@@ -57,7 +57,7 @@ def my_shelf():
 
 # Superuser Route
 @app.route('/superuser', methods=['GET', 'POST'])
-def superuser():
+def superuser() -> object:
     '''
     Superuser function checks that user is logged in,
     Queries the database for user and checks if it has superuser status,
@@ -88,7 +88,7 @@ USER AUTHENTICATION ROUTES
 
 # Register Route
 @app.route('/register', methods=['GET', 'POST'])
-def register():
+def register() -> object:
     '''
     Register function uses the RegistrationForm from forms.py,
     Checks username and email against the DB for duplicate,
@@ -138,7 +138,7 @@ def register():
 
 # Login Route
 @app.route('/login', methods=['GET', 'POST'])
-def login():
+def login() -> object:
     '''
     Login function uses LoginForm from forms.py,
     Checks if user exists in DB and password is correct,
@@ -171,7 +171,7 @@ def login():
 
 # Logout Route
 @app.route('/logout')
-def logout():
+def logout() -> object:
     '''
     Logout function removes user from session cookies,
     Displays flash message to confirm logout,
@@ -192,7 +192,7 @@ DATABASE SEARCH ROUTES
 
 # Search Route for items in DB
 @app.route('/search_items', methods=['GET', 'POST'])
-def search_items():
+def search_items() -> object:
     '''
     Search_items function checks the items collection index for a match
     with the search input from user
@@ -205,7 +205,7 @@ def search_items():
 
 # Super Search Route for users and items in DB
 @app.route('/super_search', methods=['GET', 'POST'])
-def super_search():
+def super_search() -> object:
     '''
     Super_search is available only to superusers,
     Function checks the items and users collection indexes for a match
@@ -221,7 +221,7 @@ def super_search():
 
 # Add Stock Route
 @app.route('/add_stock', methods=['GET', 'POST'])
-def add_stock():
+def add_stock() -> object:
     '''
     Add_stock function uses AddStock form from forms.py,
     Stores user inputs and validates them,
@@ -261,7 +261,7 @@ DATABASE UPDATE/DELETE ROUTES
 
 # User profile route
 @app.route('/profile/<username>', methods=['GET', 'POST'])
-def profile(username):
+def profile(username: object) -> object:
     '''
     Profile function uses the RegistrationForm from forms.py,
     Matches the user in session cookies and pulls it's information from DB
@@ -303,7 +303,7 @@ def profile(username):
 
 # Change stock route
 @app.route('/change_stock/<item_id>', methods=['GET', 'POST'])
-def change_stock(item_id):
+def change_stock(item_id: object) -> object:
     '''
     Change_stock function uses AddStock form from forms.py,
     Matches the item selected by user to be updated based on _id,
@@ -350,7 +350,7 @@ def change_stock(item_id):
 
 # Remove Stock route
 @app.route('/remove_stock/<item_id>')
-def remove_stock(item_id):
+def remove_stock(item_id: object) -> object:
     '''
     Function remove_stock deletes the item from the database,
     :param item_id: the id of the item in the DB
@@ -366,7 +366,7 @@ def remove_stock(item_id):
 
 # Remove User route
 @app.route('/remove_user/<user_id>')
-def remove_user(user_id):
+def remove_user(user_id: object) -> object:
     '''
     Function remove_user delete the user from the database,
     Only accessible by superusers.
