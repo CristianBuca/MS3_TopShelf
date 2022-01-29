@@ -376,7 +376,9 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 8 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588507-401f9bdd-999f-4bcf-8af4-13aa38fea442.mp4
+
+https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-b335-3af5fed80ee0.mp4
+
 
   [Local Link](docs/test_user_stories/user_story_8_test.mp4)
 </details>
