@@ -260,6 +260,10 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 1 testing video) </summary>
 
+
+https://user-images.githubusercontent.com/79543676/151676566-30782dfe-7d27-400f-9bd9-1e23272de2ec.mp4
+
+
   [Local Link](/docs/test_user_stories/user_story_1.mp4)
 </details>
 
