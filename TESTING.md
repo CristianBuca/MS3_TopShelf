@@ -141,7 +141,6 @@ _The same 2 warnings are present on all pages dues to missing headings on sectio
 ![Change Stock Page WAVE Validation](/docs/test_img/wave_validator/wave_valid_changestock.png)
 </details>
 
-
 [Back to Top](#testing-documentation)
 
 # Lighthouse Tests
@@ -340,10 +339,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 | --- | --- | --- | --- |
 | My Shelf Page | Click the "My Shelf" link in the navbar. View collection in the drop-down card collection. Click on each item to view individually | To view personal collection in the database | Works as expected |
 
-
-[Back to Top](#testing-documentation)
-
-
 <details>
   <summary> (Expand - User Story 7 testing video) </summary>
 
@@ -351,6 +346,8 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   [Local Link](docs/test_user_stories/user_story_7_test.mp4)
 </details>
+
+[Back to Top](#testing-documentation)
 
 ## Regular User Stories
 
@@ -457,6 +454,8 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_13_test.mp4)
 </details>
 
+[Back to Top](#testing-documentation)
+
 ## Site Owner Stories
 
 ### 15. As a site owner, I want the app to be responsive.
@@ -545,9 +544,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
   [Local Link](docs/test_user_stories/user_story_13_test.mp4)
 </details>
 
-
 [Back to Top](#testing-documentation)
-
 
 # Bugs
 
@@ -630,6 +627,4 @@ $("img").each( function ()
     });
 });
 ```
-
 [Back to Top](#testing-documentation)
-
