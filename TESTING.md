@@ -260,7 +260,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 1 testing video) </summary>
 
-  [Local Link](docs/test_user_stories/user_story_1_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_1.mp4)
 </details>
 
 ### 2. As a new user, I want to be able to login and access my account.
@@ -274,7 +274,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   https://user-images.githubusercontent.com/79543676/140587736-5d87a52a-8c8d-4aab-a639-995638890542.mp4
 
-  [Local Link](docs/test_user_stories/user_story_2_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_2.mp4)
 </details>
 
 ### 3. As a new user, I want to be able to logout.
@@ -288,7 +288,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   https://user-images.githubusercontent.com/79543676/140587959-09b0f953-1d3e-4860-af74-68dfcda3cd13.mp4
 
-  [Local Link](docs/test_user_stories/user_story_3_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_3.mp4)
 </details>
 
 ### 4. As a new user, I want to view collections in the database.
@@ -302,7 +302,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   https://user-images.githubusercontent.com/79543676/140588272-5daa2760-1f20-4c34-95ac-5e3d054a532b.mp4
 
-  [Local Link](docs/test_user_stories/user_story_4_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_4.mp4)
 </details>
 
 5. As a new user, I want to be able to search in the database.
@@ -316,7 +316,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
  
   https://user-images.githubusercontent.com/79543676/140588329-9636efce-2a13-4e88-9e22-93e0315f6c33.mp4
 
-  [Local Link](docs/test_user_stories/user_story_5_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_5.mp4)
 </details>
 
 ### 6. As a new user, I want to be able to add my own items to the database.
@@ -330,7 +330,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   https://user-images.githubusercontent.com/79543676/140588369-5b27cec6-1fd5-4d6e-a3d4-1142d739b90c.mp4
 
-  [Local Link](docs/test_user_stories/user_story_6_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_6.mp4)
 </details>
 
 ### 7. As a new user, I want to be able to view my collection in the database.
@@ -344,7 +344,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
   https://user-images.githubusercontent.com/79543676/140588411-7e35764d-4540-418d-bdbb-b4aca894e4d0.mp4
 
-  [Local Link](docs/test_user_stories/user_story_7_test.mp4)
+  [Local Link]/docs/test_user_stories/user_story_7.mp4)
 </details>
 
 [Back to Top](#testing-documentation)
