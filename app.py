@@ -376,6 +376,11 @@ ERROR HANDLING
 # Error 400
 @app.errorhandler(400)
 def bad_request(e: object) -> object:
+    '''
+    When error 400 occurs render template for respective page,
+    :param e: the error that occurs
+    :return render_template of error_400.html
+    '''
     return render_template(
         'errors/error_400.html', title='400 Error', error=e), 400
 
@@ -383,6 +388,11 @@ def bad_request(e: object) -> object:
 # Error 401
 @app.errorhandler(401)
 def unauthorized(e: object) -> object:
+    '''
+    When error 401 occurs render template for respective page,
+    :param e: the error that occurs
+    :return render_template of error_401.html
+    '''
     return render_template(
         'errors/error_401.html', title='401 Error', error=e), 401
 
@@ -390,6 +400,11 @@ def unauthorized(e: object) -> object:
 # Error 404
 @app.errorhandler(404)
 def page_not_found(e: object) -> object:
+    '''
+    When error 404 occurs render template for respective page,
+    :param e: the error that occurs
+    :return render_template of error_404.html
+    '''
     return render_template(
         'errors/error_404.html', title='404 Error', error=e), 404
 
@@ -397,6 +412,11 @@ def page_not_found(e: object) -> object:
 # Error 405
 @app.errorhandler(405)
 def method_not_allowed(e: object) -> object:
+    '''
+    When error 405 occurs render template for respective page,
+    :param e: the error that occurs
+    :return render_template of error_405.html
+    '''
     return render_template(
         'errors/error_405.html', title='405 Error', error=e), 405
 
@@ -404,10 +424,15 @@ def method_not_allowed(e: object) -> object:
 # Error 500
 @app.errorhandler(500)
 def internal_server_error(e: object) -> object:
+    '''
+    When error 500 occurs render template for respective page,
+    :param e: the error that occurs
+    :return render_template of error_500.html
+    '''
     return render_template(
         'errors/error_500.html', title='500 Error', error=e), 500
 
-
+# Initialize app using environment variables
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
