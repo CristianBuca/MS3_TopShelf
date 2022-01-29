@@ -25,15 +25,29 @@ DATABASE READ ROUTES
 '''
 
 
+# Landing/ get_items route
 @app.route('/')
 @app.route('/get_items')
 def get_items():
+    '''
+    Get_items function queries the database for all items,
+    Sorts them by most recent entry,
+    Stores results in items variable to be passed on template render
+    :return render_template items.html
+    '''
     items = mongo.db.items.find().sort('_id', -1)
     return render_template('items.html', items=items)
 
 
+# My shelf Route
 @app.route('/my_shelf', methods=['GET', 'POST'])
 def my_shelf():
+    '''
+    My_shelf function pulls the current user name from session cookies,
+    Queries the database for entries made by user,
+    Stores result in my_shelf variable to be passe on template render
+    :return render_template my_shelf.html
+    '''
     user = session['user']
     my_shelf = mongo.db.items.find({'owned_by': user})
     return render_template(
@@ -41,8 +55,16 @@ def my_shelf():
     )
 
 
+# Superuser Route
 @app.route('/superuser', methods=['GET', 'POST'])
 def superuser():
+    '''
+    Superuser function checks that user is logged in,
+    Queries the database for user and checks if it has superuser status,
+    Queries the database for users and items collection,
+    Stores results in items and users variables to be passed on template render
+    :return render_template superuser.html
+    '''
     if session.get('user') is not None:
         user = mongo.db.users.find_one({'username': session['user']})
         if user['superuser']:
@@ -71,10 +93,7 @@ def register():
     Register function uses the RegistrationForm from forms.py,
     Checks username and email against the DB for duplicate,
     Checks if all inputs are valid,
-    Redirects user accordingly based on form validation outcome
-    If valid
-    :return redirect to get_items
-    If invalid
+    Adds user to the database
     :return render_template of register.html
     '''
     form = RegistrationForm()
@@ -124,8 +143,6 @@ def login():
     Login function uses LoginForm from forms.py,
     Checks if user exists in DB and password is correct,
     Stores user in session cookies
-    :return redirect to my_shelf.
-    If inputs are not matched
     :return render_template of login.html
     '''
     form = LoginForm()
@@ -210,7 +227,6 @@ def add_stock():
     Stores user inputs and validates them,
     Inserts new item in items collection in DB
     :return render_template for add_stock.html for GET method
-    :return redirect to get_items for POST method
     '''
     form = AddStock()
     if request.method == 'POST':
@@ -292,11 +308,8 @@ def change_stock(item_id):
     Change_stock function uses AddStock form from forms.py,
     Matches the item selected by user to be updated based on _id,
     Checks if user in session is the same as the one that created the item,
-    For GET method retrieves the item data and populates the form
-    :return render_template of change_stock.html
-    For POST updates the item in DB
     :param _id: user id from DB
-    :return redirect to my_shelf
+    :return render_template of change_stock.html
     '''
     item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
     if item['owned_by'] != session['user']:
