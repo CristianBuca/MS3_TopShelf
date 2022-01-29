@@ -260,10 +260,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 1 testing video) </summary>
 
-
-  https://user-images.githubusercontent.com/79543676/151676843-32abc948-8446-403a-8e20-3342a1c19e2b.mp4
-
-
   [Local Link](/docs/test_user_stories/user_story_1.mp4)
 </details>
 
@@ -275,10 +271,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 <details>
   <summary> (Expand - User Story 2 testing video) </summary>
-
-
-  https://user-images.githubusercontent.com/79543676/151676835-9c5b62f9-ccc3-4069-bde1-a98cfe40b9f9.mp4
-
 
   [Local Link](/docs/test_user_stories/user_story_2.mp4)
 </details>
@@ -292,10 +284,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 3 testing video) </summary>
 
-
-  https://user-images.githubusercontent.com/79543676/151676854-15a5a86f-cf1a-4d6b-8fdb-ff818ac8a2de.mp4
-
-
   [Local Link](/docs/test_user_stories/user_story_3.mp4)
 </details>
 
@@ -307,10 +295,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 <details>
   <summary> (Expand - User Story 4 testing video) </summary>
-
-
-  https://user-images.githubusercontent.com/79543676/151676861-d73c1e5f-fe79-45d3-9cd7-188aa9a37e88.mp4
-
 
   [Local Link](/docs/test_user_stories/user_story_4.mp4)
 </details>
@@ -324,10 +308,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 5 testing video) </summary>
  
-
-  https://user-images.githubusercontent.com/79543676/151676869-84340846-7f8f-4f8e-bd51-f9ccaa0e4273.mp4
-
-
   [Local Link](/docs/test_user_stories/user_story_5.mp4)
 </details>
 
@@ -340,10 +320,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 6 testing video) </summary>
 
-
-  https://user-images.githubusercontent.com/79543676/151676885-21826f2a-0d7c-41d1-8c86-1a35511248b6.mp4
-
-
   [Local Link](/docs/test_user_stories/user_story_6.mp4)
 </details>
 
@@ -355,10 +331,6 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 
 <details>
   <summary> (Expand - User Story 7 testing video) </summary>
-
-
-  https://user-images.githubusercontent.com/79543676/151676891-50e5c23d-2e6b-4b56-a855-5637832b9a3e.mp4
-
 
   [Local Link]/docs/test_user_stories/user_story_7.mp4)
 </details>
@@ -376,11 +348,7 @@ Although when viewing on GitHub these videos appear fine, they might not be avai
 <details>
   <summary> (Expand - User Story 8 testing video) </summary>
 
-
-https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-b335-3af5fed80ee0.mp4
-
-
-  [Local Link](docs/test_user_stories/user_story_8_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_8.mp4)
 </details>
 
 ### 9. As a regular user, I want to be able to delete entries in my collection.
@@ -392,9 +360,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 9 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588553-39bdb347-bf92-49c2-a5ac-56e3c12a9d17.mp4
-
-  [Local Link](docs/test_user_stories/user_story_9_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_9.mp4)
 </details>
 
 ### 10. As a regular user, I want to be able to change my password.
@@ -406,9 +372,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 10 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588603-f212437f-b608-4cd6-b7b4-f3445ee00d1e.mp4
-
-  [Local Link](docs/test_user_stories/user_story_10_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_10.mp4)
 </details>
 
 ### 11. As a regular user, I want to be able to change my avatar.
@@ -420,9 +384,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 11 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588644-1648d384-a124-4d29-a357-085bc7a9844f.mp4
-
-  [Local Link](docs/test_user_stories/user_story_11_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_11.mp4)
 </details>
 
 [Back to Top](#testing-documentation)
@@ -438,9 +400,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 12 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588680-4250c1ec-af3e-48f5-8bfa-d4512ff0b61d.mp4
-
-  [Local Link](docs/test_user_stories/user_story_12_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_12.mp4)
 </details>
 
 ### 13. As a superuser, I want to be able to remove users from the database.
@@ -449,13 +409,10 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 | --- | --- | --- | --- |
 | Superuser Page | Click on "Profile" link in the navbar. Click on the green Floating Action Button at the bottom right hand corner of the page. Access Superuser Page and click "Remove User" button present next to each user in the database. Confirm Removal from the pop-up modal | For the selected user to be removed from the database | Works as expected |
 
-
 <details>
   <summary> (Expand - User Story 13 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_13.mp4)
 </details>
 
 ### 14. As a superuser, I want to be able to remove user created entries from the database.
@@ -467,9 +424,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 14 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_14.mp4)
 </details>
 
 [Back to Top](#testing-documentation)
@@ -485,9 +440,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 15 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_15.mp4)
 </details>
 
 ### 16. As a site owner, I want to have users with admin privileges.
@@ -499,9 +452,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 16 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_16.mp4)
 </details>
 
 ### 17. As a site owner, I want to showcase my social media.
@@ -513,9 +464,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 17 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_17.mp4)
 </details>
 
 ### 18. As a site owner, I want to provide feedback to the user when errors occur.
@@ -527,9 +476,7 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 <details>
   <summary> (Expand - User Story 18 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_18.mp4)
 </details>
 
 ### 19. As a site owner, I want forms to be validated on the client side.
@@ -538,13 +485,10 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 | --- | --- | --- | --- |
 | JQuery form validation | Fill in the input fields on forms | To see feedback when input does not match the required criteria | Works as expected |
 
-
 <details>
   <summary> (Expand - User Story 19 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_19.mp4)
 </details>
 
 ### 20. As a site owner, I want forms to be validated on the backend.
@@ -553,13 +497,10 @@ https://user-images.githubusercontent.com/79543676/151677310-e16ce6d0-49e9-493c-
 | --- | --- | --- | --- |
 | wtForms validation in python | Fill in the input fields on the forms | To see feedback when input does not validate | Works as expected |
 
-
 <details>
   <summary> (Expand - User Story 20 testing video) </summary>
 
-  https://user-images.githubusercontent.com/79543676/140588734-cf40597a-d084-48f9-8e8f-e13823850f84.mp4
-
-  [Local Link](docs/test_user_stories/user_story_13_test.mp4)
+  [Local Link](/docs/test_user_stories/user_story_20.mp4)
 </details>
 
 [Back to Top](#testing-documentation)
