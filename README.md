@@ -28,7 +28,7 @@
   * **[Design](#design)**
 - * **[Features](#features)**
     + **[Landing Page](#landing-page)**
-    + **[**Registration Page](#registration-page)**
+    + **[Registration Page](#registration-page)**
     + **[Login Page](#login-page)**
     + **[My Shelf - User Collection Page](#my-shelf---user-collection-page)**
     + **[Add to Shelf Page](#add-to-shelf-page)**
@@ -54,7 +54,7 @@
 The webapp Top Shelf - Scotch is a full-stack data-centric project created in Python. It is based on the Flask framework and uses MongoDB as it's database. The project was created as the Third Milestone Project for Code Institute. 
 It's main purpose is to allow the user to store and manipulate data records in a database using full CRUD (create, read, update, delete) functionality.
 
-For testing purposes I have set up the account with user: testuser and password: Password1
+**For testing purposes I have set up the account with user: testuser and password: Password1**
 
 # **User Experience**
 
@@ -631,8 +631,9 @@ The errors that have specific routes on backend are:
 ## **Technologies Used**
 
 * **[HTML5](https://html.spec.whatwg.org)**
-* **[CSS3](https://www.w3.org/Style/CSS/Overview.en.html)**
+* **[CSS 3](https://www.w3.org/Style/CSS/Overview.en.html)**
 * **[JavaScript](https://www.javascript.com)**
+* **[Python 3.9.6](https://www.python.org)**
 * **[JQuery 3.6.0](https://jquery.com)** Was used for dom manipulation.
 * **[Flask](https://flask.palletsprojects.com/en/2.0.x/)** Was used as the framework for the app.
 * **[Jinja](https://jinja.palletsprojects.com/en/3.0.x/)** As the template engine for Flask.
