@@ -315,7 +315,7 @@ https://user-images.githubusercontent.com/79543676/151678153-666f1ae8-17b3-4e02-
   [Local Link](/docs/test_user_stories/user_story_4.mp4)
 </details>
 
-5. As a new user, I want to be able to search in the database.
+### 5. As a new user, I want to be able to search in the database.
 
 |Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
