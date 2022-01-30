@@ -642,6 +642,7 @@ The errors that have specific routes on backend are:
 * **[Github Desktop](https://desktop.github.com)** For managing synchronizations between local and cloud-stored repositories.
 * **[Git](https://git-scm.com)** For version control.
 * **[VSCode](https://code.visualstudio.com)** IDE for writing code.
+* **[Balsamiq](https://balsamiq.com) For designing the wireframes.
 * **[Font Awesome](https://fontawesome.com)** Provided the icons for social media links.
 * **[Google Fonts](https://fonts.google.com)** Ubuntu, Oxygen and Fira Sans font families were used as default fonts for the web application.
 * **[Optimizilla](https://imagecompressor.com)** To optimize images for web applications.
