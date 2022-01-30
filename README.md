@@ -1,6 +1,6 @@
 # **Top Shelf**
 
-## **Third Milestone Project - Backend Development - Code Institute**
+## **Third Milestone Project - Backend Data Centric Development - Code Institute**
 
 ![Top Shelf Scotch](/docs/design/logos.png)
 
@@ -54,7 +54,8 @@
 The webapp Top Shelf - Scotch is a full-stack data-centric project created in Python. It is based on the Flask framework and uses MongoDB as it's database. The project was created as the Third Milestone Project for Code Institute. 
 It's main purpose is to allow the user to store and manipulate data records in a database using full CRUD (create, read, update, delete) functionality.
 
-**For testing purposes I have set up the account with user: testuser and password: Password1**
+**Registration on the website is open so feel free to take advantage of it. Regardless, for testing purposes I have set up the following account:**
+* _Standard user:_ **testuser**  _password:_ **Password1**
 
 # **User Experience**
 
