@@ -679,9 +679,11 @@ The website is hosted [Github](https://github.com), deployed on [Heroku](https:/
 8. Click "Connect your application" and select Python v3.6 or later,
 9. Copy the connection string generated (MONGO_URI) and replace <password> with the password for the root user. Replace myFirstDatabase with the name of the database that connections will use by default,
 
+![Connect app to MongoDB](/docs/deployment/mongo.png)
+
 **Connecting app to the database:**
 
-1. Created a env.py file in the root directory,
+1. Create a env.py file in the root directory,
 2. Set the environment variables:
 ```python
 import os
@@ -706,6 +708,8 @@ os.environ.setdefault("MONGO_DBNAME", Enter name of the collection in the databa
 9. Select "Deploy Brach",
 10. After deployment is successful enable automatic deploys. 
 
+![Deploy with Heroku](/docs/deployment/heroku.png)
+
 **Steps to follow to clone this repository:**
 
 1. Log into your [Github](https://github.com) account,
@@ -715,7 +719,7 @@ os.environ.setdefault("MONGO_DBNAME", Enter name of the collection in the databa
 5. In your Git Bash Terminal type *"git clone"* then paste the address.
 6. Install all python dependencies by running this command in the terminal: `pip install -r requirements.txt`
 
-*Alternatively you can download the repository as ZIP or use [Github Desktop](https://desktop.github.com) to ge the repository on you local machine*
+*Alternatively you can download the repository as ZIP or use [Github Desktop](https://desktop.github.com) to get the repository on you local machine*
 
 [Back to Top](#top-shelf)
 
